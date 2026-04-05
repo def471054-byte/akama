@@ -6587,3 +6587,1502 @@ prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $limit: 5
 prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
  GET /dashboard/employees 200 in 417ms (next.js: 23ms, proxy.ts: 5ms, application-code: 389ms)
  GET /dashboard/employees/create 200 in 44ms (next.js: 19ms, proxy.ts: 5ms, application-code: 20ms)
+[browser] ./components/employee/permit-view.tsx:89:39
+Expected '</', got 'ident'
+  87 | ...
+  88 | ...="flex flex-col ...
+> 89 | ...Name= text-[20px...
+     |          ^^^^
+  90 | ...Name= text-[20px...
+  91 | ...Name= text-[20px...
+  92 | ...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/employee/permit-view.tsx
+    ./app/dashboard/employees/[id]/permit/page.tsx 
+[browser] ./components/employee/permit-view.tsx:89:39
+Expected '</', got 'ident'
+  87 | ...
+  88 | ...="flex flex-col ...
+> 89 | ...Name= text-[20px...
+     |          ^^^^
+  90 | ...Name= text-[20px...
+  91 | ...Name= text-[20px...
+  92 | ...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./components/employee/permit-view.tsx
+    ./app/dashboard/employees/[id]/permit/page.tsx 
+✓ Compiled in 80ms
+✓ Compiled in 97ms
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 545ms (next.js: 317ms, proxy.ts: 11ms, application-code: 217ms)
+ GET /dashboard/employees/create 200 in 557ms (next.js: 156ms, proxy.ts: 205ms, application-code: 197ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 137ms (next.js: 21ms, proxy.ts: 12ms, application-code: 104ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 223ms (next.js: 35ms, proxy.ts: 7ms, application-code: 181ms)
+ GET /dashboard/employees/create 200 in 125ms (next.js: 10ms, proxy.ts: 13ms, application-code: 101ms)
+ GET /dashboard/employees/create 200 in 91ms (next.js: 5ms, proxy.ts: 15ms, application-code: 72ms)
+ GET /dashboard/employees/create 200 in 53ms (next.js: 4ms, proxy.ts: 23ms, application-code: 25ms)
+ GET /dashboard/employees/create 200 in 45ms (next.js: 4ms, proxy.ts: 24ms, application-code: 17ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 845ms (next.js: 271ms, proxy.ts: 10ms, application-code: 563ms)
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 479ms (next.js: 6ms, proxy.ts: 84ms, application-code: 389ms)
+ GET /dashboard/employees/create 200 in 34ms (next.js: 4ms, proxy.ts: 2ms, application-code: 28ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 395ms (next.js: 16ms, proxy.ts: 42ms, application-code: 337ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 354ms (next.js: 32ms, proxy.ts: 8ms, application-code: 313ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 323ms (next.js: 5ms, proxy.ts: 1694µs, application-code: 317ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /api/auth/session 200 in 65ms (next.js: 50ms, application-code: 15ms)
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 398ms (next.js: 2ms, proxy.ts: 1479µs, application-code: 394ms)
+ GET /api/auth/session 200 in 8ms (next.js: 1409µs, application-code: 6ms)
+ GET /api/auth/session 200 in 6ms (next.js: 837µs, application-code: 5ms)
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+POST /api/upload - Triggered
+UPLOAD ATTEMPT: { name: 'photo.jpg', size: 455570, type: 'image/jpeg' }
+ POST /api/upload 200 in 45ms (next.js: 33ms, application-code: 12ms)
+prisma:query db.Employee.insertOne({ name: "Sophia Hills", permitNumber: "298", idNumber: "146", nationality: "Santa Clarita", gender: "أنثى", issueDate: DateTime("2026-07-22 0:00:00.0 +00:00:00"), expiryDate: DateTime("2025-08-02 0:00:00.0 +00:00:00"), company: "Powlowski, McGlynn and Lang", authority: "Syracuse", purpose: "Demum aliqua cura desino.", description: "Tabesco aequitas expedita pecco turba audacia statua solus tactus culpa.", designation: "Trepide canonicus sustineo ambitus vitium speciosus.", photo: "/uploads/2ca58c58-6397-4ece-958d-1fc96e63615a.jpg", verificationToken: "GO1IZHlhjbvA2xnjSLhPB_E-LiKoHgAFvmt6PmLceQk", createdAt: DateTime("2026-04-05 21:56:54.484 +00:00:00"), })
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2daa6b322f702325d8ba1"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ POST /api/employees 200 in 994ms (next.js: 31ms, application-code: 964ms)
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees 200 in 383ms (next.js: 21ms, proxy.ts: 7ms, application-code: 354ms)
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees 200 in 346ms (next.js: 1372µs, proxy.ts: 2ms, application-code: 343ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2daa6b322f702325d8ba1"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d2daa6b322f702325d8ba1/permit 200 in 352ms (next.js: 22ms, proxy.ts: 9ms, application-code: 321ms)
+[browser] Uncaught Error: Image with src "/uploads/2ca58c58-6397-4ece-958d-1fc96e63615a.jpg?t=1775426221219" is using a query string which is not configured in images.localPatterns.
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-localpatterns
+    at defaultLoader (file:///Users/manishankarvakta/Desktop/APPS/akama/.next/dev/static/chunks/node_modules_06ffpvz._.js:2864:37)
+    at <unknown> (file:///Users/manishankarvakta/Desktop/APPS/akama/.next/dev/static/chunks/node_modules_06ffpvz._.js:331:39)
+    at Array.map (<anonymous>)
+    at generateImgAttrs (file:///Users/manishankarvakta/Desktop/APPS/akama/.next/dev/static/chunks/node_modules_06ffpvz._.js:331:24)
+    at getImgProps (file:///Users/manishankarvakta/Desktop/APPS/akama/.next/dev/static/chunks/node_modules_06ffpvz._.js:744:27)
+    at <unknown> (file:///Users/manishankarvakta/Desktop/APPS/akama/.next/dev/static/chunks/node_modules_06ffpvz._.js:3239:82)
+    at PermitView (components/employee/permit-view.tsx:108:25)
+    at PermitPage (app/dashboard/employees/[id]/permit/page.tsx:20:10)
+  106 |                   <div className="w-36 h-48 bg-slate-50 border-[1.2px] border-black relat...
+  107 |                      {employee.photo ? (
+> 108 |                         <Image src={`${employee.photo}?t=${Date.now()}`} alt="Photo" fill...
+      |                         ^
+  109 |                      ) : (
+  110 |                         <div className="text-[10px] text-slate-400 uppercase text-center ...
+  111 |                      )}
+✓ Compiled in 72ms
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 17ms
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+    at S.scheduleRefresh (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+    at Set.forEach (<anonymous>) (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /api/auth/session 200 in 59ms (next.js: 46ms, application-code: 13ms)
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 787ms (next.js: 9ms, proxy.ts: 3ms, application-code: 775ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 678ms (next.js: 209ms, proxy.ts: 222ms, application-code: 247ms)
+ GET /api/auth/session 200 in 21ms (next.js: 4ms, application-code: 17ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 77ms (next.js: 18ms, proxy.ts: 29ms, application-code: 29ms)
+ GET /api/auth/session 200 in 7ms (next.js: 908µs, application-code: 6ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 175ms (next.js: 11ms, proxy.ts: 57ms, application-code: 108ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2daa6b322f702325d8ba1"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 906ms (next.js: 289ms, proxy.ts: 229ms, application-code: 388ms)
+ GET /dashboard/employees/69d2daa6b322f702325d8ba1/permit 200 in 939ms (next.js: 169ms, proxy.ts: 221ms, application-code: 550ms)
+ POST /api/auth/_log 200 in 17ms (next.js: 6ms, application-code: 11ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 593ms (next.js: 34ms, proxy.ts: 29ms, application-code: 530ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 500ms (next.js: 8ms, proxy.ts: 6ms, application-code: 487ms)
+ GET /api/auth/session 200 in 15ms (next.js: 7ms, application-code: 8ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           data-new-gr-c-s-check-loaded="14.1280.0"
+-                           data-gr-ext-installed=""
+                          >
+                            ...
+                              <div className="jsx-253394...">
+                                <div className="jsx-253394...">
+                                  <QRCodeSVG2 value="http://loc..." size={120} level="H">
+                                    <svg
+                                      height={120}
+                                      width={120}
++                                     viewBox="0 0 49 49"
+-                                     viewBox="0 0 21 21"
+                                      ref={null}
+                                      role="img"
+                                    >
+                                      <path
+                                        fill="#FFFFFF"
++                                       d="M0,0 h49v49H0z"
+-                                       d="M0,0 h21v21H0z"
+                                        shapeRendering="crispEdges"
+                                      >
+                                      <path
+                                        fill="#000000"
++                                       d="M0 0h7v1H0zM8 0h2v1H8zM11 0h3v1H11zM16 0h1v1H16zM18 0h1v1H18zM22 0h1v1H22zM..."
+-                                       d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 ..."
+                                        shapeRendering="crispEdges"
+                                      >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 10ms (next.js: 1664µs, application-code: 8ms)
+ GET /api/auth/session 200 in 8ms (next.js: 1941µs, application-code: 6ms)
+✓ Compiled in 19ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2daa6b322f702325d8ba1"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d2daa6b322f702325d8ba1/permit 200 in 348ms (next.js: 12ms, proxy.ts: 5ms, application-code: 332ms)
+ GET /api/auth/session 200 in 8ms (next.js: 2ms, application-code: 6ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="ar" dir="rtl" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-253394...">
+                                <div className="jsx-253394...">
+                                  <QRCodeSVG2 value="http://loc..." size={120} level="H">
+                                    <svg
+                                      height={120}
+                                      width={120}
++                                     viewBox="0 0 49 49"
+-                                     viewBox="0 0 21 21"
+                                      ref={null}
+                                      role="img"
+                                    >
+                                      <path
+                                        fill="#FFFFFF"
++                                       d="M0,0 h49v49H0z"
+-                                       d="M0,0 h21v21H0z"
+                                        shapeRendering="crispEdges"
+                                      >
+                                      <path
+                                        fill="#000000"
++                                       d="M0 0h7v1H0zM8 0h2v1H8zM11 0h3v1H11zM16 0h1v1H16zM18 0h1v1H18zM22 0h1v1H22zM..."
+-                                       d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 ..."
+                                        shapeRendering="crispEdges"
+                                      >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 7ms (next.js: 1995µs, application-code: 5ms)
+ GET /api/auth/session 200 in 7ms (next.js: 835µs, application-code: 6ms)
+[browser] ⨯ unhandledRejection: Error: Attempting to parse an unsupported color function "lab"
+[browser] ⨯ unhandledRejection: Error: Attempting to parse an unsupported color function "lab"
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2daa6b322f702325d8ba1"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d2daa6b322f702325d8ba1/permit 200 in 344ms (next.js: 8ms, proxy.ts: 4ms, application-code: 332ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-253394...">
+                                <div className="jsx-253394...">
+                                  <QRCodeSVG2 value="http://loc..." size={120} level="H">
+                                    <svg
+                                      height={120}
+                                      width={120}
++                                     viewBox="0 0 49 49"
+-                                     viewBox="0 0 21 21"
+                                      ref={null}
+                                      role="img"
+                                    >
+                                      <path
+                                        fill="#FFFFFF"
++                                       d="M0,0 h49v49H0z"
+-                                       d="M0,0 h21v21H0z"
+                                        shapeRendering="crispEdges"
+                                      >
+                                      <path
+                                        fill="#000000"
++                                       d="M0 0h7v1H0zM8 0h2v1H8zM11 0h3v1H11zM16 0h1v1H16zM18 0h1v1H18zM22 0h1v1H22zM..."
+-                                       d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 ..."
+                                        shapeRendering="crispEdges"
+                                      >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 15ms (next.js: 5ms, application-code: 10ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1134µs, application-code: 5ms)
+ GET /api/auth/session 200 in 6ms (next.js: 693µs, application-code: 5ms)
+✓ Compiled in 25ms
+✓ Compiled in 42ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2daa6b322f702325d8ba1"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d2daa6b322f702325d8ba1/permit 200 in 371ms (next.js: 16ms, proxy.ts: 7ms, application-code: 349ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-253394...">
+                                <div>
+                                <div className="jsx-253394...">
+                                  <QRCodeSVG2 value="http://loc..." size={110} level="H">
+                                    <svg
+                                      height={110}
+                                      width={110}
++                                     viewBox="0 0 49 49"
+-                                     viewBox="0 0 21 21"
+                                      ref={null}
+                                      role="img"
+                                    >
+                                      <path
+                                        fill="#FFFFFF"
++                                       d="M0,0 h49v49H0z"
+-                                       d="M0,0 h21v21H0z"
+                                        shapeRendering="crispEdges"
+                                      >
+                                      <path
+                                        fill="#000000"
++                                       d="M0 0h7v1H0zM8 0h2v1H8zM11 0h3v1H11zM16 0h1v1H16zM18 0h1v1H18zM22 0h1v1H22zM..."
+-                                       d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 ..."
+                                        shapeRendering="crispEdges"
+                                      >
+                  ...
+ 
+ GET /api/auth/session 200 in 13ms (next.js: 5ms, application-code: 8ms)
+ GET /api/auth/session 200 in 9ms (next.js: 1170µs, application-code: 8ms)
+ GET /api/auth/session 200 in 8ms (next.js: 731µs, application-code: 7ms)
+✓ Compiled in 194ms
+✓ Compiled in 21ms
+✓ Compiled in 22ms
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees 200 in 430ms (next.js: 23ms, proxy.ts: 15ms, application-code: 391ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/edit 200 in 341ms (next.js: 10ms, proxy.ts: 5ms, application-code: 326ms)
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+POST /api/upload - Triggered
+UPLOAD ATTEMPT: { name: 'photo.jpg', size: 43992, type: 'image/jpeg' }
+ POST /api/upload 200 in 29ms (next.js: 21ms, application-code: 8ms)
+⨯ Detected default export in '[project]/app/api/employees/[id]/route.ts'. Export a named export for each HTTP method instead.
+⨯ No HTTP methods exported in '[project]/app/api/employees/[id]/route.ts'. Export a named export for each HTTP method.
+⨯ Detected default export in '[project]/app/api/employees/[id]/route.ts'. Export a named export for each HTTP method instead.
+⨯ No HTTP methods exported in '[project]/app/api/employees/[id]/route.ts'. Export a named export for each HTTP method.
+ PUT /api/employees/69d29fc5b322f702325d8ba0 405 in 544ms (next.js: 542ms, application-code: 2ms)
+ PUT /api/employees/69d29fc5b322f702325d8ba0 405 in 11ms (next.js: 6ms, application-code: 6ms)
+⨯ Detected default export in '[project]/app/api/employees/[id]/route.ts'. Export a named export for each HTTP method instead.
+⨯ No HTTP methods exported in '[project]/app/api/employees/[id]/route.ts'. Export a named export for each HTTP method.
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/edit 200 in 403ms (next.js: 8ms, proxy.ts: 4ms, application-code: 391ms)
+ GET /api/auth/session 200 in 14ms (next.js: 7ms, application-code: 8ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+ 
+ GET /api/auth/session 200 in 8ms (next.js: 1548µs, application-code: 7ms)
+ GET /api/auth/session 200 in 6ms (next.js: 784µs, application-code: 5ms)
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+POST /api/upload - Triggered
+UPLOAD ATTEMPT: { name: 'photo.jpg', size: 43992, type: 'image/jpeg' }
+ POST /api/upload 200 in 14ms (next.js: 4ms, application-code: 9ms)
+ PUT /api/employees/69d29fc5b322f702325d8ba0 405 in 11ms (next.js: 6ms, application-code: 5ms)
+⨯ Detected default export in '[project]/app/api/employees/[id]/route.ts'. Export a named export for each HTTP method instead.
+⨯ No HTTP methods exported in '[project]/app/api/employees/[id]/route.ts'. Export a named export for each HTTP method.
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 514ms (next.js: 163ms, proxy.ts: 71ms, application-code: 280ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 657ms (next.js: 115ms, proxy.ts: 75ms, application-code: 467ms)
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/edit 200 in 645ms (next.js: 186ms, proxy.ts: 68ms, application-code: 391ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 314ms (next.js: 70ms, proxy.ts: 55ms, application-code: 189ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 412ms (next.js: 106ms, proxy.ts: 57ms, application-code: 249ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 545ms (next.js: 61ms, proxy.ts: 65ms, application-code: 419ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/edit 200 in 373ms (next.js: 26ms, proxy.ts: 19ms, application-code: 329ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/edit 200 in 397ms (next.js: 45ms, proxy.ts: 11ms, application-code: 340ms)
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 472ms (next.js: 29ms, proxy.ts: 58ms, application-code: 385ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 393ms (next.js: 40ms, proxy.ts: 17ms, application-code: 336ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/edit 200 in 357ms (next.js: 15ms, proxy.ts: 24ms, application-code: 318ms)
+ GET /api/auth/session 200 in 59ms (next.js: 45ms, application-code: 15ms)
+ GET /api/auth/session 200 in 6ms (next.js: 877µs, application-code: 6ms)
+ GET /api/auth/session 200 in 5ms (next.js: 1186µs, application-code: 4ms)
+Error: Route "/api/employees/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PUT (app/api/employees/[id]/route.ts:34:27)
+  32 |
+  33 |     const employee = await prisma.employee.update({
+> 34 |       where: { id: params.id },
+     |                           ^
+  35 |       data: {
+  36 |         ...updateData,
+  37 |         issueDate: updateData.issueDate ? new Date(updateData.issueDate) : null,
+UPDATE ERROR: Error [PrismaClientValidationError]: 
+Invalid `__TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].employee.update()` invocation in
+/Users/manishankarvakta/Desktop/APPS/akama/.next/dev/server/chunks/[root-of-the-server]__0tvujpv._.js:104:163
+
+  101 const data = await req.json();
+  102 // Remove ID and other immutable fields if they exist in data
+  103 const { id, createdAt, ...updateData } = data;
+→ 104 const employee = await __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$prisma$2e$ts__$5b$app$2d$route$5d$__$28$ecmascript$29$__["prisma"].employee.update({
+        where: {
+          id: undefined,
+      ?   verificationToken?: String,
+      ?   AND?: EmployeeWhereInput | EmployeeWhereInput[],
+      ?   OR?: EmployeeWhereInput[],
+      ?   NOT?: EmployeeWhereInput | EmployeeWhereInput[],
+      ?   name?: StringFilter | String,
+      ?   email?: StringNullableFilter | String | Null,
+      ?   phone?: StringNullableFilter | String | Null,
+      ?   permitNumber?: StringNullableFilter | String | Null,
+      ?   idNumber?: StringNullableFilter | String | Null,
+      ?   nationality?: StringNullableFilter | String | Null,
+      ?   gender?: StringNullableFilter | String | Null,
+      ?   issueDate?: DateTimeNullableFilter | DateTime | Null,
+      ?   expiryDate?: DateTimeNullableFilter | DateTime | Null,
+      ?   company?: StringNullableFilter | String | Null,
+      ?   authority?: StringNullableFilter | String | Null,
+      ?   purpose?: StringNullableFilter | String | Null,
+      ?   description?: StringNullableFilter | String | Null,
+      ?   designation?: StringNullableFilter | String | Null,
+      ?   department?: StringNullableFilter | String | Null,
+      ?   photo?: StringNullableFilter | String | Null,
+      ?   createdAt?: DateTimeFilter | DateTime
+        },
+        data: {
+          name: "Aliya Stiedemann",
+          idNumber: "277",
+          nationality: "Buena Park",
+          permitNumber: "208",
+          issueDate: new Date("2025-09-20T00:00:00.000Z"),
+          expiryDate: new Date("2026-06-27T00:00:00.000Z"),
+          designation: "Amet supellex antiquus degusto ceno.",
+          company: "Kassulke - Wisoky",
+          gender: "ذكر",
+          authority: "المديرية العامة للجوازات",
+          purpose: "عمل دائم",
+          description: "السلام عليكم نامل من سعادتكم اصدار تصاريح للعمال علما بانه مقر الشركة داخل مكة",
+          photo: "/uploads/0cce7ee6-46d2-4c44-b0ac-fc6659958722.jpg"
+        }
+      })
+
+Argument `where` of type EmployeeWhereUniqueInput needs at least one of `id` or `verificationToken` arguments. Available options are marked with ?.
+    at <unknown> (app/api/employees/[id]/route.ts:33:44)
+    at async PUT (app/api/employees/[id]/route.ts:33:22)
+  31 |     const { id, createdAt, ...updateData } = data;
+  32 |
+> 33 |     const employee = await prisma.employee.update({
+     |                                            ^
+  34 |       where: { id: params.id },
+  35 |       data: {
+  36 |         ...updateData, {
+  clientVersion: '6.19.3'
+}
+ PUT /api/employees/69d29fc5b322f702325d8ba0 500 in 216ms (next.js: 33ms, application-code: 183ms)
+Error: Route "/api/employees/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PUT (app/api/employees/[id]/route.ts:34:27)
+  32 |
+  33 |     const employee = await prisma.employee.update({
+> 34 |       where: { id: params.id },
+     |                           ^
+  35 |       data: {
+  36 |         ...updateData,
+  37 |         issueDate: updateData.issueDate ? new Date(updateData.issueDate) : null,
+UPDATE ERROR: Error [PrismaClientValidationError]: 
+Invalid `prisma.employee.update()` invocation:
+
+{
+  where: {
+    id: undefined,
+?   verificationToken?: String,
+?   AND?: EmployeeWhereInput | EmployeeWhereInput[],
+?   OR?: EmployeeWhereInput[],
+?   NOT?: EmployeeWhereInput | EmployeeWhereInput[],
+?   name?: StringFilter | String,
+?   email?: StringNullableFilter | String | Null,
+?   phone?: StringNullableFilter | String | Null,
+?   permitNumber?: StringNullableFilter | String | Null,
+?   idNumber?: StringNullableFilter | String | Null,
+?   nationality?: StringNullableFilter | String | Null,
+?   gender?: StringNullableFilter | String | Null,
+?   issueDate?: DateTimeNullableFilter | DateTime | Null,
+?   expiryDate?: DateTimeNullableFilter | DateTime | Null,
+?   company?: StringNullableFilter | String | Null,
+?   authority?: StringNullableFilter | String | Null,
+?   purpose?: StringNullableFilter | String | Null,
+?   description?: StringNullableFilter | String | Null,
+?   designation?: StringNullableFilter | String | Null,
+?   department?: StringNullableFilter | String | Null,
+?   photo?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime
+  },
+  data: {
+    name: "Aliya Stiedemann",
+    idNumber: "277",
+    nationality: "Buena Park",
+    permitNumber: "208",
+    issueDate: new Date("2025-09-20T00:00:00.000Z"),
+    expiryDate: new Date("2026-06-27T00:00:00.000Z"),
+    designation: "Amet supellex antiquus degusto ceno.",
+    company: "Kassulke - Wisoky",
+    gender: "ذكر",
+    authority: "المديرية العامة للجوازات",
+    purpose: "عمل دائم",
+    description: "السلام عليكم نامل من سعادتكم اصدار تصاريح للعمال علما بانه مقر الشركة داخل مكة",
+    photo: "/uploads/0cce7ee6-46d2-4c44-b0ac-fc6659958722.jpg"
+  }
+}
+
+Argument `where` of type EmployeeWhereUniqueInput needs at least one of `id` or `verificationToken` arguments. Available options are marked with ?.
+    at async PUT (app/api/employees/[id]/route.ts:33:22)
+  31 |     const { id, createdAt, ...updateData } = data;
+  32 |
+> 33 |     const employee = await prisma.employee.update({
+     |                      ^
+  34 |       where: { id: params.id },
+  35 |       data: {
+  36 |         ...updateData, {
+  clientVersion: '6.19.3'
+}
+ PUT /api/employees/69d29fc5b322f702325d8ba0 500 in 176ms (next.js: 15ms, application-code: 161ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/edit 200 in 422ms (next.js: 12ms, proxy.ts: 9ms, application-code: 402ms)
+ GET /api/auth/session 200 in 18ms (next.js: 7ms, application-code: 11ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+ 
+ GET /api/auth/session 200 in 7ms (next.js: 1053µs, application-code: 6ms)
+ GET /api/auth/session 200 in 6ms (next.js: 768µs, application-code: 5ms)
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+POST /api/upload - Triggered
+UPLOAD ATTEMPT: { name: 'photo.jpg', size: 44892, type: 'image/jpeg' }
+ POST /api/upload 200 in 40ms (next.js: 31ms, application-code: 9ms)
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees 200 in 394ms (next.js: 26ms, proxy.ts: 9ms, application-code: 359ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2daa6b322f702325d8ba1"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d2daa6b322f702325d8ba1/permit 200 in 341ms (next.js: 18ms, proxy.ts: 3ms, application-code: 320ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/permit 200 in 334ms (next.js: 8ms, proxy.ts: 5ms, application-code: 321ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 364ms (next.js: 7ms, proxy.ts: 5ms, application-code: 353ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2daa6b322f702325d8ba1"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d2daa6b322f702325d8ba1/permit 200 in 334ms (next.js: 8ms, proxy.ts: 6ms, application-code: 321ms)
+ GET /dashboard/employees/create 200 in 39ms (next.js: 14ms, proxy.ts: 5ms, application-code: 20ms)
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+POST /api/upload - Triggered
+UPLOAD ATTEMPT: { name: 'photo.jpg', size: 382646, type: 'image/jpeg' }
+ POST /api/upload 200 in 15ms (next.js: 4ms, application-code: 11ms)
+prisma:query db.Employee.insertOne({ name: "Lawrence Bergstrom", permitNumber: "561", idNumber: "95", nationality: "Flower Mound", gender: "أنثى", issueDate: DateTime("2026-05-09 0:00:00.0 +00:00:00"), expiryDate: DateTime("2025-07-24 0:00:00.0 +00:00:00"), company: "Bradtke LLC", authority: "La Mesa", purpose: "Vociferor armarium delinquo reprehenderit crustulum comes attollo cariosus.", description: "Campana adnuo venustas.", designation: "Venio amor cubo corpus tabula vester demonstro curiositas.", photo: "/uploads/645e3610-fc38-44bf-9c51-44350205afc4.jpg", verificationToken: "_6x3daH8jS7VRSOfEjyvT0kSu2YVa5EuwVuPl2FYbcs", createdAt: DateTime("2026-04-05 22:21:04.977 +00:00:00"), })
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2e050b322f702325d8ba2"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ POST /api/employees 200 in 1039ms (next.js: 30ms, application-code: 1009ms)
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees 200 in 377ms (next.js: 1730µs, proxy.ts: 3ms, application-code: 372ms)
+ GET /dashboard/employees 200 in 415ms (next.js: 4ms, proxy.ts: 6ms, application-code: 405ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2e050b322f702325d8ba2"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d2e050b322f702325d8ba2/permit 200 in 362ms (next.js: 12ms, proxy.ts: 6ms, application-code: 344ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/edit 200 in 346ms (next.js: 10ms, proxy.ts: 6ms, application-code: 331ms)
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+POST /api/upload - Triggered
+UPLOAD ATTEMPT: { name: 'photo.jpg', size: 43992, type: 'image/jpeg' }
+ POST /api/upload 200 in 12ms (next.js: 3ms, application-code: 9ms)
+Error: Route "/api/employees/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PUT (app/api/employees/[id]/route.ts:34:27)
+  32 |
+  33 |     const employee = await prisma.employee.update({
+> 34 |       where: { id: params.id },
+     |                           ^
+  35 |       data: {
+  36 |         ...updateData,
+  37 |         issueDate: updateData.issueDate ? new Date(updateData.issueDate) : null,
+UPDATE ERROR: Error [PrismaClientValidationError]: 
+Invalid `prisma.employee.update()` invocation:
+
+{
+  where: {
+    id: undefined,
+?   verificationToken?: String,
+?   AND?: EmployeeWhereInput | EmployeeWhereInput[],
+?   OR?: EmployeeWhereInput[],
+?   NOT?: EmployeeWhereInput | EmployeeWhereInput[],
+?   name?: StringFilter | String,
+?   email?: StringNullableFilter | String | Null,
+?   phone?: StringNullableFilter | String | Null,
+?   permitNumber?: StringNullableFilter | String | Null,
+?   idNumber?: StringNullableFilter | String | Null,
+?   nationality?: StringNullableFilter | String | Null,
+?   gender?: StringNullableFilter | String | Null,
+?   issueDate?: DateTimeNullableFilter | DateTime | Null,
+?   expiryDate?: DateTimeNullableFilter | DateTime | Null,
+?   company?: StringNullableFilter | String | Null,
+?   authority?: StringNullableFilter | String | Null,
+?   purpose?: StringNullableFilter | String | Null,
+?   description?: StringNullableFilter | String | Null,
+?   designation?: StringNullableFilter | String | Null,
+?   department?: StringNullableFilter | String | Null,
+?   photo?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime
+  },
+  data: {
+    name: "Aliya Stiedemann",
+    idNumber: "277",
+    nationality: "Buena Park",
+    permitNumber: "208",
+    issueDate: new Date("2025-09-20T00:00:00.000Z"),
+    expiryDate: new Date("2026-06-27T00:00:00.000Z"),
+    designation: "Amet supellex antiquus degusto ceno.",
+    company: "Kassulke - Wisoky",
+    gender: "ذكر",
+    authority: "المديرية العامة للجوازات",
+    purpose: "عمل دائم",
+    description: "السلام عليكم نامل من سعادتكم اصدار تصاريح للعمال علما بانه مقر الشركة داخل مكة",
+    photo: "/uploads/87dee38c-ce7b-4664-abfc-367bc6ea59ec.jpg"
+  }
+}
+
+Argument `where` of type EmployeeWhereUniqueInput needs at least one of `id` or `verificationToken` arguments. Available options are marked with ?.
+    at async PUT (app/api/employees/[id]/route.ts:33:22)
+  31 |     const { id, createdAt, ...updateData } = data;
+  32 |
+> 33 |     const employee = await prisma.employee.update({
+     |                      ^
+  34 |       where: { id: params.id },
+  35 |       data: {
+  36 |         ...updateData, {
+  clientVersion: '6.19.3'
+}
+ PUT /api/employees/69d29fc5b322f702325d8ba0 500 in 136ms (next.js: 7ms, application-code: 130ms)
+Error: Route "/api/employees/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at DELETE (app/api/employees/[id]/route.ts:55:27)
+  53 |   try {
+  54 |     await prisma.employee.delete({
+> 55 |       where: { id: params.id },
+     |                           ^
+  56 |     });
+  57 |
+  58 |     return NextResponse.json({ message: "Employee deleted successfully" });
+ DELETE /api/employees/69d29fc5b322f702325d8ba0 500 in 75ms (next.js: 7ms, application-code: 68ms)
+Error: Route "/api/employees/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at DELETE (app/api/employees/[id]/route.ts:55:27)
+  53 |   try {
+  54 |     await prisma.employee.delete({
+> 55 |       where: { id: params.id },
+     |                           ^
+  56 |     });
+  57 |
+  58 |     return NextResponse.json({ message: "Employee deleted successfully" });
+ DELETE /api/employees/69d29d0eb322f702325d8b9f 500 in 71ms (next.js: 4ms, application-code: 67ms)
+Error: Route "/api/employees/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at DELETE (app/api/employees/[id]/route.ts:55:27)
+  53 |   try {
+  54 |     await prisma.employee.delete({
+> 55 |       where: { id: params.id },
+     |                           ^
+  56 |     });
+  57 |
+  58 |     return NextResponse.json({ message: "Employee deleted successfully" });
+ DELETE /api/employees/69d2daa6b322f702325d8ba1 500 in 62ms (next.js: 5ms, application-code: 57ms)
+Error: Route "/api/employees/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at DELETE (app/api/employees/[id]/route.ts:55:27)
+  53 |   try {
+  54 |     await prisma.employee.delete({
+> 55 |       where: { id: params.id },
+     |                           ^
+  56 |     });
+  57 |
+  58 |     return NextResponse.json({ message: "Employee deleted successfully" });
+ DELETE /api/employees/69d2daa6b322f702325d8ba1 500 in 70ms (next.js: 5ms, application-code: 65ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2daa6b322f702325d8ba1"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d2daa6b322f702325d8ba1/edit 200 in 365ms (next.js: 10ms, proxy.ts: 10ms, application-code: 344ms)
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+POST /api/upload - Triggered
+UPLOAD ATTEMPT: { name: 'photo.jpg', size: 43992, type: 'image/jpeg' }
+ POST /api/upload 200 in 23ms (next.js: 5ms, application-code: 18ms)
+Error: Route "/api/employees/[id]" used `params.id`. `params` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at PUT (app/api/employees/[id]/route.ts:34:27)
+  32 |
+  33 |     const employee = await prisma.employee.update({
+> 34 |       where: { id: params.id },
+     |                           ^
+  35 |       data: {
+  36 |         ...updateData,
+  37 |         issueDate: updateData.issueDate ? new Date(updateData.issueDate) : null,
+UPDATE ERROR: Error [PrismaClientValidationError]: 
+Invalid `prisma.employee.update()` invocation:
+
+{
+  where: {
+    id: undefined,
+?   verificationToken?: String,
+?   AND?: EmployeeWhereInput | EmployeeWhereInput[],
+?   OR?: EmployeeWhereInput[],
+?   NOT?: EmployeeWhereInput | EmployeeWhereInput[],
+?   name?: StringFilter | String,
+?   email?: StringNullableFilter | String | Null,
+?   phone?: StringNullableFilter | String | Null,
+?   permitNumber?: StringNullableFilter | String | Null,
+?   idNumber?: StringNullableFilter | String | Null,
+?   nationality?: StringNullableFilter | String | Null,
+?   gender?: StringNullableFilter | String | Null,
+?   issueDate?: DateTimeNullableFilter | DateTime | Null,
+?   expiryDate?: DateTimeNullableFilter | DateTime | Null,
+?   company?: StringNullableFilter | String | Null,
+?   authority?: StringNullableFilter | String | Null,
+?   purpose?: StringNullableFilter | String | Null,
+?   description?: StringNullableFilter | String | Null,
+?   designation?: StringNullableFilter | String | Null,
+?   department?: StringNullableFilter | String | Null,
+?   photo?: StringNullableFilter | String | Null,
+?   createdAt?: DateTimeFilter | DateTime
+  },
+  data: {
+    name: "Sophia Hills",
+    idNumber: "146",
+    nationality: "Santa Clarita",
+    permitNumber: "298",
+    issueDate: new Date("2026-07-22T00:00:00.000Z"),
+    expiryDate: new Date("2025-08-02T00:00:00.000Z"),
+    designation: "Trepide canonicus sustineo ambitus vitium speciosus.",
+    company: "Powlowski, McGlynn and Lang",
+    gender: "أنثى",
+    authority: "Syracuse",
+    purpose: "Demum aliqua cura desino.",
+    description: "Tabesco aequitas expedita pecco turba audacia statua solus tactus culpa.",
+    photo: "/uploads/85731032-c41c-4c28-b29f-0de7e91e1f15.jpg"
+  }
+}
+
+Argument `where` of type EmployeeWhereUniqueInput needs at least one of `id` or `verificationToken` arguments. Available options are marked with ?.
+    at async PUT (app/api/employees/[id]/route.ts:33:22)
+  31 |     const { id, createdAt, ...updateData } = data;
+  32 |
+> 33 |     const employee = await prisma.employee.update({
+     |                      ^
+  34 |       where: { id: params.id },
+  35 |       data: {
+  36 |         ...updateData, {
+  clientVersion: '6.19.3'
+}
+ PUT /api/employees/69d2daa6b322f702325d8ba1 500 in 125ms (next.js: 5ms, application-code: 120ms)
+✓ Compiled in 211ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 597ms (next.js: 140ms, proxy.ts: 102ms, application-code: 355ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2daa6b322f702325d8ba1"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 336ms (next.js: 77ms, proxy.ts: 70ms, application-code: 190ms)
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 640ms (next.js: 94ms, proxy.ts: 102ms, application-code: 445ms)
+ GET /dashboard/employees/69d2daa6b322f702325d8ba1/edit 200 in 570ms (next.js: 196ms, proxy.ts: 7ms, application-code: 367ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 381ms (next.js: 93ms, proxy.ts: 79ms, application-code: 210ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 471ms (next.js: 41ms, proxy.ts: 62ms, application-code: 368ms)
+ GET /api/auth/session 200 in 80ms (next.js: 53ms, application-code: 27ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2daa6b322f702325d8ba1"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d2daa6b322f702325d8ba1/edit 200 in 356ms (next.js: 18ms, proxy.ts: 15ms, application-code: 323ms)
+ GET /api/auth/session 200 in 40ms (next.js: 3ms, application-code: 37ms)
+ GET /api/auth/session 200 in 11ms (next.js: 2ms, application-code: 9ms)
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees 200 in 407ms (next.js: 33ms, proxy.ts: 11ms, application-code: 363ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:202:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  200 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  201 |                <AlertCircle className="w-5 h-5" /> 
+> 202 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  203 |              </DialogTitle>
+  204 |            </DialogHeader>
+  205 |            <div className="py-4"> (components/employee/employee-table.tsx:202:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:207:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  205 |            <div className="py-4">
+  206 |              <p className="text-slate-600">
+> 207 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  208 |              </p>
+  209 |              {employeeToDelete && (
+  210 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:207:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:202:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  200 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  201 |                <AlertCircle className="w-5 h-5" /> 
+> 202 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  203 |              </DialogTitle>
+  204 |            </DialogHeader>
+  205 |            <div className="py-4"> (components/employee/employee-table.tsx:202:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:207:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  205 |            <div className="py-4">
+  206 |              <p className="text-slate-600">
+> 207 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  208 |              </p>
+  209 |              {employeeToDelete && (
+  210 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:207:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:202:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  200 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  201 |                <AlertCircle className="w-5 h-5" /> 
+> 202 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  203 |              </DialogTitle>
+  204 |            </DialogHeader>
+  205 |            <div className="py-4"> (components/employee/employee-table.tsx:202:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:207:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  205 |            <div className="py-4">
+  206 |              <p className="text-slate-600">
+> 207 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  208 |              </p>
+  209 |              {employeeToDelete && (
+  210 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:207:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:202:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  200 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  201 |                <AlertCircle className="w-5 h-5" /> 
+> 202 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  203 |              </DialogTitle>
+  204 |            </DialogHeader>
+  205 |            <div className="py-4"> (components/employee/employee-table.tsx:202:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:207:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  205 |            <div className="py-4">
+  206 |              <p className="text-slate-600">
+> 207 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  208 |              </p>
+  209 |              {employeeToDelete && (
+  210 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:207:18)
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:202:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  200 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  201 |                <AlertCircle className="w-5 h-5" /> 
+> 202 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  203 |              </DialogTitle>
+  204 |            </DialogHeader>
+  205 |            <div className="py-4"> (components/employee/employee-table.tsx:202:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:207:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  205 |            <div className="py-4">
+  206 |              <p className="text-slate-600">
+> 207 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  208 |              </p>
+  209 |              {employeeToDelete && (
+  210 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:207:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:202:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  200 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  201 |                <AlertCircle className="w-5 h-5" /> 
+> 202 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  203 |              </DialogTitle>
+  204 |            </DialogHeader>
+  205 |            <div className="py-4"> (components/employee/employee-table.tsx:202:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:207:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  205 |            <div className="py-4">
+  206 |              <p className="text-slate-600">
+> 207 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  208 |              </p>
+  209 |              {employeeToDelete && (
+  210 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:207:18)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+prisma:query db.Employee.findAndModify({ query: 
+{ $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, remove: true, new: true }
+)
+ DELETE /api/employees/69d29d0eb322f702325d8b9f 200 in 660ms (next.js: 33ms, application-code: 627ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:202:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  200 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  201 |                <AlertCircle className="w-5 h-5" /> 
+> 202 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  203 |              </DialogTitle>
+  204 |            </DialogHeader>
+  205 |            <div className="py-4"> (components/employee/employee-table.tsx:202:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:207:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  205 |            <div className="py-4">
+  206 |              <p className="text-slate-600">
+> 207 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  208 |              </p>
+  209 |              {employeeToDelete && (
+  210 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:207:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:202:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  200 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  201 |                <AlertCircle className="w-5 h-5" /> 
+> 202 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  203 |              </DialogTitle>
+  204 |            </DialogHeader>
+  205 |            <div className="py-4"> (components/employee/employee-table.tsx:202:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:207:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  205 |            <div className="py-4">
+  206 |              <p className="text-slate-600">
+> 207 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  208 |              </p>
+  209 |              {employeeToDelete && (
+  210 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:207:18)
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees 200 in 343ms (next.js: 3ms, proxy.ts: 3ms, application-code: 338ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:202:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  200 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  201 |                <AlertCircle className="w-5 h-5" /> 
+> 202 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  203 |              </DialogTitle>
+  204 |            </DialogHeader>
+  205 |            <div className="py-4"> (components/employee/employee-table.tsx:202:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:207:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  205 |            <div className="py-4">
+  206 |              <p className="text-slate-600">
+> 207 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  208 |              </p>
+  209 |              {employeeToDelete && (
+  210 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:207:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:202:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  200 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  201 |                <AlertCircle className="w-5 h-5" /> 
+> 202 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  203 |              </DialogTitle>
+  204 |            </DialogHeader>
+  205 |            <div className="py-4"> (components/employee/employee-table.tsx:202:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:207:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  205 |            <div className="py-4">
+  206 |              <p className="text-slate-600">
+> 207 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  208 |              </p>
+  209 |              {employeeToDelete && (
+  210 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:207:18)
+✓ Compiled in 23ms
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at S.scheduleRefresh (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+    at Set.forEach (<anonymous>)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at S.scheduleRefresh (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+    at Set.forEach (<anonymous>)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at S.scheduleRefresh (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+    at Set.forEach (<anonymous>)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at S.scheduleRefresh (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+    at Set.forEach (<anonymous>)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+⨯ ReferenceError: window is not defined
+    at eval (components/employee/employee-table.tsx:153:40)
+    at Array.map (<anonymous>)
+    at EmployeeTable (components/employee/employee-table.tsx:120:23)
+  151 |                          <div className="bg-white p-4 rounded-2xl shadow-inner border bor...
+  152 |                            <QRCodeSVG 
+> 153 |                              value={`${window.location.origin}/ar?e=${selectedToken}`} 
+      |                                        ^
+  154 |                              size={200} 
+  155 |                              level="H" 
+  156 |                              includeMargin={false} {
+  digest: '383848420'
+}
+ GET /dashboard/employees 500 in 527ms (next.js: 30ms, proxy.ts: 23ms, application-code: 474ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `ar`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `ar`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `ar`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `ar`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+ GET /api/auth/session 200 in 14ms (next.js: 6ms, application-code: 8ms)
+ GET /api/auth/session 200 in 14ms (next.js: 2ms, application-code: 12ms)
+ GET /api/auth/session 200 in 5ms (next.js: 1138µs, application-code: 4ms)
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+⨯ ReferenceError: window is not defined
+    at eval (components/employee/employee-table.tsx:153:40)
+    at Array.map (<anonymous>)
+    at EmployeeTable (components/employee/employee-table.tsx:120:23)
+  151 |                          <div className="bg-white p-4 rounded-2xl shadow-inner border bor...
+  152 |                            <QRCodeSVG 
+> 153 |                              value={`${window.location.origin}/ar?e=${selectedToken}`} 
+      |                                        ^
+  154 |                              size={200} 
+  155 |                              level="H" 
+  156 |                              includeMargin={false} {
+  digest: '383848420'
+}
+ GET /dashboard/employees 500 in 387ms (next.js: 4ms, proxy.ts: 5ms, application-code: 377ms)
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+ GET /api/auth/session 200 in 16ms (next.js: 4ms, application-code: 13ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1231µs, application-code: 6ms)
+ GET /api/auth/session 200 in 6ms (next.js: 754µs, application-code: 5ms)
+✓ Compiled in 46ms
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at S.scheduleRefresh (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+    at Set.forEach (<anonymous>)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at S.scheduleRefresh (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+    at Set.forEach (<anonymous>)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at S.scheduleRefresh (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+    at Set.forEach (<anonymous>)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at S.scheduleRefresh (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+    at Set.forEach (<anonymous>)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+✓ Compiled in 20ms
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at S.scheduleRefresh (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+    at Set.forEach (<anonymous>)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at S.scheduleRefresh (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+    at Set.forEach (<anonymous>)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at S.scheduleRefresh (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+    at Set.forEach (<anonymous>)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at S.scheduleRefresh (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+    at Set.forEach (<anonymous>)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2daa6b322f702325d8ba1"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d2daa6b322f702325d8ba1/edit 200 in 379ms (next.js: 10ms, proxy.ts: 7ms, application-code: 362ms)
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+POST /api/upload - Triggered
+UPLOAD ATTEMPT: { name: 'photo.jpg', size: 43992, type: 'image/jpeg' }
+ POST /api/upload 200 in 46ms (next.js: 35ms, application-code: 12ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2daa6b322f702325d8ba1"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, }, }, ])
+prisma:query db.Employee.updateMany({ _id: { $in: [ ObjectId("69d2daa6b322f702325d8ba1"), ], }, },[{ $set: { name: { $literal: "Sophia Hills", }, }, },
+{ $set: { permitNumber: { $literal: "298", }, }, },
+{ $set: { idNumber: { $literal: "146", }, }, },
+{ $set: { nationality: { $literal: "Santa Clarita", }, }, },
+{ $set: { gender: { $literal: "أنثى", }, }, },
+{ $set: { issueDate: { $literal: DateTime("2026-07-22 0:00:00.0 +00:00:00"), }, }, },
+{ $set: { expiryDate: { $literal: DateTime("2025-08-02 0:00:00.0 +00:00:00"), }, }, },
+{ $set: { company: { $literal: "Powlowski, McGlynn and Lang", }, }, },
+{ $set: { authority: { $literal: "Syracuse", }, }, },
+{ $set: { purpose: { $literal: "Demum aliqua cura desino.", }, }, },
+{ $set: { description: { $literal: "Tabesco aequitas expedita pecco turba audacia statua solus tactus culpa.", }, }, },
+{ $set: { designation: { $literal: "Trepide canonicus sustineo ambitus vitium speciosus.", }, }, },
+{ $set: { photo: { $literal: "/uploads/4f52b64f-b399-4f6b-a3a7-b39c4be26b4b.jpg", }, }, }])
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d2daa6b322f702325d8ba1"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ PUT /api/employees/69d2daa6b322f702325d8ba1 200 in 1348ms (next.js: 6ms, application-code: 1342ms)
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees 200 in 361ms (next.js: 10ms, proxy.ts: 6ms, application-code: 344ms)
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees 200 in 344ms (next.js: 1167µs, proxy.ts: 2ms, application-code: 341ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/edit 200 in 346ms (next.js: 9ms, proxy.ts: 6ms, application-code: 331ms)
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+POST /api/upload - Triggered
+UPLOAD ATTEMPT: { name: 'photo.jpg', size: 45331, type: 'image/jpeg' }
+ POST /api/upload 200 in 14ms (next.js: 3ms, application-code: 11ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, }, }, ])
+prisma:query db.Employee.updateMany({ _id: { $in: [ ObjectId("69d29fc5b322f702325d8ba0"), ], }, },[{ $set: { name: { $literal: "Aliya Stiedemann", }, }, },
+{ $set: { permitNumber: { $literal: "208", }, }, },
+{ $set: { idNumber: { $literal: "277", }, }, },
+{ $set: { nationality: { $literal: "Buena Park", }, }, },
+{ $set: { gender: { $literal: "ذكر", }, }, },
+{ $set: { issueDate: { $literal: DateTime("2025-09-20 0:00:00.0 +00:00:00"), }, }, },
+{ $set: { expiryDate: { $literal: DateTime("2026-06-27 0:00:00.0 +00:00:00"), }, }, },
+{ $set: { company: { $literal: "Kassulke - Wisoky", }, }, },
+{ $set: { authority: { $literal: "المديرية العامة للجوازات", }, }, },
+{ $set: { purpose: { $literal: "عمل دائم", }, }, },
+{ $set: { description: { $literal: "السلام عليكم نامل من سعادتكم اصدار تصاريح للعمال علما بانه مقر الشركة داخل مكة", }, }, },
+{ $set: { designation: { $literal: "Amet supellex antiquus degusto ceno.", }, }, },
+{ $set: { photo: { $literal: "/uploads/8f84aeed-1fd6-4d17-a73b-ceef065b2b99.jpg", }, }, }])
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ PUT /api/employees/69d29fc5b322f702325d8ba0 200 in 1664ms (next.js: 4ms, application-code: 1660ms)
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees 200 in 395ms (next.js: 2ms, proxy.ts: 3ms, application-code: 390ms)
+ GET /dashboard/employees 200 in 363ms (next.js: 3ms, proxy.ts: 3ms, application-code: 357ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 348ms (next.js: 21ms, proxy.ts: 7ms, application-code: 321ms)
+✓ Compiled in 25ms

@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "@/hooks/use-toast";
 import Image from "next/image";
 import { Camera, Save, X } from "lucide-react";
+import PhotoUpload from "./photo-upload";
 
 type EmployeeFormProps = {
   initialData?: any;
@@ -22,32 +23,6 @@ export default function EmployeeForm({ initialData, isEdit }: EmployeeFormProps)
   const [loading, setLoading] = useState(false);
   const [photo, setPhoto] = useState<string | null>(initialData?.photo || null);
 
-  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-
-    console.log("CLIENT - Triggering Upload:", { name: file.name, size: file.size, type: file.type });
-
-    const formData = new FormData();
-    formData.append("file", file);
-
-    try {
-      const res = await fetch("/api/upload", { method: "POST", body: formData });
-      const result = await res.json();
-      
-      console.log("CLIENT - Upload Result:", result);
-
-      if (result.success) {
-        setPhoto(result.url);
-        toast({ title: t("success"), description: "Photo uploaded successfully" });
-      } else {
-        toast({ title: t("error"), description: result.error || "Upload failed. Check file type and size.", variant: "destructive" });
-      }
-    } catch (e) {
-      console.error("CLIENT - Upload Exception:", e);
-      toast({ title: t("error"), description: "Network error or file too large", variant: "destructive" });
-    }
-  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -91,31 +66,13 @@ export default function EmployeeForm({ initialData, isEdit }: EmployeeFormProps)
   return (
     <form onSubmit={handleSubmit} className="space-y-8 bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
       <div className="flex flex-col md:flex-row gap-8 items-start">
-        {/* Photo Upload Container */}
-        <div className="w-40 h-40 relative group shrink-0">
-          <div className="w-full h-full rounded-2xl bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center overflow-hidden transition-all group-hover:border-[#c8a45c] group-hover:bg-[#c8a45c]/5">
-            {photo ? (
-              <Image src={`${photo}?t=${Date.now()}`} alt="Profile preview" fill className="object-cover" />
-            ) : (
-              <Camera className="w-10 h-10 text-slate-300" />
-            )}
-          </div>
-          <Input 
-            type="file" 
-            accept="image/*" 
-            className="absolute inset-0 opacity-0 cursor-pointer z-20" 
-            onChange={handleUpload} 
+        {/* Photo Upload System */}
+        <div className="shrink-0">
+          <PhotoUpload 
+            label={f("photo")}
+            currentPhoto={photo}
+            onUploadSuccess={(url) => setPhoto(url)}
           />
-          {photo && (
-            <button 
-              type="button" 
-              className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 shadow-lg hover:bg-red-600 transition-colors z-30"
-              onClick={() => setPhoto(null)}
-            >
-              <X className="w-4 h-4" />
-            </button>
-          )}
-          <p className="text-[10px] text-center mt-2 text-slate-400 font-bold uppercase tracking-widest">{f("photo")}</p>
         </div>
 
         {/* Main Form Fields Container */}
