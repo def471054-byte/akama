@@ -1,0 +1,30 @@
+import { withAuth } from "next-auth/middleware";
+import createMiddleware from "next-intl/middleware";
+import { routing } from "./i18n/routing";
+
+const intlMiddleware = createMiddleware(routing);
+
+export default withAuth(
+  function middleware(req) {
+    return intlMiddleware(req);
+  },
+  {
+    callbacks: {
+      authorized: ({ token, req }) => {
+        const isDashboard = req.nextUrl.pathname.includes("/dashboard");
+        if (isDashboard) {
+           return !!token;
+        }
+        return true;
+      },
+    },
+    pages: {
+       signIn: "/login"
+    }
+  }
+);
+
+export const config = {
+  // Match only internationalized pathnames and specific routes
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|uploads).*)"],
+};

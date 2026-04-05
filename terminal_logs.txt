@@ -1,0 +1,19 @@
+
+> akama@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.2 (Turbopack)
+- Local:         http://localhost:3005
+- Network:       http://192.168.0.100:3005
+- Environments: .env
+✓ Ready in 505ms
+⚠ turbopack.root should be absolute, using: /Users/manishankarvakta/Desktop/APPS/akama
+⨯ Another next dev server is already running.
+
+- Local:        http://localhost:3000
+- PID:          8367
+- Dir:          /Users/manishankarvakta/Desktop/APPS/akama
+- Log:          .next/dev/logs/next-development.log
+
+Run kill 8367 to stop it.
+[?25h
