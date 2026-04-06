@@ -8086,3 +8086,2779 @@ prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project:
 prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
  GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 348ms (next.js: 21ms, proxy.ts: 7ms, application-code: 321ms)
 ✓ Compiled in 25ms
+✓ Compiled in 45ms
+✓ Compiled in 71ms
+✓ Compiled in 68ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 528ms (next.js: 15ms, proxy.ts: 13ms, application-code: 500ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="ar" dir="rtl" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-af942a...">
+                                <div className="jsx-af942a...">
+                                  <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                    <svg
+                                      height={130}
+                                      width={130}
++                                     viewBox="0 0 49 49"
+-                                     viewBox="0 0 21 21"
+                                      ref={null}
+                                      role="img"
+                                    >
+                                      <path
+                                        fill="#FFFFFF"
++                                       d="M0,0 h49v49H0z"
+-                                       d="M0,0 h21v21H0z"
+                                        shapeRendering="crispEdges"
+                                      >
+                                      <path
+                                        fill="#000000"
++                                       d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H24zM..."
+-                                       d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 ..."
+                                        shapeRendering="crispEdges"
+                                      >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 17ms (next.js: 5ms, application-code: 12ms)
+ GET /api/auth/session 200 in 7ms (next.js: 885µs, application-code: 6ms)
+ GET /api/auth/session 200 in 7ms (next.js: 938µs, application-code: 6ms)
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees 200 in 524ms (next.js: 8ms, proxy.ts: 8ms, application-code: 507ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `ar`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `ar`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `ar`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `ar`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 345ms (next.js: 9ms, proxy.ts: 4ms, application-code: 332ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary name="permit/" loading={null}>
+        <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/dashboard..." tree={[...]} params={{id:"69d29f..."}} cacheNode={{rsc:{...}, ...}} ...>
+                <SegmentViewNode type="page" pagePath="dashboard/...">
+                  <SegmentTrieNode>
+                  <PermitPage>
+                    <PermitView employee={{id:"69d29f...", ...}}>
+                      <div className="flex flex-...">
+                        <div>
+                        <div ref={{current:null}} dir="rtl" style={{color:"#000"}} className="jsx-af942a...">
+                          <div>
+                          <div>
+                          <div className="jsx-af942a...">
+                            <div className="jsx-af942a...">
+                              <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                <svg
+                                  height={130}
+                                  width={130}
++                                 viewBox="0 0 49 49"
+-                                 viewBox="0 0 21 21"
+                                  ref={null}
+                                  role="img"
+                                >
+                                  <path
+                                    fill="#FFFFFF"
++                                   d="M0,0 h49v49H0z"
+-                                   d="M0,0 h21v21H0z"
+                                    shapeRendering="crispEdges"
+                                  >
+                                  <path
+                                    fill="#000000"
++                                   d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H24zM31 0..."
+-                                   d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 1h1v..."
+                                    shapeRendering="crispEdges"
+                                  >
+                            ...
+                          ...
+                ...
+              ...
+ 
+ GET /api/auth/session 200 in 16ms (next.js: 9ms, application-code: 7ms)
+ GET /api/auth/session 200 in 7ms (next.js: 956µs, application-code: 7ms)
+ GET /api/auth/session 200 in 6ms (next.js: 739µs, application-code: 5ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 516ms (next.js: 12ms, proxy.ts: 6ms, application-code: 498ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+      <LoadingBoundary name="permit/" loading={null}>
+        <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/dashboard..." tree={[...]} params={{id:"69d29f..."}} cacheNode={{rsc:{...}, ...}} ...>
+                <SegmentViewNode type="page" pagePath="dashboard/...">
+                  <SegmentTrieNode>
+                  <PermitPage>
+                    <PermitView employee={{id:"69d29f...", ...}}>
+                      <div className="flex flex-...">
+                        <div>
+                        <div ref={{current:null}} dir="rtl" style={{color:"#000"}} className="jsx-af942a...">
+                          <div>
+                          <div>
+                          <div className="jsx-af942a...">
+                            <div className="jsx-af942a...">
+                              <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                <svg
+                                  height={130}
+                                  width={130}
++                                 viewBox="0 0 49 49"
+-                                 viewBox="0 0 21 21"
+                                  ref={null}
+                                  role="img"
+                                >
+                                  <path
+                                    fill="#FFFFFF"
++                                   d="M0,0 h49v49H0z"
+-                                   d="M0,0 h21v21H0z"
+                                    shapeRendering="crispEdges"
+                                  >
+                                  <path
+                                    fill="#000000"
++                                   d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H24zM31 0..."
+-                                   d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 1h1v..."
+                                    shapeRendering="crispEdges"
+                                  >
+                            ...
+                          ...
+                ...
+              ...
+ 
+ GET /api/auth/session 200 in 12ms (next.js: 4ms, application-code: 8ms)
+ GET /api/auth/session 200 in 8ms (next.js: 3ms, application-code: 6ms)
+ GET /api/auth/session 200 in 6ms (next.js: 685µs, application-code: 5ms)
+✓ Compiled in 41ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 515ms (next.js: 15ms, proxy.ts: 8ms, application-code: 492ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-af942a...">
+                                <div className="jsx-af942a...">
+                                  <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                    <svg
+                                      height={130}
+                                      width={130}
++                                     viewBox="0 0 49 49"
+-                                     viewBox="0 0 21 21"
+                                      ref={null}
+                                      role="img"
+                                    >
+                                      <path
+                                        fill="#FFFFFF"
++                                       d="M0,0 h49v49H0z"
+-                                       d="M0,0 h21v21H0z"
+                                        shapeRendering="crispEdges"
+                                      >
+                                      <path
+                                        fill="#000000"
++                                       d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H24zM..."
+-                                       d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 ..."
+                                        shapeRendering="crispEdges"
+                                      >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 17ms (next.js: 7ms, application-code: 10ms)
+ GET /api/auth/session 200 in 6ms (next.js: 1054µs, application-code: 5ms)
+ GET /api/auth/session 200 in 6ms (next.js: 742µs, application-code: 5ms)
+✓ Compiled in 30ms
+✓ Compiled in 20ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 469ms (next.js: 11ms, proxy.ts: 3ms, application-code: 455ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="ar" dir="rtl" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-411785...">
+                                <div className="jsx-411785...">
+                                  <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                    <svg
+                                      height={130}
+                                      width={130}
++                                     viewBox="0 0 49 49"
+-                                     viewBox="0 0 21 21"
+                                      ref={null}
+                                      role="img"
+                                    >
+                                      <path
+                                        fill="#FFFFFF"
++                                       d="M0,0 h49v49H0z"
+-                                       d="M0,0 h21v21H0z"
+                                        shapeRendering="crispEdges"
+                                      >
+                                      <path
+                                        fill="#000000"
++                                       d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H24zM..."
+-                                       d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 ..."
+                                        shapeRendering="crispEdges"
+                                      >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 22ms (next.js: 9ms, application-code: 14ms)
+ GET /api/auth/session 200 in 6ms (next.js: 946µs, application-code: 5ms)
+ GET /api/auth/session 200 in 6ms (next.js: 873µs, application-code: 5ms)
+✓ Compiled in 75ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 861ms (next.js: 319ms, proxy.ts: 119ms, application-code: 423ms)
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 887ms (next.js: 275ms, proxy.ts: 119ms, application-code: 492ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 261ms (next.js: 163ms, proxy.ts: 31ms, application-code: 68ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 957ms (next.js: 431ms, proxy.ts: 121ms, application-code: 404ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 364ms (next.js: 18ms, proxy.ts: 34ms, application-code: 312ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 627ms (next.js: 151ms, proxy.ts: 120ms, application-code: 355ms)
+ GET /api/auth/session 200 in 74ms (next.js: 50ms, application-code: 24ms)
+ GET /api/auth/session 200 in 9ms (next.js: 1399µs, application-code: 7ms)
+ GET /api/auth/session 200 in 15ms (next.js: 1588µs, application-code: 14ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 468ms (next.js: 7ms, proxy.ts: 15ms, application-code: 446ms)
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 573ms (next.js: 65ms, proxy.ts: 9ms, application-code: 499ms)
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 584ms (next.js: 16ms, proxy.ts: 8ms, application-code: 560ms)
+[browser] ⨯ unhandledRejection: Error: Attempting to parse an unsupported color function "lab"
+✓ Compiled in 42ms
+✓ Compiled in 40ms
+✓ Compiled in 30ms
+✓ Compiled in 22ms
+✓ Compiled in 34ms
+✓ Compiled in 25ms
+✓ Compiled in 41ms
+✓ Compiled in 54ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 517ms (next.js: 67ms, proxy.ts: 130ms, application-code: 320ms)
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 562ms (next.js: 80ms, proxy.ts: 35ms, application-code: 447ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 267ms (next.js: 101ms, proxy.ts: 26ms, application-code: 140ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 311ms (next.js: 54ms, proxy.ts: 88ms, application-code: 170ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 654ms (next.js: 107ms, proxy.ts: 130ms, application-code: 416ms)
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 490ms (next.js: 93ms, proxy.ts: 51ms, application-code: 346ms)
+ GET /api/auth/session 200 in 93ms (next.js: 70ms, application-code: 23ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 369ms (next.js: 10ms, proxy.ts: 19ms, application-code: 340ms)
+ GET /api/auth/session 200 in 11ms (next.js: 3ms, application-code: 8ms)
+ GET /api/auth/session 200 in 7ms (next.js: 860µs, application-code: 6ms)
+✓ Compiled in 49ms
+✓ Compiled in 32ms
+✓ Compiled in 66ms
+✓ Compiled in 44ms
+[browser] ./components/employee/permit-template.tsx:98:31
+Expected '</', got '['
+   96 | ...Name={`${labelW...
+   97 | ...Name="flex-1 p-...
+>  98 | ...border-[1.5px] ...
+      |           ^
+   99 | ...me="flex border...
+  100 | ...ssName={`${labe...
+  101 | ...ssName="flex-1 ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:98:31
+Expected '</', got '['
+   96 | ...Name={`${labelW...
+   97 | ...Name="flex-1 p-...
+>  98 | ...border-[1.5px] ...
+      |           ^
+   99 | ...me="flex border...
+  100 | ...ssName={`${labe...
+  101 | ...ssName="flex-1 ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+✓ Compiled in 21ms
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 172ms (next.js: 104ms, proxy.ts: 31ms, application-code: 37ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+[browser] Uncaught Error: Objects are not valid as a React child (found: object with keys {}). If you meant to render a collection of children, use an array instead.
+    at PermitView (components/employee/permit-view.tsx:87:64)
+    at PermitPage (app/dashboard/employees/[id]/permit/page.tsx:20:10)
+  85 |          style={{ color: "#000" }}
+  86 |        >
+> 87 |           <PermitTemplate employee={employee} verificationUrl={verificationUrl} />
+     |                                                                ^
+  88 |        </div>
+  89 |
+  90 |        {/* 3. Global Print Styles */}
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 404ms (next.js: 12ms, proxy.ts: 2ms, application-code: 390ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 119ms (next.js: 15ms, proxy.ts: 16ms, application-code: 88ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 516ms (next.js: 66ms, proxy.ts: 61ms, application-code: 389ms)
+ GET /api/auth/session 200 in 19ms (next.js: 5ms, application-code: 14ms)
+ GET /api/auth/session 200 in 9ms (next.js: 1375µs, application-code: 7ms)
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 50ms
+[browser] Encountered a script tag while rendering React component. Scripts inside React components are never executed when rendering on the client. Consider using template tag instead (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template). 
+    at S.scheduleRefresh (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+    at Set.forEach (<anonymous>) (chrome-extension://fmkadmapgofadopljbjfkapdkoienihi/build/installHook.js:1:86461)
+ GET /api/auth/session 200 in 16ms (next.js: 6ms, application-code: 10ms)
+ GET /api/auth/session 200 in 6ms (next.js: 927µs, application-code: 5ms)
+ GET /api/auth/session 200 in 9ms (next.js: 1336µs, application-code: 7ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 437ms (next.js: 14ms, proxy.ts: 3ms, application-code: 419ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/dashboard..." tree={[...]} params={{id:"69d29f..."}} cacheNode={{rsc:{...}, ...}} ...>
+            <SegmentViewNode type="page" pagePath="dashboard/...">
+              <SegmentTrieNode>
+              <PermitPage>
+                <PermitView employee={{id:"69d29f...", ...}}>
+                  <div className="jsx-75fb95...">
+                    <div>
+                    <div id="printable-..." ref={{current:null}} dir="rtl" style={{color:"#000"}} ...>
+                      <PermitTemplate employee={{id:"69d29f...", ...}} verificationUrl="http://loc...">
+                        <div className="almarai_9d...">
+                          <div>
+                          <div>
+                          <div className="border-[1....">
+                            <div>
+                            <div className="bg-white p...">
+                              <QRCodeSVG2 value="http://loc..." size={140} level="H">
+                                <svg
+                                  height={140}
+                                  width={140}
++                                 viewBox="0 0 49 49"
+-                                 viewBox="0 0 21 21"
+                                  ref={null}
+                                  role="img"
+                                >
+                                  <path
+                                    fill="#FFFFFF"
++                                   d="M0,0 h49v49H0z"
+-                                   d="M0,0 h21v21H0z"
+                                    shapeRendering="crispEdges"
+                                  >
+                                  <path
+                                    fill="#000000"
++                                   d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H24zM31 0..."
+-                                   d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 1h1v..."
+                                    shapeRendering="crispEdges"
+                                  >
+                          ...
+                    ...
+            ...
+          ...
+ 
+ GET /api/auth/session 200 in 13ms (next.js: 3ms, application-code: 10ms)
+ GET /api/auth/session 200 in 8ms (next.js: 3ms, application-code: 5ms)
+ GET /api/auth/session 200 in 6ms (next.js: 828µs, application-code: 5ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 367ms (next.js: 10ms, proxy.ts: 3ms, application-code: 353ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="border-[1....">
+                                <div>
+                                <div className="bg-white p...">
+                                  <QRCodeSVG2 value="http://loc..." size={140} level="H">
+                                    <svg
+                                      height={140}
+                                      width={140}
++                                     viewBox="0 0 49 49"
+-                                     viewBox="0 0 21 21"
+                                      ref={null}
+                                      role="img"
+                                    >
+                                      <path
+                                        fill="#FFFFFF"
++                                       d="M0,0 h49v49H0z"
+-                                       d="M0,0 h21v21H0z"
+                                        shapeRendering="crispEdges"
+                                      >
+                                      <path
+                                        fill="#000000"
++                                       d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H24zM..."
+-                                       d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 ..."
+                                        shapeRendering="crispEdges"
+                                      >
+                  ...
+ 
+ GET /api/auth/session 200 in 17ms (next.js: 6ms, application-code: 11ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1035µs, application-code: 6ms)
+ GET /api/auth/session 200 in 6ms (next.js: 883µs, application-code: 5ms)
+✓ Compiled in 23ms
+[browser] ./components/employee/permit-template.tsx:142:6
+Expression expected
+  140 |    );
+  141 |  }
+> 142 |      </div>
+      |      ^
+  143 |    );
+  144 |  }
+  145 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:142:7
+Unterminated regexp literal
+  140 |    );
+  141 |  }
+> 142 |      </div>
+      |       ^^^^^
+  143 |    );
+  144 |  }
+  145 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+⨯ ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  [90m138 |[0m        </div>
+  [90m139 |[0m    );
+[31m[1m>[0m [90m140 |[0m  }
+  [90m    |[0m  [31m[1m^[0m
+  [90m141 |[0m
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+
+✓ Compiled in 26ms
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 500 in 147ms (next.js: 114ms, proxy.ts: 6ms, application-code: 26ms)
+[browser] Uncaught Error: ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./components/employee/permit-template.tsx:140:2)
+    at <unknown> (Error: (./components/employee/permit-template.tsx:140:2)
+[browser] ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+⨯ ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  [90m138 |[0m        </div>
+  [90m139 |[0m    );
+[31m[1m>[0m [90m140 |[0m  }
+  [90m    |[0m  [31m[1m^[0m
+  [90m141 |[0m
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 500 in 24ms (next.js: 11ms, proxy.ts: 4ms, application-code: 9ms)
+[browser] Uncaught Error: ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./components/employee/permit-template.tsx:140:2)
+    at <unknown> (Error: (./components/employee/permit-template.tsx:140:2)
+[browser] ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+⨯ ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  [90m138 |[0m        </div>
+  [90m139 |[0m    );
+[31m[1m>[0m [90m140 |[0m  }
+  [90m    |[0m  [31m[1m^[0m
+  [90m141 |[0m
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 500 in 33ms (next.js: 14ms, proxy.ts: 6ms, application-code: 13ms)
+[browser] Uncaught Error: ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./components/employee/permit-template.tsx:140:2)
+    at <unknown> (Error: (./components/employee/permit-template.tsx:140:2)
+[browser] ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 362ms (next.js: 74ms, proxy.ts: 4ms, application-code: 284ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 432ms (next.js: 50ms, proxy.ts: 3ms, application-code: 378ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 183ms (next.js: 36ms, proxy.ts: 10ms, application-code: 136ms)
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 487ms (next.js: 15ms, proxy.ts: 3ms, application-code: 469ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/dashboard..." tree={[...]} params={{id:"69d29f..."}} cacheNode={{rsc:{...}, ...}} ...>
+            <SegmentViewNode type="page" pagePath="dashboard/...">
+              <SegmentTrieNode>
+              <PermitPage>
+                <PermitView employee={{id:"69d29f...", ...}}>
+                  <div className="jsx-75fb95...">
+                    <div>
+                    <div id="printable-..." ref={{current:null}} dir="rtl" style={{color:"#000"}} ...>
+                      <PermitTemplate employee={{id:"69d29f...", ...}} verificationUrl="http://loc...">
+                        <div className="almarai_9d...">
+                          <div>
+                          <div>
+                          <div className="border-[1....">
+                            <div>
+                            <div className={"bg-white..."}>
+                              <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                <svg
+                                  height={130}
+                                  width={130}
++                                 viewBox="0 0 49 49"
+-                                 viewBox="0 0 21 21"
+                                  ref={null}
+                                  role="img"
+                                >
+                                  <path
+                                    fill="#FFFFFF"
++                                   d="M0,0 h49v49H0z"
+-                                   d="M0,0 h21v21H0z"
+                                    shapeRendering="crispEdges"
+                                  >
+                                  <path
+                                    fill="#000000"
++                                   d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H24zM31 0..."
+-                                   d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 1h1v..."
+                                    shapeRendering="crispEdges"
+                                  >
+                          ...
+                    ...
+            ...
+          ...
+ 
+ GET /api/auth/session 200 in 17ms (next.js: 8ms, application-code: 8ms)
+ GET /api/auth/session 200 in 11ms (next.js: 5ms, application-code: 6ms)
+ GET /api/auth/session 200 in 46ms (next.js: 9ms, application-code: 37ms)
+ GET /api/auth/session 200 in 15ms (next.js: 3ms, application-code: 12ms)
+✓ Compiled in 56ms
+✓ Compiled in 40ms
+✓ Compiled in 42ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 468ms (next.js: 11ms, proxy.ts: 11ms, application-code: 446ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-c510ec...">
+                                <div>
+                                ...
+                                  <div className="border-[1....">
+                                    <div>
+                                    <div className={"bg-white..."}>
+                                      <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                        <svg
+                                          height={130}
+                                          width={130}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                                  <div className="border-[1....">
+                                    <div>
+                                    <div className="bg-white p...">
+                                      <QRCodeSVG2 value="http://loc..." size={140} level="H">
+                                        <svg
+                                          height={140}
+                                          width={140}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 24ms (next.js: 11ms, application-code: 13ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1191µs, application-code: 6ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1845µs, application-code: 5ms)
+✓ Compiled in 73ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 374ms (next.js: 17ms, proxy.ts: 6ms, application-code: 351ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-c510ec...">
+                                <div>
+                                ...
+                                  <div className="border-[1....">
+                                    <div>
+                                    <div className={"bg-white..."}>
+                                      <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                        <svg
+                                          height={130}
+                                          width={130}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                                  <div className="border-[1....">
+                                    <div>
+                                    <div className="bg-white p...">
+                                      <QRCodeSVG2 value="http://loc..." size={140} level="H">
+                                        <svg
+                                          height={140}
+                                          width={140}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 18ms (next.js: 6ms, application-code: 13ms)
+ GET /api/auth/session 200 in 6ms (next.js: 860µs, application-code: 5ms)
+ GET /api/auth/session 200 in 7ms (next.js: 696µs, application-code: 7ms)
+✓ Compiled in 26ms
+✓ Compiled in 26ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 388ms (next.js: 12ms, proxy.ts: 11ms, application-code: 365ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-c510ec...">
+                                <div>
+                                ...
+                                  <div className="border-[1....">
+                                    <div>
+                                    <div className={"bg-white..."}>
+                                      <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                        <svg
+                                          height={130}
+                                          width={130}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                                  <div className="border-[1....">
+                                    <div>
+                                    <div className="bg-white p...">
+                                      <QRCodeSVG2 value="http://loc..." size={140} level="H">
+                                        <svg
+                                          height={140}
+                                          width={140}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 26ms (next.js: 7ms, application-code: 19ms)
+ GET /api/auth/session 200 in 6ms (next.js: 945µs, application-code: 5ms)
+ GET /api/auth/session 200 in 6ms (next.js: 773µs, application-code: 5ms)
+✓ Compiled in 51ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 388ms (next.js: 14ms, proxy.ts: 11ms, application-code: 363ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-c510ec...">
+                                <div>
+                                ...
+                                  <div className="border-[1....">
+                                    <div>
+                                    <div className={"bg-white..."}>
+                                      <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                        <svg
+                                          height={130}
+                                          width={130}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                                  <div className="border-[1....">
+                                    <div>
+                                    <div className="bg-white p...">
+                                      <QRCodeSVG2 value="http://loc..." size={140} level="H">
+                                        <svg
+                                          height={140}
+                                          width={140}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 22ms (next.js: 8ms, application-code: 14ms)
+ GET /api/auth/session 200 in 19ms (next.js: 986µs, application-code: 18ms)
+ GET /api/auth/session 200 in 9ms (next.js: 1845µs, application-code: 7ms)
+✓ Compiled in 48ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 372ms (next.js: 13ms, proxy.ts: 7ms, application-code: 352ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-c510ec...">
+                                <div>
+                                ...
+                                  <div className="border-[1....">
+                                    <div>
+                                    <div className="bg-white p...">
+                                      <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                        <svg
+                                          height={130}
+                                          width={130}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                                  <div className="border-[1....">
+                                    <div>
+                                    <div className="bg-white p...">
+                                      <QRCodeSVG2 value="http://loc..." size={140} level="H">
+                                        <svg
+                                          height={140}
+                                          width={140}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 16ms (next.js: 6ms, application-code: 10ms)
+ GET /api/auth/session 200 in 7ms (next.js: 932µs, application-code: 6ms)
+ GET /api/auth/session 200 in 6ms (next.js: 700µs, application-code: 6ms)
+✓ Compiled in 46ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 377ms (next.js: 13ms, proxy.ts: 12ms, application-code: 351ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-c510ec...">
+                                <div>
+                                ...
+                                  <div className="border-[1....">
+                                    <div>
+                                    <div className="bg-white p...">
+                                      <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                        <svg
+                                          height={130}
+                                          width={130}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                                  <div className="border-[1....">
+                                    <div>
+                                    <div className="bg-white p...">
+                                      <QRCodeSVG2 value="http://loc..." size={140} level="H">
+                                        <svg
+                                          height={140}
+                                          width={140}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 23ms (next.js: 10ms, application-code: 13ms)
+ GET /api/auth/session 200 in 6ms (next.js: 894µs, application-code: 5ms)
+ GET /api/auth/session 200 in 4ms (next.js: 1033µs, application-code: 3ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 410ms (next.js: 9ms, proxy.ts: 8ms, application-code: 393ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-c510ec...">
+                                <div>
+                                ...
+                                  <div className="border-[1....">
+                                    <div>
+                                    <div className="bg-white p...">
+                                      <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                        <svg
+                                          height={130}
+                                          width={130}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                                  <div className="border-[1....">
+                                    <div>
+                                    <div className="bg-white p...">
+                                      <QRCodeSVG2 value="http://loc..." size={140} level="H">
+                                        <svg
+                                          height={140}
+                                          width={140}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 21ms (next.js: 10ms, application-code: 11ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1188µs, application-code: 6ms)
+ GET /api/auth/session 200 in 6ms (next.js: 786µs, application-code: 5ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 349ms (next.js: 7ms, proxy.ts: 5ms, application-code: 337ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/dashboard..." tree={[...]} params={{id:"69d29f..."}} cacheNode={{rsc:{...}, ...}} ...>
+            <SegmentViewNode type="page" pagePath="dashboard/...">
+              <SegmentTrieNode>
+              <PermitPage>
+                <PermitView employee={{id:"69d29f...", ...}}>
+                  <div className="jsx-c510ec...">
+                    <div>
+                    <div dir="rtl" style={{color:"#000"}} className="jsx-c510ec...">
+                      <PermitTemplate employee={{id:"69d29f...", ...}} verificationUrl="http://loc..." isPdf={false}>
+                        <div className="almarai_9d...">
+                          <div>
+                          <div>
+                          <div>
+                          <div>
+                          <div className="border-[1....">
+                            <div>
+                            <div className="bg-white p...">
+                              <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                <svg
+                                  height={130}
+                                  width={130}
++                                 viewBox="0 0 49 49"
+-                                 viewBox="0 0 21 21"
+                                  ref={null}
+                                  role="img"
+                                >
+                                  <path
+                                    fill="#FFFFFF"
++                                   d="M0,0 h49v49H0z"
+-                                   d="M0,0 h21v21H0z"
+                                    shapeRendering="crispEdges"
+                                  >
+                                  <path
+                                    fill="#000000"
++                                   d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H24zM31 0..."
+-                                   d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 1h1v..."
+                                    shapeRendering="crispEdges"
+                                  >
+                          ...
+                    <div ref={{current:null}} dir="rtl" style={{color:"#000"}} className="jsx-c510ec...">
+                      <PermitTemplate employee={{id:"69d29f...", ...}} verificationUrl="http://loc..." isPdf={true}>
+                        <div className="almarai_9d...">
+                          <div>
+                          <div>
+                          <div>
+                          <div>
+                          <div className="border-[1....">
+                            <div>
+                            <div className="bg-white p...">
+                              <QRCodeSVG2 value="http://loc..." size={140} level="H">
+                                <svg
+                                  height={140}
+                                  width={140}
++                                 viewBox="0 0 49 49"
+-                                 viewBox="0 0 21 21"
+                                  ref={null}
+                                  role="img"
+                                >
+                                  <path
+                                    fill="#FFFFFF"
++                                   d="M0,0 h49v49H0z"
+-                                   d="M0,0 h21v21H0z"
+                                    shapeRendering="crispEdges"
+                                  >
+                                  <path
+                                    fill="#000000"
++                                   d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H24zM31 0..."
+-                                   d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 1h1v..."
+                                    shapeRendering="crispEdges"
+                                  >
+                          ...
+                    ...
+            ...
+          ...
+ 
+ GET /api/auth/session 200 in 18ms (next.js: 8ms, application-code: 10ms)
+ GET /api/auth/session 200 in 8ms (next.js: 2ms, application-code: 5ms)
+ GET /api/auth/session 200 in 7ms (next.js: 814µs, application-code: 6ms)
+✓ Compiled in 31ms
+[browser] ./components/employee/permit-template.tsx:135:16
+Expression expected
+  133 | .../div>
+  134 | ...ة الحج.</li>
+> 135 | ...       <li clas...
+      |           ^
+  136 | ...     </ul>
+  137 | ...  </div>
+  138 | ...  <div classNam...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+✓ Compiled in 57ms
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 186ms (next.js: 40ms, proxy.ts: 7ms, application-code: 139ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 137ms (next.js: 20ms, proxy.ts: 49ms, application-code: 68ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 368ms (next.js: 14ms, proxy.ts: 18ms, application-code: 337ms)
+ GET /api/auth/session 200 in 13ms (next.js: 4ms, application-code: 9ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 413ms (next.js: 78ms, proxy.ts: 6ms, application-code: 330ms)
+ GET /api/auth/session 200 in 12ms (next.js: 4ms, application-code: 9ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1028µs, application-code: 6ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 358ms (next.js: 10ms, proxy.ts: 6ms, application-code: 343ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/dashboard..." tree={[...]} params={{id:"69d29f..."}} cacheNode={{rsc:{...}, ...}} ...>
+            <SegmentViewNode type="page" pagePath="dashboard/...">
+              <SegmentTrieNode>
+              <PermitPage>
+                <PermitView employee={{id:"69d29f...", ...}}>
+                  <div className="jsx-c510ec...">
+                    <div>
+                    <div dir="rtl" style={{color:"#000"}} className="jsx-c510ec...">
+                      <PermitTemplate employee={{id:"69d29f...", ...}} verificationUrl="http://loc..." isPdf={false}>
+                        <div className="almarai_9d...">
+                          <div>
+                          <div>
+                          <div>
+                          <div>
+                          <div className="border-[1....">
+                            <div>
+                            <div className="bg-white p...">
+                              <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                <svg
+                                  height={130}
+                                  width={130}
++                                 viewBox="0 0 49 49"
+-                                 viewBox="0 0 21 21"
+                                  ref={null}
+                                  role="img"
+                                >
+                                  <path
+                                    fill="#FFFFFF"
++                                   d="M0,0 h49v49H0z"
+-                                   d="M0,0 h21v21H0z"
+                                    shapeRendering="crispEdges"
+                                  >
+                                  <path
+                                    fill="#000000"
++                                   d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H24zM31 0..."
+-                                   d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 1h1v..."
+                                    shapeRendering="crispEdges"
+                                  >
+                          ...
+                    <div ref={{current:null}} dir="rtl" style={{color:"#000"}} className="jsx-c510ec...">
+                      <PermitTemplate employee={{id:"69d29f...", ...}} verificationUrl="http://loc..." isPdf={true}>
+                        <div className="almarai_9d...">
+                          <div>
+                          <div>
+                          <div>
+                          <div>
+                          <div className="border-[1....">
+                            <div>
+                            <div className="bg-white p...">
+                              <QRCodeSVG2 value="http://loc..." size={140} level="H">
+                                <svg
+                                  height={140}
+                                  width={140}
++                                 viewBox="0 0 49 49"
+-                                 viewBox="0 0 21 21"
+                                  ref={null}
+                                  role="img"
+                                >
+                                  <path
+                                    fill="#FFFFFF"
++                                   d="M0,0 h49v49H0z"
+-                                   d="M0,0 h21v21H0z"
+                                    shapeRendering="crispEdges"
+                                  >
+                                  <path
+                                    fill="#000000"
++                                   d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H24zM31 0..."
+-                                   d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM14 1h1v..."
+                                    shapeRendering="crispEdges"
+                                  >
+                          ...
+                    ...
+            ...
+          ...
+ 
+ GET /api/auth/session 200 in 26ms (next.js: 4ms, application-code: 23ms)
+ GET /api/auth/session 200 in 8ms (next.js: 1407µs, application-code: 7ms)
+ GET /api/auth/session 200 in 7ms (next.js: 2ms, application-code: 5ms)
+✓ Compiled in 28ms
+✓ Compiled in 19ms
+✓ Compiled in 22ms
+✓ Compiled in 24ms
+[browser] ./components/employee/permit-template.tsx:123:31
+Expected '</', got 'ident'
+  121 | ...border-[1.5px] ...
+  122 | ...={`flex-1 text-...
+> 123 | ...ame={`mb-3 font...
+      |          ^^
+  124 | ...me="space-y-2 l...
+  125 | ...Name="text-righ...
+  126 | ...Name="text-righ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+✓ Compiled in 24ms
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 187ms (next.js: 4ms, proxy.ts: 13ms, application-code: 170ms)
+ GET /ar?e=ygJj2MOUtDeVEWXcDa5AC-lyKoP7PhWEOWIXXAGAz6c 404 in 217ms (next.js: 122ms, proxy.ts: 18ms, application-code: 78ms)
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29d0eb322f702325d8b9f"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 390ms (next.js: 22ms, proxy.ts: 5ms, application-code: 363ms)
+ GET /dashboard/employees/69d29d0eb322f702325d8b9f/edit 200 in 448ms (next.js: 7ms, proxy.ts: 1810µs, application-code: 439ms)
+ GET /api/auth/session 200 in 21ms (next.js: 6ms, application-code: 15ms)
+ GET /api/auth/session 200 in 7ms (next.js: 956µs, application-code: 6ms)
+ GET /api/auth/session 200 in 5ms (next.js: 725µs, application-code: 5ms)
+✓ Compiled in 53ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 419ms (next.js: 13ms, proxy.ts: 8ms, application-code: 398ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-c510ec...">
+                                <div>
+                                ...
+                                  <div className="border-[1...." style={{padding:"24px", ...}}>
+                                    <div>
+                                    <div className="bg-white p..." style={{...}}>
+                                      <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                        <svg
+                                          height={130}
+                                          width={130}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                                  <div className="border-[1...." style={{padding:"80px", ...}}>
+                                    <div>
+                                    <div className="bg-white p..." style={{...}}>
+                                      <QRCodeSVG2 value="http://loc..." size={140} level="H">
+                                        <svg
+                                          height={140}
+                                          width={140}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 13ms (next.js: 5ms, application-code: 8ms)
+ GET /api/auth/session 200 in 7ms (next.js: 879µs, application-code: 6ms)
+ GET /api/auth/session 200 in 6ms (next.js: 742µs, application-code: 5ms)
+✓ Compiled in 54ms
+✓ Compiled in 20ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 416ms (next.js: 22ms, proxy.ts: 9ms, application-code: 384ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-c510ec...">
+                                <div>
+                                ...
+                                  <div className="border-[1...." style={{padding:"24px", ...}}>
+                                    <div>
+                                    <div className="bg-white p..." style={{...}}>
+                                      <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                        <svg
+                                          height={130}
+                                          width={130}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                                  <div className="border-[1...." style={{padding:"15px", ...}}>
+                                    <div>
+                                    <div className="bg-white p..." style={{...}}>
+                                      <QRCodeSVG2 value="http://loc..." size={140} level="H">
+                                        <svg
+                                          height={140}
+                                          width={140}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 20ms (next.js: 7ms, application-code: 13ms)
+ GET /api/auth/session 200 in 6ms (next.js: 917µs, application-code: 5ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1179µs, application-code: 6ms)
+✓ Compiled in 24ms
+✓ Compiled in 21ms
+prisma:query db.Employee.aggregate([ { $match: { $expr: { $and: [ { $and: [ { $and: [ { $eq: [ "$_id", { $literal: ObjectId("69d29fc5b322f702325d8ba0"), }, ], }, { $ne: [ "$_id", "$$REMOVE", ], }, ], }, ], }, { }, ], }, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees/69d29fc5b322f702325d8ba0/permit 200 in 374ms (next.js: 11ms, proxy.ts: 7ms, application-code: 355ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/dashboard..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                            ...
+                              <div className="jsx-c510ec...">
+                                <div>
+                                ...
+                                  <div className="border-[1...." style={{padding:"24px", ...}}>
+                                    <div>
+                                    <div className="bg-white p..." style={{...}}>
+                                      <QRCodeSVG2 value="http://loc..." size={130} level="H">
+                                        <svg
+                                          height={130}
+                                          width={130}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                                  <div className="border-[1...." style={{padding:"15px", ...}}>
+                                    <div>
+                                    <div className="bg-white p..." style={{...}}>
+                                      <QRCodeSVG2 value="http://loc..." size={140} level="H">
+                                        <svg
+                                          height={140}
+                                          width={140}
++                                         viewBox="0 0 49 49"
+-                                         viewBox="0 0 21 21"
+                                          ref={null}
+                                          role="img"
+                                        >
+                                          <path
+                                            fill="#FFFFFF"
++                                           d="M0,0 h49v49H0z"
+-                                           d="M0,0 h21v21H0z"
+                                            shapeRendering="crispEdges"
+                                          >
+                                          <path
+                                            fill="#000000"
++                                           d="M0 0h7v1H0zM8 0h2v1H8zM12 0h4v1H12zM17 0h1v1H17zM21 0h1v1H21zM24 0h6v1H..."
+-                                           d="M0 0h7v1H0zM9 0h1v1H9zM14,0 h7v1H14zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10z..."
+                                            shapeRendering="crispEdges"
+                                          >
+                                ...
+                  ...
+ 
+ GET /api/auth/session 200 in 19ms (next.js: 12ms, application-code: 8ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1173µs, application-code: 6ms)
+ GET /api/auth/session 200 in 6ms (next.js: 808µs, application-code: 5ms)
+[browser] ./components/employee/permit-template.tsx:98:31
+Expected '</', got '['
+   96 | ...Name={`${labelW...
+   97 | ...Name="flex-1 p-...
+>  98 | ...border-[1.5px] ...
+      |           ^
+   99 | ...me="flex border...
+  100 | ...ssName={`${labe...
+  101 | ...ssName="flex-1 ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:98:31
+Expected '</', got '['
+   96 | ...Name={`${labelW...
+   97 | ...Name="flex-1 p-...
+>  98 | ...border-[1.5px] ...
+      |           ^
+   99 | ...me="flex border...
+  100 | ...ssName={`${labe...
+  101 | ...ssName="flex-1 ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:142:6
+Expression expected
+  140 |    );
+  141 |  }
+> 142 |      </div>
+      |      ^
+  143 |    );
+  144 |  }
+  145 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:142:7
+Unterminated regexp literal
+  140 |    );
+  141 |  }
+> 142 |      </div>
+      |       ^^^^^
+  143 |    );
+  144 |  }
+  145 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:140:2
+Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+  138 |        </div>
+  139 |    );
+> 140 |  }
+      |  ^
+  141 |
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:135:16
+Expression expected
+  133 | .../div>
+  134 | ...ة الحج.</li>
+> 135 | ...       <li clas...
+      |           ^
+  136 | ...     </ul>
+  137 | ...  </div>
+  138 | ...  <div classNam...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+[browser] ./components/employee/permit-template.tsx:123:31
+Expected '</', got 'ident'
+  121 | ...border-[1.5px] ...
+  122 | ...={`flex-1 text-...
+> 123 | ...ame={`mb-3 font...
+      |          ^^
+  124 | ...me="space-y-2 l...
+  125 | ...Name="text-righ...
+  126 | ...Name="text-righ...
+
+Parsing ecmascript source code failed
+
+Import traces:
+  Client Component Browser:
+    ./components/employee/permit-template.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Client Component Browser]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./components/employee/permit-template.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Client Component SSR]
+    ./components/employee/permit-view.tsx [Server Component]
+    ./app/dashboard/employees/[id]/permit/page.tsx [Server Component] 
+ GET /api/auth/session 200 in 85ms (next.js: 48ms, application-code: 37ms)
+ GET /api/auth/session 200 in 12ms (next.js: 1279µs, application-code: 11ms)
+ GET /api/auth/session 200 in 8ms (next.js: 1299µs, application-code: 7ms)
+ GET /api/auth/session 200 in 30ms (next.js: 15ms, application-code: 15ms)
+ GET /api/auth/session 200 in 17ms (next.js: 3ms, application-code: 14ms)
+ GET /api/auth/session 200 in 6ms (next.js: 937µs, application-code: 5ms)
+ GET /api/auth/session 200 in 13ms (next.js: 5ms, application-code: 8ms)
+ GET /api/auth/session 200 in 6ms (next.js: 1185µs, application-code: 5ms)
+ GET /api/auth/session 200 in 5ms (next.js: 1083µs, application-code: 4ms)
+ GET /api/auth/session 200 in 27ms (next.js: 19ms, application-code: 8ms)
+ GET /api/auth/session 200 in 8ms (next.js: 1764µs, application-code: 7ms)
+✓ Compiled in 72ms
+✓ Compiled in 51ms
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees 200 in 2.2s (next.js: 28ms, proxy.ts: 9ms, application-code: 2.2s)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+ GET /dashboard/employees 200 in 9ms (next.js: 1827µs, proxy.ts: 3ms, application-code: 4ms)
+prisma:query db.Employee.aggregate([ { $sort: { createdAt: -1, }, }, { $project: { _id: 1, name: 1, email: 1, phone: 1, permitNumber: 1, idNumber: 1, nationality: 1, gender: 1, issueDate: 1, expiryDate: 1, company: 1, authority: 1, purpose: 1, description: 1, designation: 1, department: 1, photo: 1, verificationToken: 1, createdAt: 1, }, }, ])
+ GET /dashboard/employees 200 in 314ms (next.js: 1484µs, proxy.ts: 5ms, application-code: 308ms)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.confirm_delete` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:214:17)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  212 |              <DialogTitle className="flex items-center gap-2 text-red-600">
+  213 |                <AlertCircle className="w-5 h-5" /> 
+> 214 |                {t("confirm_delete") || "Confirm Deletion"}
+      |                 ^
+  215 |              </DialogTitle>
+  216 |            </DialogHeader>
+  217 |            <div className="py-4"> (components/employee/employee-table.tsx:214:17)
+[browser] Error: MISSING_MESSAGE: Could not resolve `common.delete_warning` in messages for locale `en`.
+    at EmployeeTable (components/employee/employee-table.tsx:219:18)
+    at EmployeesPage (app/dashboard/employees/page.tsx:55:12)
+  217 |            <div className="py-4">
+  218 |              <p className="text-slate-600">
+> 219 |                 {t("delete_warning") || "Are you sure you want to delete this employee? T...
+      |                  ^
+  220 |              </p>
+  221 |              {employeeToDelete && (
+  222 |                <div className="mt-4 p-3 bg-red-50 border border-red-100 rounded-lg"> (components/employee/employee-table.tsx:219:18)
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+ GET /ar?e=_6x3daH8jS7VRSOfEjyvT0kSu2YVa5EuwVuPl2FYbcs 404 in 56ms (next.js: 11ms, proxy.ts: 8ms, application-code: 37ms)
+ GET /api/auth/session 200 in 14ms (next.js: 4ms, application-code: 10ms)
+ GET /api/auth/session 200 in 6ms (next.js: 1061µs, application-code: 5ms)
+ GET /api/auth/session 200 in 5ms (next.js: 733µs, application-code: 4ms)
+Error: Route "/" used `searchParams.e`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at VerifyPage (app/page.tsx:19:30)
+  17 |   const f = await getTranslations("fields");
+  18 |
+> 19 |   const token = searchParams.e;
+     |                              ^
+  20 |
+  21 |   if (!token) {
+  22 |     return (
+ GET /?e=_6x3daH8jS7VRSOfEjyvT0kSu2YVa5EuwVuPl2FYbcs 200 in 110ms (next.js: 22ms, proxy.ts: 6ms, application-code: 83ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" dir="ltr" suppressHydrationWarning={true}>
+                          <body
+                            className="inter_5901b7c6-module__ec5Qua__variable outfit_8778cd42-module__wRojWG__variabl..."
+-                           cz-shortcut-listen="true"
+                          >
+                  ...
+ 
+ GET /api/auth/session 200 in 22ms (next.js: 4ms, application-code: 18ms)
+ GET /api/auth/session 200 in 9ms (next.js: 1971µs, application-code: 7ms)
+ GET /api/auth/session 200 in 6ms (next.js: 820µs, application-code: 6ms)
