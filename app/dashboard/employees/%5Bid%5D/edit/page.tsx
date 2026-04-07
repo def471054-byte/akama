@@ -1,8 +1,9 @@
 import { prisma } from "@/lib/prisma";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import EmployeeForm from "@/components/employee/employee-form";
 import { ArrowLeft } from "lucide-react";
-import { Link, redirect } from "@/i18n/routing";
+import { Link } from "@/i18n/routing";
+import { redirect } from "next/navigation";
 
 export default async function EditEmployeePage({ params: { id } }: { params: { id: string } }) {
   const t = await getTranslations("common");

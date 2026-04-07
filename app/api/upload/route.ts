@@ -4,16 +4,9 @@ import { join } from "path";
 import { v4 as uuidv4 } from "uuid";
 
 export async function POST(req: Request) {
-  console.log("POST /api/upload - Triggered");
   try {
     const formData = await req.formData();
     const file = formData.get("file") as File;
-
-    console.log("UPLOAD ATTEMPT:", { 
-      name: file?.name, 
-      size: file?.size, 
-      type: file?.type 
-    });
 
     if (!file) {
       console.error("UPLOAD ERROR: No file in form data");

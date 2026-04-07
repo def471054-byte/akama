@@ -14,9 +14,7 @@ export const authOptions: AuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        console.log("Auth attempt for:", credentials?.email);
         if (!credentials?.email || !credentials?.password) {
-          console.log("Missing credentials");
           throw new Error("Invalid credentials");
         }
 
@@ -25,7 +23,6 @@ export const authOptions: AuthOptions = {
         });
 
         if (!user || !user.password) {
-          console.log("User not found in DB:", credentials.email);
           throw new Error("User not found");
         }
 
@@ -34,10 +31,8 @@ export const authOptions: AuthOptions = {
           user.password
         );
 
-        console.log("Password valid:", isPasswordValid);
 
         if (!isPasswordValid) {
-          console.log("Invalid password for:", credentials.email);
           throw new Error("Invalid password");
         }
 

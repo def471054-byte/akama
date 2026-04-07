@@ -16,7 +16,6 @@ async function main() {
     },
   });
 
-  console.log("Database seeded successfully with initial admin user.");
 }
 
 main()

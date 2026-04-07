@@ -6,4 +6,4 @@ export const toast = ({ title, description, variant }: { title: string; descript
     sonnerToast.success(title, { description });
   }
 }
-export const useToast = () => { return { toast, toasts: [] }; }
+export const useToast = () => { return { toast, toasts: [] as any[] }; }
