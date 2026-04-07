@@ -44,7 +44,11 @@
              <div className="w-[30%] p-6 flex flex-col items-center justify-center shrink-0">
                 <div className="w-36 h-48 bg-[#f8fafc] border-[1.2px] border-black relative overflow-hidden flex items-center justify-center">
                    {employee.photo ? (
-                      <img src={employee.photo} alt="Employee Photo" className="w-full h-full object-cover" />
+                      <img 
+                        src={employee.photo.startsWith('/uploads/') ? employee.photo.replace('/uploads/', '/api/uploads/') : employee.photo} 
+                        alt="Employee Photo" 
+                        className="w-full h-full object-cover" 
+                      />
                    ) : (
                       <div className="text-[10px] text-slate-400 uppercase text-center p-2 font-normal">PHOTO</div>
                    )}

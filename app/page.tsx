@@ -120,7 +120,7 @@ export default async function VerifyPage(props: {
                 <div className="w-full h-full rounded-full overflow-hidden border-[6px] border-white relative shadow-inner">
                   {employee?.photo ? (
                     <img 
-                      src={employee.photo} 
+                      src={employee.photo.startsWith('/uploads/') ? employee.photo.replace('/uploads/', '/api/uploads/') : employee.photo} 
                       alt={employee.name} 
                       className="w-full h-full object-cover m-0" 
                       style={{ transform: 'scale(1.1)' }}

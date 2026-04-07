@@ -125,7 +125,7 @@
                  <div className="flex items-center gap-3">
                    <div className="w-10 h-10 rounded-full overflow-hidden bg-slate-50 border border-slate-100 shrink-0 flex items-center justify-center">
                      {emp.photo ? (
-                       <img src={emp.photo} alt={emp.name} className="w-full h-full object-cover" />
+                       <img src={emp.photo.startsWith("/uploads/") ? emp.photo.replace("/uploads/", "/api/uploads/") : emp.photo} alt={emp.name} className="w-full h-full object-cover" />
                      ) : (
                        <div className="text-[10px] text-slate-400 font-bold uppercase">NA</div>
                      )}

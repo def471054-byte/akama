@@ -35,7 +35,7 @@ export async function POST(req: Request) {
     await writeFile(filePath, buffer);
 
     return NextResponse.json({ 
-      url: `/uploads/${filename}`,
+      url: `/api/uploads/${filename}`,
       success: true 
     });
   } catch (error) {

@@ -90,7 +90,7 @@
        >
          <div className="w-full h-full rounded-2xl bg-slate-100 border-2 border-dashed border-slate-300 flex items-center justify-center overflow-hidden transition-all group-hover:border-[#1e3a5f] group-hover:bg-[#1e3a5f]/5">
            {currentPhoto ? (
-             <img src={`${currentPhoto}?t=${Date.now()}`} alt="Profile" className="w-full h-full object-cover" />
+             <img src={`${currentPhoto.startsWith("/uploads/") ? currentPhoto.replace("/uploads/", "/api/uploads/") : currentPhoto}?t=${Date.now()}`} alt="Profile" className="w-full h-full object-cover" />
            ) : (
              <Camera className="w-10 h-10 text-slate-300" />
            )}
