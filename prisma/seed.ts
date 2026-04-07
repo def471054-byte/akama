@@ -17,6 +17,8 @@ async function main() {
   });
 
 }
+//admin@akama.com
+//524d49ab
 
 main()
   .catch((e) => {

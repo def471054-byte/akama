@@ -119,7 +119,12 @@ export default async function VerifyPage(props: {
               <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-[4px] border-[#c8a45c] p-0.5 bg-white shadow-lg relative z-10 transition-transform duration-500 hover:scale-[1.02]">
                 <div className="w-full h-full rounded-full overflow-hidden border-[6px] border-white relative shadow-inner">
                   {employee?.photo ? (
-                    <Image src={employee.photo} alt={employee.name} fill className="object-cover m-2" />
+                    <img 
+                      src={employee.photo} 
+                      alt={employee.name} 
+                      className="w-full h-full object-cover m-0" 
+                      style={{ transform: 'scale(1.1)' }}
+                    />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-slate-50 text-slate-200">
                       <span className="text-5xl font-black">{employee?.name.charAt(0)}</span>
