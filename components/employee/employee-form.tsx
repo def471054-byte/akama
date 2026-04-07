@@ -37,6 +37,8 @@ export default function EmployeeForm({ initialData, isEdit }: EmployeeFormProps)
       photo,
       issueDate: data.issueDate ? new Date(data.issueDate as string).toISOString() : null,
       expiryDate: data.expiryDate ? new Date(data.expiryDate as string).toISOString() : null,
+      birthDate: data.birthDate ? new Date(data.birthDate as string).toISOString() : null,
+      bloodType: data.bloodType || null,
     };
 
     try {
@@ -112,10 +114,32 @@ export default function EmployeeForm({ initialData, isEdit }: EmployeeFormProps)
              <Input id="designation" name="designation" defaultValue={initialData?.designation} placeholder="eg: Driver, Security" className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
            </div>
 
-           <div className="space-y-2">
-             <Label htmlFor="company" className="text-sm font-bold text-slate-700 uppercase tracking-wide">{f("company")}</Label>
-             <Input id="company" name="company" defaultValue={initialData?.company} placeholder="Company Name" className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
-           </div>
+            <div className="space-y-2">
+              <Label htmlFor="company" className="text-sm font-bold text-slate-700 uppercase tracking-wide">{f("company")}</Label>
+              <Input id="company" name="company" defaultValue={initialData?.company} placeholder="Company Name" className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="birthDate" className="text-sm font-bold text-slate-700 uppercase tracking-wide">{f("birthDate")}</Label>
+              <Input 
+                id="birthDate" 
+                name="birthDate" 
+                type="date" 
+                defaultValue={initialData?.birthDate ? new Date(initialData.birthDate).toISOString().split('T')[0] : ''} 
+                className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" 
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="bloodType" className="text-sm font-bold text-slate-700 uppercase tracking-wide">{f("bloodType")}</Label>
+              <Input 
+                id="bloodType" 
+                name="bloodType" 
+                defaultValue={initialData?.bloodType} 
+                placeholder="eg: A+, O-" 
+                className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" 
+              />
+            </div>
 
            <div className="space-y-2">
              <Label htmlFor="gender" className="text-sm font-bold text-slate-700 uppercase tracking-wide">{t("gender")}</Label>

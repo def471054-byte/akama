@@ -38,6 +38,8 @@ export async function PUT(
         ...updateData,
         issueDate: updateData.issueDate ? new Date(updateData.issueDate) : null,
         expiryDate: updateData.expiryDate ? new Date(updateData.expiryDate) : null,
+        birthDate: updateData.birthDate ? new Date(updateData.birthDate) : null,
+        bloodType: updateData.bloodType || null,
       },
     });
 

@@ -23,7 +23,9 @@
     "backup": "Backup",
     "restore": "Restore",
     "success": "Success",
-    "error": "Error"
+    "error": "Error",
+    "confirm_delete": "Confirm Deletion",
+    "delete_warning": "Are you sure you want to delete this employee record? This action cannot be undone."
   },
   "fields": {
     "phone": "Phone Number",
@@ -37,14 +39,24 @@
     "description": "Description",
     "designation": "Designation",
     "department": "Department",
-    "photo": "Photo"
+    "photo": "Photo",
+    "bloodType": "Blood Type",
+    "birthDate": "Birth Date"
   },
   "verify": {
     "supervision": "Under the supervision of the Supreme Hajj Committee",
     "verifiedStatus": "✅ Verified Employee",
     "personalInfo": "Personal Information",
     "birthDate": "Birth Date",
-    "backToHome": "Back to Home"
+    "backToHome": "Back to Home",
+    "hajjData": "Hajj Permit Data",
+    "permitType": "Permit Type",
+    "permitId": "Permit ID",
+    "entity": "Entity",
+    "serviceProvider": "Service Provider",
+    "companyNumber": "Company Number",
+    "serviceGroup": "Service Group",
+    "instructionNote": "You can now view your Hajj Completion Certificate within the Tawakkalna app. Go to the 'My Information' section, then to 'My Documents' to view the certificate."
   },
   "auth": {
     "login": "Login",

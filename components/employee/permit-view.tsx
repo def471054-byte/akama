@@ -61,7 +61,7 @@
    };
  
    const verificationUrl = typeof window !== 'undefined' 
-     ? `${window.location.origin}/ar?e=${employee.verificationToken}` 
+     ? `${window.location.origin}/?e=${employee.verificationToken}` 
      : "";
  
    return (

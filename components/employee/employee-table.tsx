@@ -31,6 +31,8 @@
    nationality: string;
    verificationToken: string;
    photo?: string;
+   birthDate?: string | Date;
+   bloodType?: string;
  };
  
  export default function EmployeeTable({ employees }: { employees: Employee[] }) {
@@ -47,7 +49,7 @@
    const [isDeleting, setIsDeleting] = useState(false);
  
    const verificationUrl = typeof window !== 'undefined' 
-     ? `${window.location.origin}/ar?e=${selectedToken}` 
+     ? `${window.location.origin}/?e=${selectedToken}` 
      : "";
  
    const handleDelete = async () => {
@@ -150,7 +152,7 @@
                        <div className="flex flex-col items-center p-6 space-y-6">
                          <div className="bg-white p-4 rounded-2xl shadow-inner border border-slate-100">
                            <QRCodeSVG 
-                             value={`${window.location.origin}/ar?e=${selectedToken}`} 
+                             value={`${window.location.origin}/?e=${selectedToken}`} 
                              size={200} 
                              level="H" 
                              includeMargin={false}

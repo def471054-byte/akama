@@ -10862,3 +10862,62 @@ https://react.dev/link/hydration-mismatch
  GET /api/auth/session 200 in 22ms (next.js: 4ms, application-code: 18ms)
  GET /api/auth/session 200 in 9ms (next.js: 1971µs, application-code: 7ms)
  GET /api/auth/session 200 in 6ms (next.js: 820µs, application-code: 6ms)
+Error: Route "/" used `searchParams.e`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at VerifyPage (app/page.tsx:19:30)
+  17 |   const f = await getTranslations("fields");
+  18 |
+> 19 |   const token = searchParams.e;
+     |                              ^
+  20 |
+  21 |   if (!token) {
+  22 |     return (
+ GET / 200 in 52ms (next.js: 4ms, proxy.ts: 4ms, application-code: 43ms)
+ GET /api/auth/session 200 in 8ms (next.js: 2ms, application-code: 6ms)
+ GET /api/auth/session 200 in 8ms (next.js: 1184µs, application-code: 7ms)
+ GET /api/auth/session 200 in 6ms (next.js: 1097µs, application-code: 5ms)
+ GET / 200 in 18ms (next.js: 4ms, proxy.ts: 6ms, application-code: 8ms)
+Error: Route "/" used `searchParams.e`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at VerifyPage (app/page.tsx:19:30)
+  17 |   const f = await getTranslations("fields");
+  18 |
+> 19 |   const token = searchParams.e;
+     |                              ^
+  20 |
+  21 |   if (!token) {
+  22 |     return (
+ GET / 200 in 23ms (next.js: 956µs, proxy.ts: 1575µs, application-code: 21ms)
+ GET / 200 in 19ms (next.js: 5ms, proxy.ts: 7ms, application-code: 7ms)
+Error: Route "/" used `searchParams.e`. `searchParams` is a Promise and must be unwrapped with `await` or `React.use()` before accessing its properties. Learn more: https://nextjs.org/docs/messages/sync-dynamic-apis
+    at VerifyPage (app/page.tsx:19:30)
+  17 |   const f = await getTranslations("fields");
+  18 |
+> 19 |   const token = searchParams.e;
+     |                              ^
+  20 |
+  21 |   if (!token) {
+  22 |     return (
+ GET / 200 in 27ms (next.js: 1979µs, proxy.ts: 3ms, application-code: 21ms)
+ GET /api/auth/session 200 in 22ms (next.js: 8ms, application-code: 14ms)
+ GET /api/auth/session 200 in 9ms (next.js: 1046µs, application-code: 8ms)
+ GET /api/auth/session 200 in 14ms (next.js: 5ms, application-code: 10ms)
+ GET /api/auth/session 200 in 9ms (next.js: 2ms, application-code: 6ms)
+ GET /api/auth/session 200 in 31ms (next.js: 10ms, application-code: 21ms)
+ GET /api/auth/session 200 in 8ms (next.js: 1215µs, application-code: 6ms)
+ GET /api/auth/session 200 in 12ms (next.js: 4ms, application-code: 9ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1118µs, application-code: 6ms)
+ GET /ar?e=_6x3daH8jS7VRSOfEjyvT0kSu2YVa5EuwVuPl2FYbcs 404 in 47ms (next.js: 7ms, proxy.ts: 4ms, application-code: 36ms)
+ GET /api/auth/session 200 in 10ms (next.js: 3ms, application-code: 7ms)
+ GET /api/auth/session 200 in 6ms (next.js: 1045µs, application-code: 5ms)
+ GET /api/auth/session 200 in 6ms (next.js: 829µs, application-code: 5ms)
+ GET /api/auth/session 200 in 16ms (next.js: 6ms, application-code: 11ms)
+ GET /api/auth/session 200 in 11ms (next.js: 1431µs, application-code: 9ms)
+ GET /api/auth/session 200 in 6ms (next.js: 1104µs, application-code: 5ms)
+ GET /api/auth/session 200 in 14ms (next.js: 6ms, application-code: 7ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1211µs, application-code: 6ms)
+ GET /api/auth/session 200 in 7ms (next.js: 1264µs, application-code: 6ms)
+ GET /api/auth/session 200 in 20ms (next.js: 6ms, application-code: 14ms)
+ GET /api/auth/session 200 in 7ms (next.js: 953µs, application-code: 6ms)
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+[browser] Warning: Missing `Description` or `aria-describedby={undefined}` for {DialogContent}.
+ GET /api/auth/session 200 in 18ms (next.js: 6ms, application-code: 12ms)
+ GET /api/auth/session 200 in 8ms (next.js: 1331µs, application-code: 7ms)
