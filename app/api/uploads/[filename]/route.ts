@@ -5,10 +5,10 @@ import { existsSync } from "fs";
 
 export async function GET(
   req: Request,
-  { params }: { params: { filename: string } }
+  { params }: { params: Promise<{ filename: string }> }
 ) {
   try {
-    const { filename } = params;
+    const { filename } = await params;
     
     // 1. Resolve the path to the uploads directory
     // In production, we assume it's in public/uploads relative to project root
