@@ -19,8 +19,8 @@ export default async function VerifyPage(props: {
   const f = await getTranslations("fields");
 
   const token = searchParams.e;
-  // Force RTL/Arabic for the home/error views as requested
-  const isRtl = locale === "ar" || !token; 
+  // Strictly RTL/Arabic as requested
+  const isRtl = true; 
   
   const employee = token 
     ? await prisma.employee.findUnique({ where: { verificationToken: token } })
@@ -47,20 +47,15 @@ export default async function VerifyPage(props: {
                  className={`object-contain ${isRtl ? "object-right" : "object-left"}`} 
                />
             </div>
-            {/* Placeholder for 'How to verify' if not in the image */}
-            {!isRtl && <div className="text-[12px] text-green-700 font-bold hidden sm:block">How to verify ⌵</div>}
         </div>
       </nav>
 
       {/* 2. MAIN NAVY PORTAL HEADER */}
       <header className="bg-[#1e3a5f] h-20 flex items-center px-4 relative z-50 shadow-xl">
         <div className="w-full max-w-7xl mx-auto flex justify-between items-center text-white h-full">
-          {/* Left: Language Selection */}
+          {/* Left: Branding Placeholder */}
           <div className="flex items-center">
-             <div className="flex items-center gap-2 px-4 py-2 rounded-lg border border-white/20 hover:bg-white/10 transition-all cursor-pointer bg-black/5">
-                <span className="text-sm font-bold">{isRtl ? "English" : "العربية"}</span>
-                <Globe className="w-4 h-4 text-white/80" />
-             </div>
+             {/* Strictly Arabic - No Language Switcher */}
           </div>
           
           {/* Right: Tasreeh Identity */}
@@ -100,10 +95,7 @@ export default async function VerifyPage(props: {
 
       {/* 4. FOOTER */}
       <footer className="bg-[#1e3a5f] text-white py-8 relative z-50">
-        <div className="max-w-7xl mx-auto px-10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left opacity-90">
-          <div className="text-[14px] font-sans tracking-wide">
-             Under the supervision of the Supreme Hajj Committee
-          </div>
+        <div className="max-w-7xl mx-auto px-10 flex justify-center items-center opacity-90">
           <div className="text-[16px] font-bold" dir="rtl">
              تحت إشراف لجنة الحج العليا
           </div>
@@ -169,9 +161,7 @@ export default async function VerifyPage(props: {
           
           <div className="bg-white rounded-2xl p-8 shadow-md border border-slate-100 text-center">
              <p className="text-[#1a2d48] font-bold text-xl leading-relaxed">
-                {isRtl 
-                  ? "بإمكانك الآن استعراض شهادة إتمام الحج الخاصة بك داخل تطبيق توكلنا انتقل إلى قسم 'معلوماتي'، ثم إلى 'مستنداتي' للاطلاع على الشهادة."
-                  : "You can now view your Hajj completion certificate in the Tawakkalna application. Go to 'My Info' then 'My Documents'."}
+                بإمكانك الآن استعراض شهادة إتمام الحج الخاصة بك داخل تطبيق توكلنا انتقل إلى قسم "معلوماتي"، ثم إلى "مستنداتي" للاطلاع على الشهادة.
              </p>
           </div>
 
