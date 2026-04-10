@@ -34,6 +34,11 @@ model Employee {
   photo             String?
   bloodType         String?
   birthDate         DateTime?
+  providerEstNumber String?
+  beneficiaryEstName String?
+  beneficiaryEstNumber String?
+  workLocations     String?
+  ajeerId           String?  @unique
   verificationToken String?  @unique
   createdAt         DateTime @default(now())
 }
