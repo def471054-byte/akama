@@ -19,7 +19,7 @@
    DialogFooter
  } from "@/components/ui/dialog";
  import { Button } from "@/components/ui/button";
- import { QrCode, Edit, Trash2, Printer, ExternalLink, AlertCircle, Loader2 } from "lucide-react";
+ import { QrCode, Edit, Trash2, Printer, ExternalLink, AlertCircle, Loader2, FileText } from "lucide-react";
  import { useRouter } from "@/i18n/routing";
  import { QRCodeSVG } from "qrcode.react";
  import { toast } from "@/hooks/use-toast";
@@ -178,9 +178,18 @@
                        </div>
                      </DialogContent>
                    </Dialog>
-                   <Button variant="ghost" size="icon" className="h-8 w-8 text-[#c8a45c] hover:bg-[#c8a45c]/10" onClick={() => router.push(`/dashboard/employees/${emp.id}/permit`)}>
-                     <Printer className="w-4 h-4" />
-                   </Button>
+                    <Button variant="ghost" size="icon" className="h-8 w-8 text-[#c8a45c] hover:bg-[#c8a45c]/10" onClick={() => router.push(`/dashboard/employees/${emp.id}/permit`)}>
+                      <Printer className="w-4 h-4" />
+                    </Button>
+                    <Button 
+                      variant="ghost" 
+                      size="icon" 
+                      className="h-8 w-8 text-emerald-600 hover:bg-emerald-50" 
+                      onClick={() => window.open(`/ajeer/${emp.id}`, "_blank")} 
+                      title="Ajeer Page"
+                    >
+                      <FileText className="w-4 h-4" />
+                    </Button>
                    <Button variant="ghost" size="icon" className="h-8 w-8 text-blue-600 hover:bg-blue-50" onClick={() => router.push(`/dashboard/employees/${emp.id}/edit`)}>
                      <Edit className="w-4 h-4" />
                    </Button>
