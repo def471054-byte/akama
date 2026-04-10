@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { readFile } from "fs/promises";
 import { join } from "path";
 import { existsSync } from "fs";
+import { getUploadDir } from "@/lib/storage";
 
 export async function GET(
   req: Request,
@@ -10,9 +11,9 @@ export async function GET(
   try {
     const { filename } = await params;
     
-    // 1. Resolve the path to the uploads directory
-    // In production, we assume it's in public/uploads relative to project root
-    const uploadDir = join(process.cwd(), "public", "uploads");
+    // 1. Resolve the path using the storage utility
+    // This handles both local dev and production volume mounts
+    const uploadDir = getUploadDir();
     const filePath = join(uploadDir, filename);
 
     // 2. Check if file exists
@@ -40,6 +41,6 @@ export async function GET(
     });
   } catch (error) {
     console.error("IMAGE API ERROR:", error);
-    return new NextResponse("Internal Server Error", { status: 500 });
+    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
 }
