@@ -25,7 +25,10 @@
     "success": "Success",
     "error": "Error",
     "confirm_delete": "Confirm Deletion",
-    "delete_warning": "Are you sure you want to delete this employee record? This action cannot be undone."
+    "delete_warning": "Are you sure you want to delete this employee record? This action cannot be undone.",
+    "dateMode": "Date Format",
+    "gregorian": "Gregorian",
+    "hijri": "Islamic (Hijri)"
   },
   "fields": {
     "phone": "Phone Number",

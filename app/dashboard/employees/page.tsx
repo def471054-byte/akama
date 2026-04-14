@@ -6,6 +6,7 @@ import { Link } from "@/i18n/routing";
 import { Input } from "@/components/ui/input";
 import EmployeeTable from "@/components/employee/employee-table";
 import AdminActions from "@/components/admin/admin-actions";
+import ImportEmployeeDialog from "@/components/employee/import-dialog";
 
 export default async function EmployeesPage() {
   const t = await getTranslations("common");
@@ -22,6 +23,7 @@ export default async function EmployeesPage() {
         </div>
         <div className="flex flex-wrap gap-3">
           <AdminActions />
+          <ImportEmployeeDialog />
           <Link href="/dashboard/employees/create">
             <Button size="lg" className="gap-2 bg-[#1e3a5f] hover:bg-[#162a45] rounded-2xl shadow-xl shadow-blue-900/10 px-6 font-bold uppercase tracking-widest text-xs">
               <Plus className="w-4 h-4" /> 

@@ -28,3 +28,14 @@ body {
 .font-ajeer {
   font-family: var(--font-tajawal), sans-serif !important;
 }
+
+/* Automatically apply Tajawal (Arabic font) to any element containing Arabic text */
+[dir="auto"],
+[lang="ar"] {
+  font-family: var(--font-tajawal), 'Noto Sans Arabic', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Ensure Arabic Unicode range renders correctly even without explicit dir attribute */
+body {
+  font-family: var(--font-outfit), var(--font-inter), var(--font-tajawal), Arial, Helvetica, sans-serif;
+}

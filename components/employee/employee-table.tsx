@@ -152,7 +152,7 @@
                        <div className="flex flex-col items-center p-6 space-y-6">
                          <div className="bg-white p-4 rounded-2xl shadow-inner border border-slate-100">
                            <QRCodeSVG 
-                             value={`${window.location.origin}/?e=${selectedToken}`} 
+                             value={`${typeof window !== 'undefined' ? window.location.origin : ''}/?e=${selectedToken}`} 
                              size={200} 
                              level="H" 
                              includeMargin={false}
