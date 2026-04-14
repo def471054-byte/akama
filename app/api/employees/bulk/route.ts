@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { Prisma } from "@prisma/client";
 import crypto from "crypto";
 import moment from "moment-hijri";
 
@@ -60,10 +61,9 @@ export async function POST(req: Request) {
           // Normalise 'workLocation' (CSV header) → 'workLocations' (schema field)
           const workLocations = emp.workLocations || emp.workLocation || null;
 
-          const data: Record<string, unknown> = {
-            // Sanitize every text field to remove invisible Unicode chars
-            // that corrupt Arabic text when stored in MongoDB
-            name:                  sanitizeString(emp.name),
+          const data: Prisma.EmployeeUncheckedCreateInput = {
+            // name is required in the schema — fall back to empty string if CSV is blank
+            name:                  sanitizeString(emp.name) ?? "",
             photo:                 sanitizeString(emp.photo),
             idNumber:              sanitizeString(emp.idNumber),
             nationality:           sanitizeString(emp.nationality),
@@ -81,7 +81,7 @@ export async function POST(req: Request) {
             beneficiaryEstName:    sanitizeString(emp.beneficiaryEstName),
             beneficiaryEstNumber:  sanitizeString(emp.beneficiaryEstNumber),
             permitNumber:          sanitizeString(emp.permitNumber),
-            workLocations,
+            workLocations:         sanitizeString(workLocations),
             ajeerId,
             verificationToken,
             issueDate:  parseDate(emp.issueDate,  dateMode),
