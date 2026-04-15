@@ -52,7 +52,7 @@
      });
      
      const imgProps = pdf.getImageProperties(imgData);
-     const margin = 12.7; // 0.5 inches in mm
+     const margin = 5; // Reduced margin for larger scale
      const pdfWidth = pdf.internal.pageSize.getWidth() - (margin * 2);
      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
      
@@ -89,7 +89,7 @@
        <div 
          ref={pdfCaptureRef}
          dir="rtl"
-         className="absolute left-[-9999px] top-0 w-[800px] bg-white p-10"
+         className="absolute left-[-9999px] top-0 w-[800px] bg-white p-0"
          style={{ color: "#000" }}
        >
           <PermitTemplate employee={employee} verificationUrl={verificationUrl} isPdf={true} />
