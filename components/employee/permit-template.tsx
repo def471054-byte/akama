@@ -17,12 +17,9 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
   const boldValueClass = `flex-1 p-3 text-center flex items-center justify-center uppercase ${isPdf ? 'text-[14px] font-normal' : 'text-[15px] font-bold'}`;
 
   return (
-    <div className="w-full bg-white font-ajeer p-6">
-      {/* Outer Card Wrapper */}
-      <div className={`border-[1px] border-gray-300 rounded-[24px] shadow-sm bg-white overflow-hidden ${isPdf ? 'pb-10' : 'pb-6'}`}>
-        
-        {/* 1. Main Table Wrapper */}
-        <div className="border-[1px] border-gray-900 bg-white mx-5 mt-5 overflow-hidden rounded-xl">
+    <div className="w-full bg-white font-ajeer pb-12">
+      {/* 1. Main Table Wrapper */}
+      <div className="border-[1.5px] border-black bg-white mx-4 mt-4 overflow-hidden">
          {/* Header Grid Row */}
          <div 
            className="flex justify-between items-stretch bg-white min-h-[220px] border-b-[1px] border-black text-black"
@@ -104,7 +101,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
       </div>
 
        {/* 2. Purpose Table */}
-       <div className="border-[1px] border-gray-900 bg-white mx-5 mt-6 overflow-hidden text-black text-[14px] rounded-xl">
+       <div className="border-[1.5px] border-t-0 border-black bg-white mx-4 overflow-hidden text-black text-[14px]">
          <div className="flex border-b-[1px] border-black min-h-[50px]">
              <div className={labelClass}>غرض التصريح</div>
              <div className="flex-1 p-3 text-center flex items-center justify-center text-[14px] font-normal">{employee.purpose || "عمل دائم"}</div>
@@ -119,7 +116,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
 
        {/* 3. Instructions & QR Section */}
        <div 
-         className={`border-[1px] border-gray-900 bg-white mx-5 mt-6 flex justify-between items-center text-black rounded-xl`}
+         className={`border-[1.5px] border-t-0 border-black bg-white mx-4 flex justify-between items-center text-black`}
          style={isPdf ? { padding: '15px', minHeight: '180px' } : { padding: '24px', minHeight: '160px' }}
        >
          <div className="flex-1 text-right">
@@ -146,11 +143,10 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
       </div>
 
        {/* 4. Print Metadata */}
-       <div className={`mt-6 flex justify-end items-center text-[12px] font-normal text-gray-600 px-6 gap-2`}>
+       <div className={`mt-4 flex justify-end items-center text-[13px] font-normal text-black px-4 gap-2`}>
           <span>{new Date().toISOString().split('T')[0]}</span>
           <span className="font-bold">:تاريخ الطباعة</span>
        </div>
-      </div>
     </div>
   );
 }

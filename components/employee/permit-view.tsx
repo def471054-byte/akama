@@ -52,7 +52,7 @@
      });
      
      const imgProps = pdf.getImageProperties(imgData);
-     const margin = 8; // Increased margin to create the "framed" card look from reference
+     const margin = 4; // Reduced margin to maximize page fit
      const pdfWidth = pdf.internal.pageSize.getWidth() - (margin * 2);
      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
      
@@ -88,7 +88,7 @@
        <div 
          ref={pdfCaptureRef}
          dir="rtl"
-         className="absolute left-[-9999px] top-0 w-[750px] bg-white p-0"
+         className="absolute left-[-9999px] top-0 w-[800px] bg-white p-0"
          style={{ color: "#000" }}
        >
           <PermitTemplate employee={employee} verificationUrl={verificationUrl} isPdf={true} />
