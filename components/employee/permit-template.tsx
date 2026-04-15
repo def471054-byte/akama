@@ -101,7 +101,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
       </div>
 
       {/* PDF GAP 1: Physical Spacer Div */}
-      <div className={isPdf ? "h-[30px]" : "h-8"} />
+      <div className={isPdf ? "h-[20px]" : "h-6"} />
 
       {/* 2. Purpose Table */}
       <div className="border-[1px] border-gray-900 bg-white mx-4 overflow-hidden text-black text-[14px]">
@@ -118,7 +118,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
       </div>
 
       {/* PDF GAP 2: Physical Spacer Div */}
-      <div className={isPdf ? "h-[30px]" : "h-8"} />
+      <div className={isPdf ? "h-[20px]" : "h-6"} />
 
       {/* 3. Instructions & QR Section */}
       <div 
@@ -155,13 +155,10 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
       </div>
 
       {/* 4. Print Metadata */}
-      <div className={`${isPdf ? 'mt-8 pb-48' : 'mt-4 pb-10'} flex justify-start text-[14px] font-normal text-black px-4 gap-2 leading-loose`}>
+      <div className={`${isPdf ? 'mt-8 pb-10' : 'mt-4 pb-10'} flex justify-start text-[14px] font-normal text-black px-4 gap-2 leading-loose`}>
          <span>تاريخ الطباعة:</span>
          <span>{new Date().toISOString().split('T')[0]}</span>
       </div>
-
-      {/* Final Safety Gap for PDF height capture */}
-      {isPdf && <div className="h-20" />}
     </div>
   );
 }
