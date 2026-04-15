@@ -1,13 +1,6 @@
 "use client";
 
-import { Almarai } from "next/font/google";
 import { QRCodeSVG } from "qrcode.react";
-
-const almarai = Almarai({ 
-  weight: ['400', '700', '800'],
-  subsets: ['arabic'],
-  display: 'swap',
-});
 
 type PermitTemplateProps = {
   employee: any;
@@ -19,17 +12,17 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
   const labelWidth = "w-[22%] shrink-0";
   
   // Helper classes to ensure PDF consistency
-  const labelClass = `${labelWidth} p-3 bg-white border-l-[1.5px] border-black text-center flex items-center justify-center text-[14px] ${isPdf ? 'font-normal' : 'font-bold'}`;
+  const labelClass = `${labelWidth} p-3 bg-white border-l-[1px] border-black text-center flex items-center justify-center text-[14px] ${isPdf ? 'font-normal' : 'font-bold'}`;
   const valueClass = `flex-1 p-3 text-center flex items-center justify-center ${isPdf ? 'text-[14px] font-normal' : 'text-[16px] font-normal'}`;
   const boldValueClass = `flex-1 p-3 text-center flex items-center justify-center uppercase ${isPdf ? 'text-[14px] font-normal' : 'text-[15px] font-bold'}`;
 
   return (
-    <div className={`${almarai.className} w-full bg-white`}>
+    <div className="w-full bg-white font-ajeer">
       {/* 1. Main Table Wrapper */}
-      <div className="border-[1.5px] border-gray-900 bg-white mx-4 mt-4 overflow-hidden">
+      <div className="border-[1px] border-gray-900 bg-white mx-4 mt-4 overflow-hidden">
          {/* Header Grid Row */}
          <div 
-           className="flex justify-between items-stretch bg-white min-h-[220px] border-b-[1.5px] border-black text-black"
+           className="flex justify-between items-stretch bg-white min-h-[220px] border-b-[1px] border-black text-black"
            style={isPdf ? { paddingLeft: '20px', paddingRight: '20px' } : { paddingLeft: '16px', paddingRight: '16px' }}
          >
             <div className="w-[30%] py-4 flex flex-col items-start justify-center shrink-0">
@@ -45,7 +38,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
             </div>
 
             <div className="w-[30%] py-4 flex flex-col items-end justify-center shrink-0">
-               <div className="w-36 h-48 bg-[#f8fafc] border-[1.2px] border-black relative overflow-hidden flex items-center justify-center">
+               <div className="w-36 h-48 bg-[#e6e6e6] border-[1px] p-[1px] border-black relative overflow-hidden flex items-center justify-center">
                   {employee.photo ? (
                      <img 
                        src={employee.photo.startsWith('/uploads/') ? employee.photo.replace('/uploads/', '/api/uploads/') : employee.photo} 
@@ -70,9 +63,9 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
             <div className={boldValueClass}>{employee.name}</div>
          </div>
 
-         <div className="flex border-b-[1.5px] border-black min-h-[50px] text-black">
+         <div className="flex border-b-[1px] border-black min-h-[50px] text-black">
             <div className={labelClass}>تاريخ اصدار التصريح</div>
-            <div className={`w-[28%] p-3 text-center flex items-center justify-center border-l-[1.5px] border-black font-normal ${isPdf ? 'text-[14px]' : 'text-[13px]'}`}>
+            <div className={`w-[28%] p-3 text-center flex items-center justify-center border-l-[1px] border-black font-normal ${isPdf ? 'text-[14px]' : 'text-[13px]'}`}>
                {employee.issueDate ? new Date(employee.issueDate).toLocaleDateString('en-GB').replace(/\//g, '-') : '20-09-2025'}
             </div>
             <div className={labelClass}>تاريخ انتهاء التصريح</div>
@@ -111,13 +104,13 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
       <div className={isPdf ? "h-[30px]" : "h-8"} />
 
       {/* 2. Purpose Table */}
-      <div className="border-[1.5px] border-gray-900 bg-white mx-4 overflow-hidden text-black text-[14px]">
-         <div className="flex border-b-[1.5px] border-black min-h-[50px]">
+      <div className="border-[1px] border-gray-900 bg-white mx-4 overflow-hidden text-black text-[14px]">
+         <div className="flex border-b-[1px] border-black min-h-[50px]">
              <div className={labelClass}>غرض التصريح</div>
              <div className="flex-1 p-3 text-center flex items-center justify-center text-[14px] font-normal">{employee.purpose || "عمل دائم"}</div>
          </div>
          <div className="flex min-h-[70px]">
-             <div className={`${labelWidth} p-4 bg-white border-l-[1.5px] border-black text-center flex items-center justify-center leading-tight text-[14px] ${isPdf ? 'font-normal' : 'font-bold'}`}>وصف غرض التصريح</div>
+             <div className={`${labelWidth} p-4 bg-white border-l-[1px] border-black text-center flex items-center justify-center leading-tight text-[14px] ${isPdf ? 'font-normal' : 'font-bold'}`}>وصف غرض التصريح</div>
              <div className="flex-1 p-4 text-right leading-relaxed flex items-center justify-center text-[14px] font-normal">
                 {employee.description || "السلام عليكم نامل من سعادتكم اصدار تصاريح للعمال علما بانه مقر الشركة داخل مكة"}
              </div>
@@ -129,7 +122,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
 
       {/* 3. Instructions & QR Section */}
       <div 
-        className={`border-[1.5px] border-gray-900 bg-white mx-4 flex justify-between items-center text-black`}
+        className={`border-[1px] border-gray-900 bg-white mx-4 flex justify-between items-center text-black`}
         style={isPdf ? { padding: '15px', minHeight: '180px' } : { padding: '24px', minHeight: '160px' }}
       >
          <div className="flex-1 text-right">
@@ -144,12 +137,20 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
            className="bg-white shrink-0"
            style={{ marginLeft: isPdf ? '0px' : '0px' }}
          >
-            <QRCodeSVG 
+            {/* <QRCodeSVG 
               value={verificationUrl} 
               size={isPdf ? 170 : 180} 
               level="L" 
               includeMargin={true}
-            />
+            /> */}
+            {verificationUrl && (
+              <QRCodeSVG 
+                 value={verificationUrl} 
+                 size={180} 
+                 level="L" 
+                 includeMargin={false}
+              />
+            )}
          </div>
       </div>
 

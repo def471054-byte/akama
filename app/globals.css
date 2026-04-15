@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* ─── DIN Next LT Arabic — self-hosted from public/fonts/ ─── */
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  src: url("/fonts/DIN Next LT Arabic Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -22,20 +31,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-outfit), var(--font-inter), Arial, Helvetica, sans-serif;
 }
 
+/* Arabic text elements — uses DIN Next LT Arabic with Tajawal as fallback */
 .font-ajeer {
-  font-family: var(--font-tajawal), sans-serif !important;
+  font-family: "DIN Next LT Arabic", var(--font-tajawal), sans-serif !important;
 }
 
-/* Automatically apply Tajawal (Arabic font) to any element containing Arabic text */
 [dir="auto"],
+[dir="rtl"],
 [lang="ar"] {
-  font-family: var(--font-tajawal), 'Noto Sans Arabic', 'Segoe UI', Arial, sans-serif;
-}
-
-/* Ensure Arabic Unicode range renders correctly even without explicit dir attribute */
-body {
-  font-family: var(--font-outfit), var(--font-inter), var(--font-tajawal), Arial, Helvetica, sans-serif;
+  font-family: "DIN Next LT Arabic", var(--font-tajawal), 'Noto Sans Arabic', Arial, sans-serif;
 }

@@ -1,18 +1,13 @@
 "use client";
  
- import { useRef } from "react";
- import { Almarai } from "next/font/google";
+ import { useRef, useState, useEffect } from "react";
  import { Button } from "@/components/ui/button";
  import { Download } from "lucide-react";
  import html2canvas from "html2canvas";
  import jsPDF from "jspdf";
  import PermitTemplate from "./permit-template";
  
- const almarai = Almarai({ 
-   weight: ['400', '700', '800'],
-   subsets: ['arabic'],
-   display: 'swap',
- });
+ 
  
  type PermitViewProps = {
    employee: any;
@@ -20,6 +15,11 @@
  
  export default function PermitView({ employee }: PermitViewProps) {
    const pdfCaptureRef = useRef<HTMLDivElement>(null);
+   const [mounted, setMounted] = useState(false);
+
+   useEffect(() => {
+     setMounted(true);
+   }, []);
  
    const downloadPDF = async () => {
      if (!pdfCaptureRef.current) return;
@@ -57,15 +57,15 @@
      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
      
      pdf.addImage(imgData, "PNG", margin, margin, pdfWidth, pdfHeight);
-     pdf.save(`Permit_${employee.name.replace(/\s+/g, "_")}.pdf`);
+     pdf.save(`${employee.idNumber || "Permit"}.pdf`);
    };
  
-   const verificationUrl = typeof window !== 'undefined' 
+   const verificationUrl = mounted 
      ? `${window.location.origin}/?e=${employee.verificationToken}` 
      : "";
  
    return (
-     <div className={`flex flex-col items-center gap-8 py-10 bg-[#f1f5f9] min-h-screen ${almarai.className} print-page-root`}>
+     <div className={`flex flex-col items-center gap-8 py-10 bg-[#f1f5f9] min-h-screen font-ajeer print-page-root`}>
        {/* 1. Action Buttons: Not Visible during Print */}
        <div className="flex gap-4 no-print">
          <Button 
