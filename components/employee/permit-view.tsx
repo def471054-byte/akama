@@ -52,7 +52,7 @@
      });
      
      const imgProps = pdf.getImageProperties(imgData);
-     const margin = 4; // Reduced margin to maximize page fit
+     const margin = 15; // Increased margin for the "floating card" look from reference
      const pdfWidth = pdf.internal.pageSize.getWidth() - (margin * 2);
      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
      
@@ -88,7 +88,7 @@
        <div 
          ref={pdfCaptureRef}
          dir="rtl"
-         className="absolute left-[-9999px] top-0 w-[800px] bg-white p-0"
+         className="absolute left-[-9999px] top-0 w-[850px] bg-white p-0"
          style={{ color: "#000" }}
        >
           <PermitTemplate employee={employee} verificationUrl={verificationUrl} isPdf={true} />
