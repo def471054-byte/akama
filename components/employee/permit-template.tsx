@@ -161,7 +161,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
       </div>
 
       {/* Final Safety Gap for PDF height capture */}
-      {isPdf && <div className="h-16" />}
+      {isPdf && <div className="h-20" />}
     </div>
   );
 }
