@@ -17,9 +17,12 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
   const boldValueClass = `flex-1 p-3 text-center flex items-center justify-center uppercase ${isPdf ? 'text-[14px] font-normal' : 'text-[15px] font-bold'}`;
 
   return (
-    <div className="w-full bg-white font-ajeer">
-      {/* 1. Main Table Wrapper */}
-      <div className="border-[1px] border-gray-900 bg-white mx-4 mt-4 overflow-hidden">
+    <div className="w-full bg-white font-ajeer p-6">
+      {/* Outer Card Wrapper */}
+      <div className={`border-[1px] border-gray-300 rounded-[24px] shadow-sm bg-white overflow-hidden ${isPdf ? 'pb-10' : 'pb-6'}`}>
+        
+        {/* 1. Main Table Wrapper */}
+        <div className="border-[1px] border-gray-900 bg-white mx-5 mt-5 overflow-hidden rounded-xl">
          {/* Header Grid Row */}
          <div 
            className="flex justify-between items-stretch bg-white min-h-[220px] border-b-[1px] border-black text-black"
@@ -100,11 +103,8 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          </div>
       </div>
 
-      {/* PDF GAP 1: Physical Spacer Div */}
-      <div className={isPdf ? "h-[20px]" : "h-6"} />
-
-      {/* 2. Purpose Table */}
-      <div className="border-[1px] border-gray-900 bg-white mx-4 overflow-hidden text-black text-[14px]">
+       {/* 2. Purpose Table */}
+       <div className="border-[1px] border-gray-900 bg-white mx-5 mt-6 overflow-hidden text-black text-[14px] rounded-xl">
          <div className="flex border-b-[1px] border-black min-h-[50px]">
              <div className={labelClass}>غرض التصريح</div>
              <div className="flex-1 p-3 text-center flex items-center justify-center text-[14px] font-normal">{employee.purpose || "عمل دائم"}</div>
@@ -117,14 +117,11 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          </div>
       </div>
 
-      {/* PDF GAP 2: Physical Spacer Div */}
-      <div className={isPdf ? "h-[20px]" : "h-6"} />
-
-      {/* 3. Instructions & QR Section */}
-      <div 
-        className={`border-[1px] border-gray-900 bg-white mx-4 flex justify-between items-center text-black`}
-        style={isPdf ? { padding: '15px', minHeight: '180px' } : { padding: '24px', minHeight: '160px' }}
-      >
+       {/* 3. Instructions & QR Section */}
+       <div 
+         className={`border-[1px] border-gray-900 bg-white mx-5 mt-6 flex justify-between items-center text-black rounded-xl`}
+         style={isPdf ? { padding: '15px', minHeight: '180px' } : { padding: '24px', minHeight: '160px' }}
+       >
          <div className="flex-1 text-right">
             <div className={`mb-3 ${isPdf ? 'text-[14px] font-normal' : 'text-[18px] font-bold'}`}>التعليمات:</div>
             <ul className="space-y-2 list-none text-[14px] font-normal leading-relaxed">
@@ -137,12 +134,6 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
            className="bg-white shrink-0"
            style={{ marginLeft: isPdf ? '0px' : '0px' }}
          >
-            {/* <QRCodeSVG 
-              value={verificationUrl} 
-              size={isPdf ? 170 : 180} 
-              level="L" 
-              includeMargin={true}
-            /> */}
             {verificationUrl && (
               <QRCodeSVG 
                  value={verificationUrl} 
@@ -154,14 +145,12 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          </div>
       </div>
 
-      {/* 4. Print Metadata */}
-      <div className={`${isPdf ? 'mt-8 pb-10' : 'mt-4 pb-10'} flex justify-start text-[14px] font-normal text-black px-4 gap-2 leading-loose`}>
-         <span>تاريخ الطباعة:</span>
-         <span>{new Date().toISOString().split('T')[0]}</span>
+       {/* 4. Print Metadata */}
+       <div className={`mt-6 flex justify-end items-center text-[12px] font-normal text-gray-600 px-6 gap-2`}>
+          <span>{new Date().toISOString().split('T')[0]}</span>
+          <span className="font-bold">:تاريخ الطباعة</span>
+       </div>
       </div>
-
-      {/* Final Safety Gap for PDF height capture */}
-      {isPdf && <div className="h-20" />}
     </div>
   );
 }

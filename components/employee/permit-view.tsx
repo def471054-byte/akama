@@ -52,7 +52,7 @@
      });
      
      const imgProps = pdf.getImageProperties(imgData);
-     const margin = 2; // Further reduced margin for maximum scale
+     const margin = 8; // Increased margin to create the "framed" card look from reference
      const pdfWidth = pdf.internal.pageSize.getWidth() - (margin * 2);
      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
      
@@ -79,17 +79,16 @@
        {/* 2. Compact View: Visible on screen */}
        <div 
          dir="rtl"
-         className="w-[800px] bg-white border-[1px] border-[#94a3b8] shadow-sm overflow-hidden relative"
-         style={{ color: "#000" }}
+         className="w-[850px] bg-[#f1f5f9] p-8 shadow-none"
        >
           <PermitTemplate employee={employee} verificationUrl={verificationUrl} isPdf={false} />
        </div>
  
-       {/* 3. Ghost View: Specifically for PDF Export (Hidden off-screen with forced gaps and padding) */}
+       {/* 3. Ghost View: Specifically for PDF Export (Width reduced to force larger relative scale on PDF) */}
        <div 
          ref={pdfCaptureRef}
          dir="rtl"
-         className="absolute left-[-9999px] top-0 w-[700px] bg-white p-0"
+         className="absolute left-[-9999px] top-0 w-[750px] bg-white p-0"
          style={{ color: "#000" }}
        >
           <PermitTemplate employee={employee} verificationUrl={verificationUrl} isPdf={true} />
