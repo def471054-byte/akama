@@ -12,9 +12,9 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
   const labelWidth = "w-[22%] shrink-0";
   
   // Helper classes to ensure PDF consistency
-  const labelClass = `${labelWidth} p-3 bg-white border-l-[1px] border-black text-center flex items-center justify-center text-[14px] ${isPdf ? 'font-normal' : 'font-bold'}`;
-  const valueClass = `flex-1 p-3 text-center flex items-center justify-center ${isPdf ? 'text-[14px] font-normal' : 'text-[16px] font-normal'}`;
-  const boldValueClass = `flex-1 p-3 text-center flex items-center justify-center uppercase ${isPdf ? 'text-[14px] font-normal' : 'text-[15px] font-bold'}`;
+  const labelClass = `${labelWidth} ${isPdf ? 'pt-[11px] pb-[13px]' : 'p-3'} bg-white border-l-[1px] border-black text-center flex items-center justify-center leading-none text-[14px] ${isPdf ? 'font-normal' : 'font-bold'}`;
+  const valueClass = `flex-1 ${isPdf ? 'pt-[11px] pb-[13px]' : 'p-3'} text-center flex items-center justify-center leading-none ${isPdf ? 'text-[14px] font-normal' : 'text-[16px] font-normal'}`;
+  const boldValueClass = `flex-1 ${isPdf ? 'pt-[11px] pb-[13px]' : 'p-3'} text-center flex items-center justify-center uppercase leading-none ${isPdf ? 'text-[14px] font-normal' : 'text-[15px] font-bold'}`;
 
   return (
     <div className={`w-full bg-white font-ajeer ${isPdf ? 'pb-20' : 'p-6'}`}>
@@ -53,9 +53,9 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          </div>
 
          {/* Data Rows */}
-         <div className="flex border-b-[1px] border-black min-h-[50px] text-black">
+         <div className="flex border-b-[1px] border-black min-h-[60px] text-black">
             <div className={labelClass}>رقم التصريح</div>
-            <div className={`flex-1 p-3 text-center tracking-[0.1em] flex items-center justify-center font-normal ${isPdf ? 'text-[14px]' : 'text-[16px]'}`}>{employee.permitNumber || "208"}</div>
+            <div className={`flex-1 ${isPdf ? 'pt-[11px] pb-[13px]' : 'p-3'} text-center tracking-[0.1em] flex items-center justify-center leading-none font-normal ${isPdf ? 'text-[14px]' : 'text-[16px]'}`}>{employee.permitNumber || "208"}</div>
          </div>
 
          <div className="flex border-b-[1px] border-black min-h-[50px] text-black">
@@ -65,7 +65,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
 
          <div className="flex border-b-[1px] border-black min-h-[50px] text-black">
             <div className={labelClass}>تاريخ اصدار التصريح</div>
-            <div className={`w-[28%] p-3 text-center flex items-center justify-center border-l-[1px] border-black font-normal ${isPdf ? 'text-[14px]' : 'text-[13px]'}`}>
+            <div className={`w-[28%] ${isPdf ? 'pt-[11px] pb-[13px]' : 'p-3'} text-center flex items-center justify-center border-l-[1px] border-black leading-none font-normal ${isPdf ? 'text-[14px]' : 'text-[13px]'}`}>
                {employee.issueDate ? new Date(employee.issueDate).toLocaleDateString('en-GB').replace(/\//g, '-') : '20-09-2025'}
             </div>
             <div className={labelClass}>تاريخ انتهاء التصريح</div>
