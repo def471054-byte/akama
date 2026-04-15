@@ -19,10 +19,10 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
   return (
     <div className={`w-full bg-white font-ajeer ${isPdf ? 'pb-10 p-4' : 'p-8'}`}>
       {/* Outer Card Wrapper - To match the "framed" card look */}
-      <div className="border-[1.2px] border-gray-300 rounded-lg bg-white overflow-hidden shadow-sm">
+      <div className="border-[1.2px] border-gray-300 bg-white overflow-hidden shadow-sm">
         
         {/* 1. Main Table Section */}
-        <div className="border-[1.5px] border-black bg-white mx-5 mt-5 overflow-hidden rounded-md">
+        <div className="border-[1.5px] border-black bg-white mx-5 mt-5 overflow-hidden">
            {/* Header Grid Row: Photo Left, Logos Right */}
            <div 
              className="flex flex-row-reverse justify-between items-stretch bg-white min-h-[220px] border-b-[1.5px] border-black text-black"
@@ -44,7 +44,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
 
               {/* Photo (Far Left) */}
               <div className="w-[30%] py-4 flex flex-col items-start justify-center shrink-0">
-                 <div className="w-36 h-48 bg-[#f8fafc] border-[1.2px] p-[1px] border-gray-400 relative overflow-hidden flex items-center justify-center rounded-sm">
+                 <div className="w-36 h-48 bg-[#f8fafc] border-[1.2px] p-[1px] border-gray-400 relative overflow-hidden flex items-center justify-center">
                     {employee.photo ? (
                        <img 
                          src={employee.photo.startsWith('/uploads/') ? employee.photo.replace('/uploads/', '/api/uploads/') : employee.photo} 
@@ -109,7 +109,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
         <div className="h-10" />
 
          {/* 2. Purpose Table Section */}
-         <div className="border-[1.5px] border-black bg-white mx-5 overflow-hidden text-black text-[14px] rounded-md">
+         <div className="border-[1.5px] border-black bg-white mx-5 overflow-hidden text-black text-[14px]">
            <div className="flex border-b-[1.5px] border-black min-h-[52px]">
                <div className={labelClass}>غرض التصريح</div>
                <div className="flex-1 p-3 text-center flex items-center justify-center text-[14px] font-normal">{employee.purpose || "عمل دائم"}</div>
@@ -126,7 +126,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
 
          {/* 3. Instructions & QR Section */}
          <div 
-           className="border-[1.5px] border-black bg-white mx-5 flex flex-row items-center text-black rounded-md overflow-hidden"
+           className="border-[1.5px] border-black bg-white mx-5 flex flex-row items-center text-black overflow-hidden"
            style={isPdf ? { padding: '15px', minHeight: '180px' } : { padding: '24px', minHeight: '160px' }}
          >
            <div 
