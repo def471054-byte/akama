@@ -38,7 +38,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
             </div>
 
             <div className="w-[30%] py-4 flex flex-col items-end justify-center shrink-0">
-               <div className="w-36 h-48 bg-[#e6e6e6] border-[1px] p-[1px] border-black relative overflow-hidden flex items-center justify-center">
+               <div className="w-36 h-48 bg-[#e6e6e6] border-[1px] border-gray-300 p-[1px] border-black relative overflow-hidden flex items-center justify-center">
                   {employee.photo ? (
                      <img 
                        src={employee.photo.startsWith('/uploads/') ? employee.photo.replace('/uploads/', '/api/uploads/') : employee.photo} 
@@ -100,7 +100,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          </div>
       </div>
 
-      <div className={isPdf ? "h-[25px]" : "h-8"} />
+      <div className={isPdf ? "h-[30px]" : "h-8"} />
 
        {/* 2. Purpose Table */}
        <div className="border-[1px] border-black bg-white mx-4 overflow-hidden text-black text-[14px]">
@@ -108,7 +108,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
              <div className={labelClass}>غرض التصريح</div>
              <div className="flex-1 p-3 text-center flex items-center justify-center text-[14px] font-normal">{employee.purpose || "عمل دائم"}</div>
          </div>
-         <div className="flex min-h-[70px]">
+         <div className="flex min-h-[80px]">
              <div className={`${labelWidth} p-4 bg-white border-l-[1px] border-black text-center flex items-center justify-center leading-tight text-[14px] ${isPdf ? 'font-normal' : 'font-bold'}`}>وصف غرض التصريح</div>
              <div className="flex-1 p-4 text-right leading-relaxed flex items-center justify-center text-[14px] font-normal">
                 {employee.description || "السلام عليكم نامل من سعادتكم اصدار تصاريح للعمال علما بانه مقر الشركة داخل مكة"}
@@ -116,7 +116,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          </div>
       </div>
 
-      <div className={isPdf ? "h-[20px]" : "h-4"} />
+      <div className={isPdf ? "h-[25px]" : "h-4"} />
 
        {/* 3. Instructions & QR Section */}
        <div 
@@ -124,8 +124,8 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          style={isPdf ? { padding: '15px', minHeight: '180px' } : { padding: '24px', minHeight: '160px' }}
        >
          <div className="flex-1 text-right">
-            <div className={`mb-3 ${isPdf ? 'text-[14px] font-normal' : 'text-[18px] font-bold'}`}>التعليمات:</div>
-            <ul className="space-y-2 list-none text-[14px] font-normal leading-relaxed">
+            <div className={`mb-3 text-[16px] font-bold`}>التعليمات:</div>
+            <ul className="space-y-2 list-none text-[15px] font-normal leading-relaxed">
               <li className="text-right">1. يجب إلصاق صورة حامل التصريح 6x4 (في حال عدم وجودها آلياً) ووضع ختم المنشأة عليها.</li>
               <li className="text-right">2. تتعهد الشركة / المؤسسة بعدم السماح لحامل هذا التصريح بأداء فريضة الحج.</li>
               <li className="text-right">3. يجب إبراز تصريح التنقل والهوية لدى النقاط الأمنية.</li>
@@ -147,10 +147,12 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
       </div>
 
        {/* 4. Print Metadata */}
-       <div className={`mt-8 mb-4 flex justify-end items-center text-[13px] font-normal text-black px-4 gap-2`} dir="rtl">
+       <div className={`mt-4 mb-4 pb-4 flex justify-start items-center text-[14px] font-normal text-black px-4 gap-2`} dir="rtl">
           <span className="font-bold">تاريخ الطباعة:</span>
           <span>{new Date().toISOString().split('T')[0]}</span>
        </div>
+      <div className={isPdf ? "h-[20px]" : "h-4"} />
+
     </div>
   );
 }
