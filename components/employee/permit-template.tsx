@@ -120,12 +120,12 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
 
        {/* 3. Instructions & QR Section */}
        <div 
-         className={`border-[1px] border-black bg-white mx-4 flex justify-between items-center text-black`}
-         style={isPdf ? { padding: '15px', minHeight: '180px' } : { padding: '24px', minHeight: '160px' }}
+         className={`border-[1px] border-black bg-white mx-4 flex justify-between items-start text-black`}
+         style={{ padding: '15px 25px', minHeight: '150px'}}
        >
          <div className="flex-1 text-right">
-            <div className={`mb-3 text-[16px] font-bold`}>التعليمات:</div>
-            <ul className="space-y-2 list-none text-[15px] font-normal leading-relaxed">
+            <div className={`mb-3 text-[18px] font-bold`}>التعليمات:</div>
+            <ul className="space-y-2 list-none text-[17px] font-normal leading-relaxed">
               <li className="text-right">1. يجب إلصاق صورة حامل التصريح 6x4 (في حال عدم وجودها آلياً) ووضع ختم المنشأة عليها.</li>
               <li className="text-right">2. تتعهد الشركة / المؤسسة بعدم السماح لحامل هذا التصريح بأداء فريضة الحج.</li>
               <li className="text-right">3. يجب إبراز تصريح التنقل والهوية لدى النقاط الأمنية.</li>

@@ -52,11 +52,12 @@
      });
      
      const imgProps = pdf.getImageProperties(imgData);
-     const margin = 5; // Reduced margin to fill more of the page
+     const margin = 6; // Horizontal margin
+     const topMargin = 12.7; // Precise 0.5 inch top margin
      const pdfWidth = pdf.internal.pageSize.getWidth() - (margin * 2);
      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
      
-     pdf.addImage(imgData, "PNG", margin, margin, pdfWidth, pdfHeight);
+     pdf.addImage(imgData, "PNG", margin, topMargin, pdfWidth, pdfHeight);
      pdf.save(`${employee.idNumber || "Permit"}.pdf`);
    };
  
