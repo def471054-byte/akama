@@ -12,12 +12,11 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
   const labelWidth = "w-[22%] shrink-0";
   
   // Helper classes to ensure PDF consistency
-  // Labels on the RIGHT in RTL, meaning border-l is between label and value
   const labelClass = `${labelWidth} p-3 bg-white border-l-[1.5px] border-black text-center flex items-center justify-center text-[14px] ${isPdf ? 'font-normal' : 'font-bold'}`;
   const boldValueClass = `flex-1 p-3 text-center flex items-center justify-center uppercase ${isPdf ? 'text-[14px] font-normal' : 'text-[15px] font-bold'}`;
 
   return (
-    <div className={`w-full bg-white font-ajeer ${isPdf ? 'pb-10 p-4' : 'p-8'}`}>
+    <div className={`w-full bg-white font-ajeer ${isPdf ? 'pb-24 p-4' : 'p-8'}`}>
       {/* Outer Card Wrapper - To match the "framed" card look */}
       <div className="border-[1.2px] border-gray-300 bg-white overflow-hidden shadow-sm">
         
@@ -152,7 +151,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
         </div>
 
         {/* 4. Print Metadata */}
-        <div className="mt-8 mb-6 flex justify-end items-center text-[13px] font-normal text-black px-6 gap-2" dir="rtl">
+        <div className="mt-8 mb-10 flex justify-end items-center text-[13px] font-normal text-black px-6 gap-2" dir="rtl">
            <span className="font-bold">تاريخ الطباعة:</span>
            <span>{new Date().toISOString().split('T')[0]}</span>
         </div>
