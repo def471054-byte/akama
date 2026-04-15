@@ -53,7 +53,7 @@
      
      const imgProps = pdf.getImageProperties(imgData);
      const margin = 6; // Horizontal margin
-     const topMargin = 12.7; // Precise 0.5 inch top margin
+     const topMargin = 25.4; // Precise 1 inch top margin
      const pdfWidth = pdf.internal.pageSize.getWidth() - (margin * 2);
      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
      
