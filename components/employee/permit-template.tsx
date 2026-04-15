@@ -159,6 +159,9 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          <span>تاريخ الطباعة:</span>
          <span>{new Date().toISOString().split('T')[0]}</span>
       </div>
+
+      {/* Final Safety Gap for PDF height capture */}
+      {/* {isPdf && <div className="h-20" />} */}
     </div>
   );
 }
