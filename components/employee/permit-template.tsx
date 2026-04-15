@@ -100,8 +100,10 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          </div>
       </div>
 
+      <div className={isPdf ? "h-[20px]" : "h-6"} />
+
        {/* 2. Purpose Table */}
-       <div className="border-[1.5px] border-t-0 border-black bg-white mx-4 overflow-hidden text-black text-[14px]">
+       <div className="border-[1.5px] border-black bg-white mx-4 overflow-hidden text-black text-[14px]">
          <div className="flex border-b-[1px] border-black min-h-[50px]">
              <div className={labelClass}>غرض التصريح</div>
              <div className="flex-1 p-3 text-center flex items-center justify-center text-[14px] font-normal">{employee.purpose || "عمل دائم"}</div>
@@ -114,9 +116,11 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          </div>
       </div>
 
+      <div className={isPdf ? "h-[20px]" : "h-6"} />
+
        {/* 3. Instructions & QR Section */}
        <div 
-         className={`border-[1.5px] border-t-0 border-black bg-white mx-4 flex justify-between items-center text-black`}
+         className={`border-[1.5px] border-black bg-white mx-4 flex justify-between items-center text-black`}
          style={isPdf ? { padding: '15px', minHeight: '180px' } : { padding: '24px', minHeight: '160px' }}
        >
          <div className="flex-1 text-right">
