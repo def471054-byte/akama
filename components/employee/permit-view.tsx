@@ -52,7 +52,7 @@
      });
      
      const imgProps = pdf.getImageProperties(imgData);
-     const margin = 15; // Increased margin for the "floating card" look from reference
+     const margin = 5; // Reduced margin to fill more of the page
      const pdfWidth = pdf.internal.pageSize.getWidth() - (margin * 2);
      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
      
