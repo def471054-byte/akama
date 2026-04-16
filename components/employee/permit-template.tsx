@@ -12,13 +12,13 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
   const labelWidth = "w-[22%] shrink-0";
   
   // Helper classes to ensure PDF consistency
-  // Use leading-none and specific padding to fix the "sunk" text issue in html2canvas
-  const labelClass = `${labelWidth} ${isPdf ? 'pt-[12px] pb-[10px]' : 'p-3'} bg-white border-l-[1px] border-black text-center flex items-center justify-center text-[14px] leading-none ${isPdf ? 'font-normal' : 'font-bold'}`;
-  const valueClass = `flex-1 ${isPdf ? 'pt-[12px] pb-[10px]' : 'p-3'} text-center flex items-center justify-center leading-none ${isPdf ? 'text-[14px] font-normal' : 'text-[16px] font-normal'}`;
-  const boldValueClass = `flex-1 ${isPdf ? 'pt-[12px] pb-[10px]' : 'p-3'} text-center flex items-center justify-center uppercase leading-none ${isPdf ? 'text-[14px] font-normal' : 'text-[15px] font-bold'}`;
+  // Use leading-[1.6] and symmetric padding py-[14px] for better visual vertical centering in PDF
+  const labelClass = `${labelWidth} ${isPdf ? 'py-[14px] leading-[1.6]' : 'p-3 leading-none items-center'} bg-white border-l-[1px] border-black text-center flex justify-center text-[14px] ${isPdf ? 'font-normal' : 'font-bold'}`;
+  const valueClass = `flex-1 ${isPdf ? 'py-[14px] leading-[1.6]' : 'p-3 items-center leading-none'} text-center flex justify-center ${isPdf ? 'text-[14px] font-normal' : 'text-[16px] font-normal'}`;
+  const boldValueClass = `flex-1 ${isPdf ? 'py-[14px] leading-[1.6]' : 'p-3 items-center leading-none'} text-center flex justify-center uppercase ${isPdf ? 'text-[14px] font-normal' : 'text-[15px] font-bold'}`;
 
   return (
-    <div className={`w-full bg-white font-ajeer ${isPdf ? 'pb-20' : 'p-6'}`}>
+    <div className={`bg-white font-ajeer ${isPdf ? 'w-[794px] pt-[96px] pb-[96px] px-[24px]' : 'w-full p-6 pb-20'}`}>
       {/* 1. Main Table Wrapper */}
       <div className="border-[1px] border-black bg-white mx-4 mt-4 overflow-hidden">
          {/* Header Grid Row */}
@@ -54,9 +54,9 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          </div>
 
          {/* Data Rows */}
-         <div className="flex border-b-[1px] border-black min-h-[60px] text-black">
+         <div className={`flex border-b-[1px] border-black min-h-[60px] text-black ${isPdf ? '' : 'items-center'}`}>
             <div className={labelClass}>رقم التصريح</div>
-            <div className={`flex-1 p-3 text-center tracking-[0.1em] flex items-center justify-center font-normal ${isPdf ? 'text-[14px]' : 'text-[16px]'}`}>{employee.permitNumber || "208"}</div>
+            <div className={`flex-1 ${isPdf ? 'py-[14px] leading-[1.6]' : 'p-3 items-center leading-none'} text-center tracking-[0.1em] flex justify-center font-normal ${isPdf ? 'text-[14px]' : 'text-[16px]'}`}>{employee.permitNumber || "208"}</div>
          </div>
 
          <div className="flex border-b-[1px] border-black min-h-[50px] text-black">
@@ -64,40 +64,40 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
             <div className={boldValueClass}>{employee.name}</div>
          </div>
 
-         <div className="flex border-b-[1px] border-black min-h-[50px] text-black">
+         <div className={`flex border-b-[1px] border-black min-h-[50px] text-black ${isPdf ? '' : 'items-center'}`}>
             <div className={labelClass}>تاريخ اصدار التصريح</div>
-            <div className={`w-[28%] p-3 text-center flex items-center justify-center border-l-[1px] border-black font-normal ${isPdf ? 'text-[14px]' : 'text-[13px]'}`}>
+            <div className={`w-[28%] ${isPdf ? 'py-[14px] leading-[1.6]' : 'p-3 items-center leading-none'} text-center flex justify-center border-l-[1px] border-black font-normal ${isPdf ? 'text-[14px]' : 'text-[13px]'}`}>
                {employee.issueDate ? new Date(employee.issueDate).toLocaleDateString('en-GB').replace(/\//g, '-') : '20-09-2025'}
             </div>
             <div className={labelClass}>تاريخ انتهاء التصريح</div>
-            <div className={`flex-1 p-3 text-center flex items-center justify-center font-normal ${isPdf ? 'text-[14px]' : 'text-[13px]'}`}>
+            <div className={`flex-1 ${isPdf ? 'py-[14px] leading-[1.6]' : 'p-3 items-center leading-none'} text-center flex justify-center font-normal ${isPdf ? 'text-[14px]' : 'text-[13px]'}`}>
                {employee.expiryDate ? new Date(employee.expiryDate).toLocaleDateString('en-GB').replace(/\//g, '-') : '27-06-2026'}
             </div>
          </div>
 
-         <div className="flex border-b-[1px] border-black min-h-[50px] text-black text-[14px]">
+         <div className={`flex border-b-[1px] border-black min-h-[50px] text-black text-[14px] ${isPdf ? '' : 'items-center'}`}>
             <div className={labelClass}>رقم الهوية</div>
-            <div className="flex-1 p-3 text-center flex items-center justify-center font-normal">{employee.idNumber || "277"}</div>
+            <div className={`flex-1 ${isPdf ? 'py-[14px] leading-[1.6]' : 'p-3 items-center leading-none'} text-center flex justify-center font-normal`}>{employee.idNumber || "277"}</div>
          </div>
 
-         <div className="flex border-b-[1px] border-black min-h-[50px] text-black text-[14px]">
+         <div className={`flex border-b-[1px] border-black min-h-[50px] text-black text-[14px] ${isPdf ? '' : 'items-center'}`}>
             <div className={labelClass}>الجنسية</div>
-            <div className="flex-1 p-3 text-center flex items-center justify-center font-normal">{employee.nationality || "Saudi"}</div>
+            <div className={`flex-1 ${isPdf ? 'py-[14px] leading-[1.6]' : 'p-3 items-center leading-none'} text-center flex justify-center font-normal`}>{employee.nationality || "Saudi"}</div>
          </div>
 
-         <div className="flex border-b-[1px] border-black min-h-[50px] text-black text-[14px]">
+         <div className={`flex border-b-[1px] border-black min-h-[50px] text-black text-[14px] ${isPdf ? '' : 'items-center'}`}>
             <div className={labelClass}>الجنس</div>
-            <div className="flex-1 p-3 text-center flex items-center justify-center font-normal">{employee.gender || "ذكر"}</div>
+            <div className={`flex-1 ${isPdf ? 'py-[14px] leading-[1.6]' : 'p-3 items-center leading-none'} text-center flex justify-center font-normal`}>{employee.gender || "ذكر"}</div>
          </div>
 
-         <div className="flex border-b-[1px] border-black min-h-[50px] text-black text-[14px]">
+         <div className={`flex border-b-[1px] border-black min-h-[50px] text-black text-[14px] ${isPdf ? '' : 'items-center'}`}>
             <div className={labelClass}>اسم الشركة/المؤسسة</div>
-            <div className="flex-1 p-3 text-center flex items-center justify-center uppercase font-normal">{employee.company || "Company Name"}</div>
+            <div className={`flex-1 ${isPdf ? 'py-[14px] leading-[1.6]' : 'p-3 items-center leading-none'} text-center flex justify-center uppercase font-normal`}>{employee.company || "Company Name"}</div>
          </div>
 
-         <div className="flex min-h-[50px] text-black text-[14px]">
+         <div className={`flex min-h-[50px] text-black text-[14px] ${isPdf ? '' : 'items-center'}`}>
             <div className={labelClass}>جهة الموافقة</div>
-            <div className="flex-1 p-3 text-center flex items-center justify-center font-normal">{employee.authority || "المديرية العامة للجوازات"}</div>
+            <div className={`flex-1 ${isPdf ? 'py-[14px] leading-[1.6]' : 'p-3 items-center leading-none'} text-center flex justify-center font-normal`}>{employee.authority || "المديرية العامة للجوازات"}</div>
          </div>
       </div>
 
@@ -105,13 +105,13 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
 
        {/* 2. Purpose Table */}
        <div className="border-[1px] border-black bg-white mx-4 overflow-hidden text-black text-[14px]">
-         <div className="flex border-b-[1px] border-black min-h-[50px]">
+         <div className={`flex border-b-[1px] border-black min-h-[50px] ${isPdf ? '' : 'items-center'}`}>
              <div className={labelClass}>غرض التصريح</div>
-             <div className="flex-1 p-3 text-center flex items-center justify-center text-[14px] font-normal">{employee.purpose || "عمل دائم"}</div>
+             <div className={`flex-1 ${isPdf ? 'py-[14px] leading-[1.6]' : 'p-3 items-center leading-none'} text-center flex justify-center text-[14px] font-normal`}>{employee.purpose || "عمل دائم"}</div>
          </div>
-         <div className="flex min-h-[80px]">
-             <div className={`${labelWidth} p-4 bg-white border-l-[1px] border-black text-center flex items-center justify-center leading-tight text-[14px] ${isPdf ? 'font-normal' : 'font-bold'}`}>وصف غرض التصريح</div>
-             <div className="flex-1 p-4 text-right leading-relaxed flex items-center justify-center text-[14px] font-normal">
+         <div className={`flex min-h-[80px] ${isPdf ? '' : 'items-center'}`}>
+             <div className={`${labelWidth} ${isPdf ? 'py-[14px] leading-[1.6]' : 'p-4 leading-tight items-center'} bg-white border-l-[1px] border-black text-center flex justify-center text-[14px] ${isPdf ? 'font-normal' : 'font-bold'}`}>وصف غرض التصريح</div>
+             <div className={`flex-1 ${isPdf ? 'py-[14px] leading-[1.6]' : 'p-4 items-center leading-relaxed'} text-right flex justify-center text-[14px] font-normal`}>
                 {employee.description || "السلام عليكم نامل من سعادتكم اصدار تصاريح للعمال علما بانه مقر الشركة داخل مكة"}
              </div>
          </div>
