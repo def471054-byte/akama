@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
     const employeeCount = await prisma.employee.count();
     
@@ -17,14 +17,13 @@ export async function GET() {
       }
     });
 
-    const host = req.headers.get('host') || 'localhost:3000';
-    const protocol = req.headers.get('x-forwarded-proto') || 'http';
-    const origin = `${protocol}://${host}`;
+    const host = req.headers.get('host') || 'localhost:3002';
+    const origin = `http://${host}`; 
 
     const formattedRecent = recentEmployees.map(emp => ({
       ...emp,
       photo: emp.photo 
-        ? `${origin}${emp.photo.startsWith('/uploads/') ? emp.photo.replace('/uploads/', '/api/uploads/') : emp.photo}` 
+        ? (emp.photo.startsWith('http') ? emp.photo : `${origin}${emp.photo.startsWith('/uploads/') ? emp.photo.replace('/uploads/', '/api/uploads/') : emp.photo}`) 
         : null
     }));
 
@@ -36,8 +35,8 @@ export async function GET() {
       ],
       recentRegistrations: formattedRecent,
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error("DASHBOARD_ERROR:", error);
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    return NextResponse.json({ error: "Internal server error", message: error.message }, { status: 500 });
   }
 }

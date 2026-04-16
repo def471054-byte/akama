@@ -37,17 +37,25 @@ export async function GET(req: Request) {
       }),
     ]);
 
-    const host = req.headers.get('host') || 'localhost:3000';
-    const protocol = req.headers.get('x-forwarded-proto') || 'http';
-    const origin = `${protocol}://${host}`;
+    // Foolproof origin and photo URL construction
+    const host = req.headers.get('host') || 'localhost:3002';
+    const origin = `http://${host}`; 
 
-    const formattedEmployees = employees.map(emp => ({
-      ...emp,
-      photo: emp.photo 
-        ? `${origin}${emp.photo.startsWith('/uploads/') ? emp.photo.replace('/uploads/', '/api/uploads/') : emp.photo}` 
-        : null
-    }));
+    const formattedEmployees = employees.map(emp => {
+      if (!emp.photo) return { ...emp, photo: null };
+      
+      let photoPath = emp.photo;
+      if (photoPath.startsWith('/uploads/')) {
+        photoPath = photoPath.replace('/uploads/', '/api/uploads/');
+      }
+      
+      return {
+        ...emp,
+        photo: photoPath.startsWith('http') ? photoPath : `${origin}${photoPath}`
+      };
+    });
 
+    console.log("formattedEmployees", formattedEmployees);
     return NextResponse.json({
       employees: formattedEmployees,
       metadata: {
