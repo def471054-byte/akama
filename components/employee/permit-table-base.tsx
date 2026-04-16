@@ -24,11 +24,11 @@ export default function PermitTableBase({ employee, verificationUrl, isPdf, styl
   return (
     <div className={`w-full bg-white font-ajeer ${styles.containerPadding}`}>
       {/* 1. Main Table Wrapper */}
-      <div className="border-[1px] border-black bg-white mx-4 mt-4 overflow-hidden">
+      <div className="bg-white mx-4 mt-4 overflow-hidden" style={{ border: '1px solid #000000' }}>
          {/* Header Grid Row */}
          <div 
-           className="flex justify-between items-stretch bg-white min-h-[220px] border-b-[1px] border-black text-black"
-           style={styles.headerPadding}
+           className="flex justify-between items-stretch bg-white min-h-[220px] text-black"
+           style={{ ...styles.headerPadding, borderBottom: '1px solid #000000' }}
          >
             <div className="w-[30%] py-4 flex flex-col items-start justify-center shrink-0">
                <div className="h-48 w-auto relative">
