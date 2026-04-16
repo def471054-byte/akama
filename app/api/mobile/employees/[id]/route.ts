@@ -19,7 +19,15 @@ export async function GET(
       );
     }
 
-    return NextResponse.json(employee);
+    const origin = new URL(req.url).origin;
+    const formattedEmployee = {
+      ...employee,
+      photo: employee.photo 
+        ? `${origin}${employee.photo.startsWith('/uploads/') ? employee.photo.replace('/uploads/', '/api/uploads/') : employee.photo}` 
+        : null
+    };
+
+    return NextResponse.json(formattedEmployee);
   } catch (error) {
     console.error("EMPLOYEE_DETAILS_ERROR:", error);
     return NextResponse.json({ error: "Internal server error" }, { status: 500 });

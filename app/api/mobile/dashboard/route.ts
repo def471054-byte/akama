@@ -17,13 +17,21 @@ export async function GET() {
       }
     });
 
+    const origin = new URL(req.url).origin;
+    const formattedRecent = recentEmployees.map(emp => ({
+      ...emp,
+      photo: emp.photo 
+        ? `${origin}${emp.photo.startsWith('/uploads/') ? emp.photo.replace('/uploads/', '/api/uploads/') : emp.photo}` 
+        : null
+    }));
+
     return NextResponse.json({
       stats: [
         { label: "Verified Employees", value: employeeCount },
         { label: "System Status", value: "Green" },
         { label: "Current Cycle", value: "Hajj 1447H" },
       ],
-      recentRegistrations: recentEmployees,
+      recentRegistrations: formattedRecent,
     });
   } catch (error) {
     console.error("DASHBOARD_ERROR:", error);

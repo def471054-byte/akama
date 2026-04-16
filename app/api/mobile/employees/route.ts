@@ -37,8 +37,16 @@ export async function GET(req: Request) {
       }),
     ]);
 
+    const origin = new URL(req.url).origin;
+    const formattedEmployees = employees.map(emp => ({
+      ...emp,
+      photo: emp.photo 
+        ? `${origin}${emp.photo.startsWith('/uploads/') ? emp.photo.replace('/uploads/', '/api/uploads/') : emp.photo}` 
+        : null
+    }));
+
     return NextResponse.json({
-      employees,
+      employees: formattedEmployees,
       metadata: {
         total,
         page,
