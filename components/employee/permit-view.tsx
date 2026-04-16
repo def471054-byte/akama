@@ -1,126 +1,92 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 import PermitTemplate from "./permit-template";
-import PermitTableExport from "./permit-table-export";
+import { Button } from "@/components/ui/button";
 
-type PermitViewProps = {
-  employee: any;
-};
-
-export default function PermitView({ employee }: PermitViewProps) {
-  const pdfCaptureRef = useRef<HTMLDivElement>(null);
+export default function PermitView({ employee }: any) {
+  const pdfRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => setMounted(true), []);
 
   const downloadPDF = async () => {
-    if (!pdfCaptureRef.current) return;
-    
-    try {
-      // Width for content: A4 (210mm) - 2 * 0.25in (12.7mm) = 197.3mm
-      const HORIZONTAL_MARGIN_MM = 6.35; // 0.25 inch
-      const VERTICAL_MARGIN_MM = 25.4;   // 1 inch
-      
-      const canvas = await html2canvas(pdfCaptureRef.current, {
-        scale: 3, // High quality capture
-        useCORS: true,
-        logging: false,
-        onclone: (clonedDoc) => {
-          // Robust fix for Tailwind v4 modern color functions (lab, oklch, oklab)
-          // that html2canvas cannot parse.
-          const elements = clonedDoc.getElementsByTagName('*');
-          for (let i = 0; i < elements.length; i++) {
-            const el = elements[i] as HTMLElement;
-            const style = clonedDoc.defaultView?.getComputedStyle(el);
-            
-            if (style) {
-              const check = (v: string) => 
-                v && (v.includes('lab(') || v.includes('oklch(') || v.includes('oklab('));
-              
-              if (check(style.color)) el.style.color = '#000000';
-              if (check(style.backgroundColor)) {
-                // If it's a background oklch, it's likely a gray or white background in our design
-                el.style.backgroundColor = style.backgroundColor.includes('0%') ? 'transparent' : '#ffffff';
+    if (!pdfRef.current) return;
+
+    // Small delay to ensure any dynamic content is settled
+    await new Promise(resolve => setTimeout(resolve, 100));
+
+    const canvas = await html2canvas(pdfRef.current, {
+      scale: 3,
+      useCORS: true,
+      logging: false, // Set to true if debugging is needed
+      scrollX: 0,
+      scrollY: -window.scrollY, // Critical fix for white-page issues when scrolled
+      onclone: (clonedDoc) => {
+        // Fix for Tailwind 4 / modern CSS color functions that html2canvas cannot parse
+        const elements = clonedDoc.getElementsByTagName('*');
+        for (let i = 0; i < elements.length; i++) {
+           const el = elements[i] as HTMLElement;
+           const style = clonedDoc.defaultView?.getComputedStyle(el);
+           if (style) {
+              if (style.color.includes('lab') || style.color.includes('oklch')) {
+                 el.style.color = '#000000';
               }
-              if (check(style.borderColor)) el.style.borderColor = '#000000';
-              if (check(style.outlineColor)) el.style.outlineColor = '#000000';
-              if (check(style.boxShadow)) el.style.boxShadow = 'none';
-            }
-          }
+              if (style.backgroundColor.includes('lab') || style.backgroundColor.includes('oklch')) {
+                 el.style.backgroundColor = el.classList.contains('bg-white') ? '#ffffff' : '#f3f4f6';
+              }
+              if (style.borderColor.includes('lab') || style.borderColor.includes('oklch')) {
+                 el.style.borderColor = '#000000';
+              }
+           }
         }
-      });
-      
-      const imgData = canvas.toDataURL("image/png");
-      const pdf = new jsPDF({
-        orientation: "portrait",
-        unit: "mm",
-        format: "a4",
-      });
-      
-      const imgProps = pdf.getImageProperties(imgData);
-      const pdfPageWidth = pdf.internal.pageSize.getWidth();
-      
-      const contentWidth = pdfPageWidth - (HORIZONTAL_MARGIN_MM * 2);
-      const contentHeight = (imgProps.height * contentWidth) / imgProps.width;
-      
-      pdf.addImage(imgData, "PNG", HORIZONTAL_MARGIN_MM, VERTICAL_MARGIN_MM, contentWidth, contentHeight);
-      pdf.save(`${employee.idNumber || "Permit"}.pdf`);
-    } catch (error: any) {
-      console.error("PDF_ERROR:", error);
-      alert("PDF generation failed due to a browser rendering limitation with modern CSS colors. We are refining the fix. Error: " + error.message);
-    }
+      }
+    });
+
+    const imgData = canvas.toDataURL("image/png");
+    const pdf = new jsPDF("p", "mm", "a4");
+
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const marginX = 6.35;
+    const marginTop = 25.4;
+
+    const pdfWidth = pageWidth - marginX * 2;
+    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+    const x = (pageWidth - pdfWidth) / 2;
+
+    pdf.addImage(imgData, "PNG", x, marginTop, pdfWidth, pdfHeight);
+    pdf.save(`${employee.idNumber || "permit"}.pdf`);
   };
 
-  const verificationUrl = mounted 
-    ? `${window.location.origin}/?e=${employee.verificationToken}` 
+  const verificationUrl = mounted
+    ? `${window.location.origin}/?e=${employee.verificationToken}`
     : "";
 
   return (
-    <div className={`flex flex-col items-center gap-8 py-10 bg-[#f1f5f9] min-h-screen font-ajeer print-page-root`}>
-      <div className="flex gap-4 no-print">
-        <Button 
-          onClick={downloadPDF} 
-          className="gap-2 bg-[#1e3a5f] hover:bg-[#162a45] text-white shadow-lg text-[14px] font-normal"
-        >
-          <Download className="w-4 h-4" /> Download PDF
-        </Button>
+    <div className="flex flex-col items-center gap-6 py-10 bg-gray-100 min-h-screen">
+
+      <Button onClick={downloadPDF} className="bg-[#1e3a5f] hover:bg-[#162a45] text-white px-6 py-2 rounded-md shadow-lg transition-all active:scale-95">
+        Download PDF
+      </Button>
+
+      {/* Preview */}
+      <div dir="rtl" className="w-[794px] bg-white shadow-xl">
+        <PermitTemplate employee={employee} verificationUrl={verificationUrl} />
       </div>
 
-      <div dir="rtl" className="w-[850px] aspect-[1/1.414] bg-[#f1f5f9] p-8 shadow-none">
-         <PermitTemplate employee={employee} verificationUrl={verificationUrl} />
-      </div>
-
-      <div 
-        ref={pdfCaptureRef}
+      {/* Hidden PDF View - Fixed position behind the scenes to ensure it's in the render tree but invisible. */}
+      <div
+        ref={pdfRef}
         dir="rtl"
-        className="absolute left-[-9999px] top-0 w-[850px] bg-white p-0"
-        style={{ color: "#000" }}
+        className="fixed top-0 left-0 w-[794px] -z-50 pointer-events-none bg-white opacity-100"
+        style={{ left: '-2000px' }} // Positioned far left to ensure it doesn't overlap even at z-index
       >
-         <PermitTableExport employee={employee} verificationUrl={verificationUrl} />
+        <PermitTemplate employee={employee} verificationUrl={verificationUrl} isPdf />
       </div>
 
-      <style jsx global>{`
-        @page { size: A4 portrait; margin: 0.5in; }
-        @media print {
-          body > *:not(.print-page-root) { display: none !important; }
-          .print-page-root {
-            position: absolute !important;
-            left: 0 !important; top: 0 !important;
-            width: 210mm !important;
-            background: white !important;
-            padding: 0 !important; margin: 0 !important;
-          }
-          .no-print { display: none !important; }
-          * { -webkit-print-color-adjust: exact !important; color-adjust: exact !important; }
-        }
-      `}</style>
     </div>
   );
 }
