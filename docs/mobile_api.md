@@ -59,7 +59,7 @@ Retrieve high-level statistics and recent registrations for the mobile dashboard
       "name": "John Doe",
       "idNumber": "277...",
       "createdAt": "2026-04-15T...",
-      "photo": "/api/uploads/..."
+      "photo": "https://your-domain.com/api/uploads/image_name.jpg"
     }
   ]
 }
@@ -89,7 +89,7 @@ Fetch an alphabetically sorted list of employees with search and pagination supp
       "id": "67b...",
       "name": "Ahmed Al-Farsi",
       "idNumber": "236...",
-      "photo": "/api/uploads/...",
+      "photo": "https://your-domain.com/api/uploads/image_name.jpg",
       "designation": "Manager",
       "department": "IT",
       "permitNumber": "208"
@@ -118,6 +118,7 @@ Fetch the full profile of a single employee.
   "email": "john@example.com",
   "phone": "+966...",
   "idNumber": "277...",
+  "photo": "https://your-domain.com/api/uploads/image_name.jpg",
   "nationality": "Saudi",
   "gender": "Male",
   "company": "Akama Solutions",
