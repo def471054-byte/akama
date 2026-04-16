@@ -19,7 +19,10 @@ export async function GET(
       );
     }
 
-    const origin = new URL(req.url).origin;
+    const host = req.headers.get('host') || 'localhost:3000';
+    const protocol = req.headers.get('x-forwarded-proto') || 'http';
+    const origin = `${protocol}://${host}`;
+
     const formattedEmployee = {
       ...employee,
       photo: employee.photo 
