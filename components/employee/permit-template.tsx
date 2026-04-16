@@ -1,6 +1,7 @@
 "use client";
 
 import { QRCodeSVG } from "qrcode.react";
+import { formatDualCalendar } from "@/lib/date-utils";
 
 type PermitTemplateProps = {
   employee: any;
@@ -56,7 +57,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          {/* Data Rows */}
          <div className={`flex border-b-[1px] border-black min-h-[50px] text-black ${isPdf ? '' : 'items-center'}`}>
             <div className={labelClass}>رقم التصريح</div>
-            <div className={`flex-1 ${isPdf ? 'py-[14px] leading-[2.3]' : 'items-center leading-none'} text-center tracking-[0.1em] flex justify-center font-normal ${isPdf ? 'text-[14px]' : 'text-[16px]'}`}>{employee.permitNumber || "208"}</div>
+            <div className={`flex-1 ${isPdf ? 'py-[14px] leading-[2.3]' : 'p-3 items-center leading-none'} text-center tracking-[0.1em] flex justify-center font-normal ${isPdf ? 'text-[14px]' : 'text-[16px]'}`}>{employee.permitNumber || "208"}</div>
          </div>
 
          <div className="flex border-b-[1px] border-black min-h-[50px] text-black">
@@ -67,11 +68,11 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          <div className={`flex border-b-[1px] border-black min-h-[50px] text-black ${isPdf ? '' : 'items-center'}`}>
             <div className={labelClass}>تاريخ اصدار التصريح</div>
             <div className={`w-[28%] ${isPdf ? 'py-[14px] leading-[2.3]' : 'p-3 items-center leading-none'} text-center flex justify-center border-l-[1px] border-black font-normal ${isPdf ? 'text-[14px]' : 'text-[13px]'}`}>
-               {employee.issueDate ? new Date(employee.issueDate).toLocaleDateString('en-GB').replace(/\//g, '-') : '20-09-2025'}
+               {formatDualCalendar(employee.issueDate)}
             </div>
             <div className={labelClass}>تاريخ انتهاء التصريح</div>
             <div className={`flex-1 ${isPdf ? 'py-[14px] leading-[2.3]' : 'p-3 items-center leading-none'} text-center flex justify-center font-normal ${isPdf ? 'text-[14px]' : 'text-[13px]'}`}>
-               {employee.expiryDate ? new Date(employee.expiryDate).toLocaleDateString('en-GB').replace(/\//g, '-') : '27-06-2026'}
+               {formatDualCalendar(employee.expiryDate)}
             </div>
          </div>
 

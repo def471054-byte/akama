@@ -2,28 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { Prisma } from "@prisma/client";
 import crypto from "crypto";
-import moment from "moment-hijri";
-
-// Ensure Arabic dates are handled and normalized
-const parseDate = (val: string, mode: "HIJRI" | "GREGORIAN") => {
-  if (!val || typeof val !== 'string') return null;
-  
-  const cleanVal = val.trim();
-  if (mode === "HIJRI") {
-    // Support DD-MM-YYYY or DD/MM/YYYY for Hijri
-    const normalized = cleanVal.replace(/-/g, '/');
-    const m = moment(normalized, 'iDD/iMM/iYYYY');
-    if (m.isValid()) {
-      return m.toDate();
-    }
-    // Fallback if the user used YYYY/MM/DD
-    const m2 = moment(normalized, 'iYYYY/iMM/iDD');
-    return m2.isValid() ? m2.toDate() : null;
-  }
-  
-  const d = new Date(cleanVal);
-  return isNaN(d.getTime()) ? null : d;
-};
+import { formatDualCalendar, parseDualDate } from "@/lib/date-utils";
 
 // Strip BOM, zero-width spaces, and other invisible unicode garbage that
 // survives CSV parsing and corrupts Arabic text in MongoDB.
@@ -84,9 +63,9 @@ export async function POST(req: Request) {
             workLocations:         sanitizeString(workLocations),
             ajeerId,
             verificationToken,
-            issueDate:  parseDate(emp.issueDate,  dateMode),
-            expiryDate: parseDate(emp.expiryDate, dateMode),
-            birthDate:  parseDate(emp.birthDate,  dateMode),
+            issueDate:  parseDualDate(emp.issueDate,  dateMode),
+            expiryDate: parseDualDate(emp.expiryDate, dateMode),
+            birthDate:  parseDualDate(emp.birthDate,  dateMode),
           };
 
           const created = await prisma.employee.create({ data });
