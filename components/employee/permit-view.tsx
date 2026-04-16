@@ -6,6 +6,7 @@
  import html2canvas from "html2canvas";
  import jsPDF from "jspdf";
  import PermitTemplate from "./permit-template";
+ import PermitTableExport from "./permit-table-export";
  
  
  
@@ -16,7 +17,7 @@
  export default function PermitView({ employee }: PermitViewProps) {
    const pdfCaptureRef = useRef<HTMLDivElement>(null);
    const [mounted, setMounted] = useState(false);
-
+ 
    useEffect(() => {
      setMounted(true);
    }, []);
@@ -24,21 +25,22 @@
    const downloadPDF = async () => {
      if (!pdfCaptureRef.current) return;
      
+     // Width for content: A4 (210mm) - 2 * 0.25in (12.7mm) = 197.3mm
+     const HORIZONTAL_MARGIN_MM = 6.35; // 0.25 inch
+     const VERTICAL_MARGIN_MM = 25.4;   // 1 inch
+     
      const canvas = await html2canvas(pdfCaptureRef.current, {
-       scale: 3, // High quality
+       scale: 3, // High quality capture
        useCORS: true,
        logging: false,
        onclone: (clonedDoc) => {
-         // Fix for Tailwind 4 / modern CSS color functions that html2canvas cannot parse
          const elements = clonedDoc.getElementsByTagName('*');
          for (let i = 0; i < elements.length; i++) {
             const el = elements[i] as HTMLElement;
             const style = clonedDoc.defaultView?.getComputedStyle(el);
-            if (style && (style.color.includes('lab') || style.backgroundColor.includes('lab') || style.borderColor.includes('lab'))) {
-               // Fallback to basic colors if lab() is detected
+            if (style && (style.color.includes('lab') || style.backgroundColor.includes('lab'))) {
                el.style.color = '#000000';
                if (style.backgroundColor.includes('lab')) el.style.backgroundColor = '#ffffff';
-               if (style.borderColor.includes('lab')) el.style.borderColor = '#000000';
             }
          }
        }
@@ -52,12 +54,21 @@
      });
      
      const imgProps = pdf.getImageProperties(imgData);
-     const margin = 6; // Horizontal margin
-     const topMargin = 25.4; // Precise 1 inch top margin
-     const pdfWidth = pdf.internal.pageSize.getWidth() - (margin * 2);
-     const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+     const pdfPageWidth = pdf.internal.pageSize.getWidth();
      
-     pdf.addImage(imgData, "PNG", margin, topMargin, pdfWidth, pdfHeight);
+     // Calculate content dimension with margins
+     const contentWidth = pdfPageWidth - (HORIZONTAL_MARGIN_MM * 2);
+     const contentHeight = (imgProps.height * contentWidth) / imgProps.width;
+     
+     pdf.addImage(
+       imgData, 
+       "PNG", 
+       HORIZONTAL_MARGIN_MM, 
+       VERTICAL_MARGIN_MM, 
+       contentWidth, 
+       contentHeight
+     );
+     
      pdf.save(`${employee.idNumber || "Permit"}.pdf`);
    };
  
@@ -77,22 +88,22 @@
          </Button>
        </div>
  
-       {/* 2. Compact View: Visible on screen */}
+       {/* 2. Compact View: Visible on screen (Mimics A4 Proportion) */}
        <div 
          dir="rtl"
-         className="w-[850px] bg-[#f1f5f9] p-8 shadow-none"
+         className="w-[850px] aspect-[1/1.414] bg-[#f1f5f9] p-8 shadow-none"
        >
-          <PermitTemplate employee={employee} verificationUrl={verificationUrl} isPdf={false} />
+          <PermitTemplate employee={employee} verificationUrl={verificationUrl} />
        </div>
  
-       {/* 3. Ghost View: Specifically for PDF Export (Width reduced to force larger relative scale on PDF) */}
+       {/* 3. Ghost View: Specifically for PDF Export */}
        <div 
          ref={pdfCaptureRef}
          dir="rtl"
          className="absolute left-[-9999px] top-0 w-[850px] bg-white p-0"
          style={{ color: "#000" }}
        >
-          <PermitTemplate employee={employee} verificationUrl={verificationUrl} isPdf={true} />
+          <PermitTableExport employee={employee} verificationUrl={verificationUrl} />
        </div>
  
        {/* 4. Global Print Styles */}
