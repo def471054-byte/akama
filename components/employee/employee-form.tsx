@@ -35,9 +35,9 @@ export default function EmployeeForm({ initialData, isEdit }: EmployeeFormProps)
     const payload = {
       ...data,
       photo,
-      issueDate: data.issueDate ? new Date(data.issueDate as string).toISOString() : null,
-      expiryDate: data.expiryDate ? new Date(data.expiryDate as string).toISOString() : null,
-      birthDate: data.birthDate ? new Date(data.birthDate as string).toISOString() : null,
+      issueDate: data.issueDate || null,
+      expiryDate: data.expiryDate || null,
+      birthDate: data.birthDate || null,
       bloodType: data.bloodType || null,
     };
 
@@ -101,12 +101,12 @@ export default function EmployeeForm({ initialData, isEdit }: EmployeeFormProps)
 
            <div className="space-y-2">
              <Label htmlFor="issueDate" className="text-sm font-bold text-slate-700 uppercase tracking-wide">{f("issueDate")}</Label>
-             <Input id="issueDate" name="issueDate" type="date" defaultValue={initialData?.issueDate ? new Date(initialData.issueDate).toISOString().split('T')[0] : ''} className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
+             <Input id="issueDate" name="issueDate" type="text" defaultValue={initialData?.issueDate || ''} placeholder="1447-12-15" className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
            </div>
 
            <div className="space-y-2">
              <Label htmlFor="expiryDate" className="text-sm font-bold text-slate-700 uppercase tracking-wide">{f("expiryDate")}</Label>
-             <Input id="expiryDate" name="expiryDate" type="date" defaultValue={initialData?.expiryDate ? new Date(initialData.expiryDate).toISOString().split('T')[0] : ''} className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
+             <Input id="expiryDate" name="expiryDate" type="text" defaultValue={initialData?.expiryDate || ''} placeholder="1448-12-15" className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
            </div>
 
            <div className="space-y-2">
@@ -124,8 +124,9 @@ export default function EmployeeForm({ initialData, isEdit }: EmployeeFormProps)
               <Input 
                 id="birthDate" 
                 name="birthDate" 
-                type="date" 
-                defaultValue={initialData?.birthDate ? new Date(initialData.birthDate).toISOString().split('T')[0] : ''} 
+                type="text" 
+                defaultValue={initialData?.birthDate || ''} 
+                placeholder="1410-01-01"
                 className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" 
               />
             </div>

@@ -2,7 +2,14 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { Prisma } from "@prisma/client";
 import crypto from "crypto";
-import { formatDualCalendar, parseDualDate } from "@/lib/date-utils";
+import moment from "moment-hijri";
+
+// Ensure Arabic dates are handled and normalized
+// Sanitization helper is enough now that we store dates as strings
+const parseDateString = (val: string) => {
+  if (!val || typeof val !== 'string') return null;
+  return val.trim();
+};
 
 // Strip BOM, zero-width spaces, and other invisible unicode garbage that
 // survives CSV parsing and corrupts Arabic text in MongoDB.
@@ -63,9 +70,9 @@ export async function POST(req: Request) {
             workLocations:         sanitizeString(workLocations),
             ajeerId,
             verificationToken,
-            issueDate:  parseDualDate(emp.issueDate,  dateMode),
-            expiryDate: parseDualDate(emp.expiryDate, dateMode),
-            birthDate:  parseDualDate(emp.birthDate,  dateMode),
+            issueDate:  parseDateString(emp.issueDate),
+            expiryDate: parseDateString(emp.expiryDate),
+            birthDate:  parseDateString(emp.birthDate),
           };
 
           const created = await prisma.employee.create({ data });

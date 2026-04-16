@@ -10,8 +10,8 @@ export async function GET() {
     const exportData = employees.map(({ id, verificationToken, createdAt, ...rest }) => ({
       ...rest,
       id: id.toString(),
-      issueDate: rest.issueDate?.toLocaleDateString(),
-      expiryDate: rest.expiryDate?.toLocaleDateString(),
+      issueDate: rest.issueDate,
+      expiryDate: rest.expiryDate,
     }));
 
     const worksheet = XLSX.utils.json_to_sheet(exportData);

@@ -36,9 +36,9 @@ export async function PUT(
       where: { id },
       data: {
         ...updateData,
-        issueDate: updateData.issueDate ? new Date(updateData.issueDate) : null,
-        expiryDate: updateData.expiryDate ? new Date(updateData.expiryDate) : null,
-        birthDate: updateData.birthDate ? new Date(updateData.birthDate) : null,
+        issueDate: updateData.issueDate || null,
+        expiryDate: updateData.expiryDate || null,
+        birthDate: updateData.birthDate || null,
         bloodType: updateData.bloodType || null,
       },
     });

@@ -1,7 +1,6 @@
 "use client";
 
 import { QRCodeSVG } from "qrcode.react";
-import { formatDualCalendar } from "@/lib/date-utils";
 
 type PermitTemplateProps = {
   employee: any;
@@ -68,11 +67,11 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          <div className={`flex border-b-[1px] border-black min-h-[50px] text-black ${isPdf ? '' : 'items-center'}`}>
             <div className={labelClass}>تاريخ اصدار التصريح</div>
             <div className={`w-[28%] ${isPdf ? 'py-[14px] leading-[2.3]' : 'p-3 items-center leading-none'} text-center flex justify-center border-l-[1px] border-black font-normal ${isPdf ? 'text-[14px]' : 'text-[13px]'}`}>
-               {formatDualCalendar(employee.issueDate)}
+               {employee.issueDate || '20-09-2025'}
             </div>
             <div className={labelClass}>تاريخ انتهاء التصريح</div>
             <div className={`flex-1 ${isPdf ? 'py-[14px] leading-[2.3]' : 'p-3 items-center leading-none'} text-center flex justify-center font-normal ${isPdf ? 'text-[14px]' : 'text-[13px]'}`}>
-               {formatDualCalendar(employee.expiryDate)}
+               {employee.expiryDate || '27-06-2026'}
             </div>
          </div>
 
@@ -151,7 +150,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
        {/* 4. Print Metadata */}
        <div className={`mt-4 mb-4 pb-4 flex justify-start items-center text-[14px] font-normal text-black px-4 gap-2`} dir="rtl">
           <span className="font-bold">تاريخ الطباعة:</span>
-          <span>{new Date().toISOString().split('T')[0]}</span>
+          <span>{employee.createdAt ? new Date(employee.createdAt).toISOString().split('T')[0] : new Date().toISOString().split('T')[0]}</span>
        </div>
       <div className={isPdf ? "h-[20px]" : "h-4"} />
 

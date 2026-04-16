@@ -25,8 +25,8 @@ export async function POST(req: Request) {
       return {
         ...row,
         verificationToken,
-        issueDate: row.issueDate ? new Date(row.issueDate) : null,
-        expiryDate: row.expiryDate ? new Date(row.expiryDate) : null,
+        issueDate: row.issueDate || null,
+        expiryDate: row.expiryDate || null,
       };
     }));
 

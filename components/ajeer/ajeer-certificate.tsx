@@ -29,8 +29,10 @@ export default function AjeerCertificate({ employee }: AjeerCertificateProps) {
   // Format dates
   const formatDate = (date: Date | string | null) => {
     if (!date) return '--';
-    const d = typeof date === 'string' ? new Date(date) : date;
-    return format(d, 'yyyy/MM/dd');
+    // If it's already a string (which it is now in the DB), just return it.
+    // Otherwise, convert for backward compatibility during transition.
+    if (typeof date === 'string') return date;
+    return format(date, 'yyyy/MM/dd');
   };
 
   return (

@@ -22,9 +22,9 @@ export async function POST(req: Request) {
       data: {
         ...data,
         verificationToken,
-        issueDate: data.issueDate ? new Date(data.issueDate) : null,
-        expiryDate: data.expiryDate ? new Date(data.expiryDate) : null,
-        birthDate: data.birthDate ? new Date(data.birthDate) : null,
+        issueDate: data.issueDate || null,
+        expiryDate: data.expiryDate || null,
+        birthDate: data.birthDate || null,
         bloodType: data.bloodType || null,
       },
     });
