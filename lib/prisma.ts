@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient } from "@prisma/client"; // Force reload for date migration
 
 const globalForPrisma = global as unknown as { prisma: PrismaClient };
 

@@ -23,8 +23,8 @@ model Employee {
   idNumber          String?
   nationality       String?
   gender            String?
-  issueDate         DateTime?
-  expiryDate        DateTime?
+  issueDate         String?
+  expiryDate        String?
   company           String?
   authority         String?
   purpose           String?
@@ -33,7 +33,7 @@ model Employee {
   department        String?
   photo             String?
   bloodType         String?
-  birthDate         DateTime?
+  birthDate         String?
   providerEstNumber String?
   beneficiaryEstName String?
   beneficiaryEstNumber String?
