@@ -178,7 +178,7 @@
                        </div>
                      </DialogContent>
                    </Dialog>
-                    <Button variant="ghost" size="icon" className="h-8 w-8 text-[#c8a45c] hover:bg-[#c8a45c]/10" onClick={() => router.push(`/dashboard/employees/${emp.id}/permit`)}>
+                    <Button variant="ghost" size="icon" className="h-8 w-8 text-[#c8a45c] hover:bg-[#c8a45c]/10" onClick={() => window.open(`/dashboard/employees/${emp.id}/permit`, "_blank")}>
                       <Printer className="w-4 h-4" />
                     </Button>
                     <Button 
