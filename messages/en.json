@@ -43,6 +43,7 @@
     "designation": "Designation",
     "department": "Department",
     "photo": "Photo",
+    "arabicName": "Arabic Name",
     "bloodType": "Blood Type",
     "birthDate": "Birth Date"
   },

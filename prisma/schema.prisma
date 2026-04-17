@@ -17,6 +17,7 @@ model User {
 model Employee {
   id                String   @id @default(auto()) @map("_id") @db.ObjectId
   name              String
+  arabicName        String?
   email             String?
   phone             String?
   permitNumber      String?

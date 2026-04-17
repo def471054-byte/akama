@@ -50,6 +50,7 @@ export async function POST(req: Request) {
           const data: Prisma.EmployeeUncheckedCreateInput = {
             // name is required in the schema — fall back to empty string if CSV is blank
             name:                  sanitizeString(emp.name) ?? "",
+            arabicName:            sanitizeString(emp.arabicName),
             photo:                 sanitizeString(emp.photo),
             idNumber:              sanitizeString(emp.idNumber),
             nationality:           sanitizeString(emp.nationality),

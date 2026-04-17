@@ -107,7 +107,7 @@ export default function ImportEmployeeDialog() {
   // 2. Sample CSV Generation
   const downloadSample = () => {
     const headers = [
-      "name", "photo", "idNumber", "nationality", "gender", "designation", 
+      "name", "arabicName", "photo", "idNumber", "nationality", "gender", "designation", 
       "description", "company", "permitNumber", "issueDate", 
       "expiryDate", "birthDate", "bloodType", "workLocation", "purpose"
     ];
@@ -115,6 +115,7 @@ export default function ImportEmployeeDialog() {
     const sampleRows = [
       [
         "MUHAMMAD YOUSUF GULZAR AHMED", 
+        "محمد يوسف كلزار أحمد",
         "/api/uploads/2183694914.jpg", 
         "2183694914", 
         "باكستان", 
@@ -132,6 +133,7 @@ export default function ImportEmployeeDialog() {
       ],
       [
         "ABDULJALIL EBRAHIM AHMED KDHAM", 
+        "عبدالجليل ابراهيم احمد كحام",
         "/api/uploads/2363526753.jpeg", 
         "2363526753", 
         "اليمن", 
@@ -324,6 +326,7 @@ export default function ImportEmployeeDialog() {
                     <TableHeader className="bg-white sticky top-0 z-10">
                       <TableRow>
                         <TableHead className="font-black text-[10px] uppercase tracking-widest min-w-[180px]">Name</TableHead>
+                        <TableHead className="font-black text-[10px] uppercase tracking-widest min-w-[180px]">Arabic Name</TableHead>
                         <TableHead className="font-black text-[10px] uppercase tracking-widest">ID Number</TableHead>
                         <TableHead className="font-black text-[10px] uppercase tracking-widest min-w-[100px]">Nationality</TableHead>
                         <TableHead className="font-black text-[10px] uppercase tracking-widest min-w-[160px]">Designation</TableHead>
@@ -337,6 +340,12 @@ export default function ImportEmployeeDialog() {
                             className="font-bold text-slate-700 font-ajeer"
                           >
                             {row.name || "---"}
+                          </TableCell>
+                          <TableCell 
+                            dir="auto" 
+                            className="text-slate-500 font-ajeer"
+                          >
+                            {row.arabicName || "---"}
                           </TableCell>
                           <TableCell className="text-slate-500 font-mono text-xs">{row.idNumber || "---"}</TableCell>
                           <TableCell 

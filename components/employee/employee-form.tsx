@@ -85,6 +85,11 @@ export default function EmployeeForm({ initialData, isEdit }: EmployeeFormProps)
            </div>
 
            <div className="space-y-2">
+             <Label htmlFor="arabicName" className="text-sm font-bold text-slate-700 uppercase tracking-wide">{f("arabicName")}</Label>
+             <Input id="arabicName" name="arabicName" defaultValue={initialData?.arabicName} placeholder="الاسم الكامل بالعربية" className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f] font-ajeer" />
+           </div>
+
+           <div className="space-y-2">
              <Label htmlFor="idNumber" className="text-sm font-bold text-slate-700 uppercase tracking-wide">{t("idNumber")}</Label>
              <Input id="idNumber" name="idNumber" defaultValue={initialData?.idNumber} required placeholder="ID Number (Iqama/National ID)" className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
            </div>

@@ -43,6 +43,7 @@
     "designation": "المسمى الوظيفي",
     "department": "القسم",
     "photo": "الصورة",
+    "arabicName": "الاسم بالعربي",
     "bloodType": "فصيلة الدم",
     "birthDate": "تاريخ الميلاد"
   },
