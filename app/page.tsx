@@ -5,6 +5,13 @@ import { getTranslations, getLocale } from "next-intl/server";
 import { XCircle, ArrowLeft, Globe } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import LanguageSwitcher from "@/components/common/language-switcher";
+import { Noto_Sans_Arabic } from "next/font/google";
+
+const notoSansArabic = Noto_Sans_Arabic({
+  subsets: ["arabic"],
+  weight: ["400", "500", "700"],
+  variable: "--font-noto-arabic",
+});
 
 export default async function VerifyPage(props: {
   searchParams: Promise<{ e?: string }>;
@@ -55,25 +62,28 @@ export default async function VerifyPage(props: {
 
   return (
     <main 
-      className="min-h-screen w-full relative font-sans text-slate-900 selection:bg-[#c8a45c]/30 overflow-x-hidden bg-[#efeef0]" 
+      className={`${notoSansArabic.className} min-h-screen w-full relative text-slate-900 selection:bg-[#c8a45c]/30 overflow-x-hidden bg-[#efeef0]`} 
       dir="rtl"
     >
 
 
       {/* 1. TOP-MOST GOVERNMENT BAR (#e8ebee BG) */}
-      <nav className="relative z-20 bg-[#e8ebee] border-b border-slate-100">
-        <div className="w-full flex justify-start items-center px-6">
-          <div className="flex items-center">
+      <nav className="relative z-20 min-h-[60px] bg-[#e8ebee] border-b border-slate-100">
+        <div className="w-full flex justify-start items-center px-3">
+          <div className="flex flex-col items-start sm:flex-row sm:items-center sm:gap-8 sm:py-0">
             {/* Right side logo from mockup */}
-            <div className="relative h-16 w-[400px]">
-              <Image src="/verify-logo.png" alt="Government Portal" fill className="object-contain object-left" />
+            <div className="relative h-16 w-[320px] sm:w-[320px] w-[240px]">
+              <Image src="/verify-logo-r.png" alt="Government Portal" fill className="object-contain object-right" />
+            </div>
+            <div className="relative h-12 w-[80px] sm:h-16 sm:w-[100px] mt-[-10px]">
+              <Image src="/verify-logo-l.png" alt="Government Portal" fill className="object-contain object-right" />
             </div>
           </div>
         </div>
       </nav>
 
       {/* 2. SECONDARY BRAND BAR (Dark Navy) */}
-      <header className="relative z-20 bg-[#243149] shadow-xl">
+      <header className="relative z-20 bg-[#243149] min-h-[70px] shadow-xl">
         <div className="w-full flex justify-between items-center px-6">
           <div className="flex items-center">
             {/* Disabled Language Button with stylized border */}
@@ -103,12 +113,12 @@ export default async function VerifyPage(props: {
       {token ? (
         <>
           
-          {/* INSTRUCTION/NOTICE CARD - Fixed Arabic Text */}
-          <div className="bg-white/98 rounded-lg p-6 shadow-sm border border-slate-100 max-w-5xl mx-auto text-center animate-in fade-in slide-in-from-top-2 duration-700">
-             <p className="text-[#1a2d4b] font-bold text-[15px] sm:text-[15px] leading-relaxed mb-2 px-4 font-sans rtl">
-                بإمكانك الآن استعراض شهادة إتمام الحج الخاصة بك داخل تطبيق توكلنا انتقل إلى قسم "معلوماتي"، ثم إلى "مستنداتي" للاطلاع على الشهادة.
+          {/* INSTRUCTION/NOTICE CARD - Compact for Mobile */}
+          <div className="bg-white/98 rounded-lg p-3 sm:p-6 shadow-sm border border-slate-100 max-w-5xl mx-auto text-center animate-in fade-in slide-in-from-top-2 duration-700">
+             <p className="text-[#1a2d4b] font-bold text-[14px] sm:text-[18px] leading-[1.6] mb-2 px-4 rtl">
+                بإمكانك الآن استعراض شهادة إتمام الحج الخاصة بك داخل تطبيق توكلنا انتقل إلى قسم "معلوماتي"، ثم إلى "مستنداتي للاطلاع على الشهادة.
              </p>
-             <button className="text-[#1a2d4b] font-bold text-[15px] sm:text-[15px]  hover:text-blue-900 transition-all font-sans rtl">
+             <button className="text-[#1a2d4b] font-bold text-[15px] sm:text-[18px] hover:text-blue-900 transition-all rtl">
                 لدخول التطبيق اضغط هنا
              </button>
           </div>
@@ -117,8 +127,8 @@ export default async function VerifyPage(props: {
             <div className="px-6 py-6 sm:px-6 sm:py-6 flex flex-col md:flex-row items-center gap-12 md:gap-24 relative overflow-hidden">
               
               {/* Profile Photo Section (Gold Circle from Mockup) */}
-              <div className="flex-shrink-0 ml-14 relative">
-                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-[4px] border-[#c8a45c] p-0.5 bg-white shadow-lg relative z-10 transition-transform duration-500 hover:scale-[1.02]">
+              <div className="flex-shrink-0 md:ml-14 relative">
+                <div className="w-36 h-36 md:w-28 md:h-28 rounded-full border-[4px] border-[#c8a45c] p-0.5 bg-white shadow-lg relative z-10 transition-transform duration-500 hover:scale-[1.02]">
                   <div className="w-full h-full rounded-full overflow-hidden border-[6px] border-white relative shadow-inner">
                     {employee?.photo ? (
                       <img 
@@ -137,43 +147,43 @@ export default async function VerifyPage(props: {
               </div>
   
               {/* Information Grid (Fixed RTL Column Consistency) */}
-              <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-y-10 gap-x-24 w-full text-right">
+              <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-y-8 gap-x-24 w-full text-center md:text-right">
                 
                 {/* Column 1: Name/ID */}
-                <div className="flex flex-col gap-4">
-                  <div className="flex flex-col items-start">
-                    <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wide mb-1.5 font-sans">الاسم</label>
-                    <p className="text-[15px] font-extrabold text-[#1a2d4b] uppercase leading-tight">{employee?.name}</p>
+                <div className="flex flex-col gap-y-8">
+                  <div className="flex flex-col items-center md:items-start space-y-1">
+                    <label className="text-[14px] font-medium text-slate-500 uppercase leading-[1.4]">الاسم</label>
+                    <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4]">{employee?.name}</p>
                   </div>
-                  <div className="flex flex-col items-start">
-                    <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wide mb-1.5 font-sans">رقم الهوية</label>
-                    <p className="text-[15px] font-extrabold text-[#1a2d4b] font-mono">{employee?.idNumber}</p>
+                  <div className="flex flex-col items-center md:items-start space-y-1">
+                    <label className="text-[14px] font-medium text-slate-500 uppercase leading-[1.4]">رقم الهوية</label>
+                    <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4]">{employee?.idNumber}</p>
                   </div>
                 </div>
   
                 {/* Column 2: Nationality/Birth */}
-                <div className="flex flex-col gap-4">
-                  <div className="flex flex-col items-start">
-                    <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wide mb-1.5 font-sans">الجنسية</label>
-                    <p className="text-[15px] font-extrabold text-[#1a2d4b] uppercase">{employee?.nationality || "--"}</p>
+                <div className="flex flex-col gap-y-8">
+                  <div className="flex flex-col items-center md:items-start space-y-1">
+                    <label className="text-[14px] font-medium text-slate-500 uppercase leading-[1.4]">الجنسية</label>
+                    <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4]">{employee?.nationality || "--"}</p>
                   </div>
-                  <div className="flex flex-col items-start">
-                    <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wide mb-1.5 font-sans">تاريخ الميلاد</label>
-                    <p className="text-[15px] font-extrabold text-[#1a2d4b] font-mono">
-                      {employee?.birthDate ? new Date(employee.birthDate).toISOString().split('T')[0] : "1992-02-01"}
+                  <div className="flex flex-col items-center md:items-start space-y-1">
+                    <label className="text-[14px] font-medium text-slate-500 uppercase leading-[1.4]">تاريخ الميلاد</label>
+                    <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4]">
+                      {employee?.birthDate || "2000-01-01"}
                     </p>
                   </div>
                 </div>
   
                 {/* Column 3: Gender/Blood */}
-                <div className="flex flex-col gap-4">
-                  <div className="flex flex-col items-start">
-                    <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wide mb-1.5 font-sans">الجنس</label>
-                    <p className="text-[15px] font-extrabold text-[#1a2d4b] uppercase">{employee?.gender || "--"}</p>
+                <div className="flex flex-col gap-y-8">
+                  <div className="flex flex-col items-center md:items-start space-y-1">
+                    <label className="text-[14px] font-medium text-slate-500 uppercase leading-[1.4]">الجنس</label>
+                    <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4]">{employee?.gender || "--"}</p>
                   </div>
-                  <div className="flex flex-col items-start">
-                    <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wide mb-1.5 font-sans">فصيلة الدم</label>
-                    <p className="text-[15px] font-extrabold text-[#1a2d4b] uppercase">{employee?.bloodType || "--"}</p>
+                  <div className="flex flex-col items-center md:items-start space-y-1">
+                    <label className="text-[14px] font-medium text-slate-500 uppercase leading-[1.4]">فصيلة الدم</label>
+                    <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4]">{employee?.bloodType || "--"}</p>
                   </div>
                 </div>
               </div>
@@ -182,54 +192,54 @@ export default async function VerifyPage(props: {
   
           <div className="flex justify-start animate-in fade-in slide-in-from-bottom-12 duration-1000 w-full">
             <div className="w-full max-w-md bg-white rounded-lg shadow-md p-5 border border-slate-100 relative overflow-hidden">
-              <h3 className="text-[22px] font-black text-[#1a2d4b] mb-6 tracking-tight text-right font-sans">
+              <h3 className="text-[22px] font-black text-[#1a2d4b] mb-6 tracking-tight text-right">
                   بيانات تصريح الحج
               </h3>
               
               <div className="space-y-6">
-                <div className="flex flex-col items-start text-right">
-                  <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wide font-sans">نوع التصريح</label>
-                  <p className="text-[15px] font-extrabold text-[#1a2d4b] uppercase">
+                <div className="flex flex-col items-start text-right space-y-1">
+                  <label className="text-[14px] font-medium text-slate-500 uppercase leading-[1.4]">نوع التصريح</label>
+                  <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4]">
                     {employee?.designation || "تصاريح دخول العاصمة المقدسة"}
                   </p>
                 </div>
                 
-                <div className="flex flex-col items-start text-right">
-                  <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wide font-sans">رقم التصريح</label>
-                  <p className="text-[18px] font-extrabold text-[#1a2d4b] font-mono tracking-widest">
+                <div className="flex flex-col items-start text-right space-y-1">
+                  <label className="text-[14px] font-medium text-slate-500 uppercase leading-[1.4]">رقم التصريح</label>
+                  <p className="text-[24px] font-bold text-[#1f2937] leading-[1.4] tracking-normal">
                     {employee?.permitNumber || "447190104508947"}
                   </p>
                 </div>
-  
-                <div className="flex flex-col items-start text-right">
-                  <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wide font-sans">الجهة المصدرة</label>
-                  <p className="text-[15px] font-extrabold text-[#1a2d4b]">{employee?.authority || "--"}</p>
+   
+                <div className="flex flex-col items-start text-right space-y-1">
+                  <label className="text-[14px] font-medium text-slate-500 uppercase leading-[1.4]">الجهة المصدرة</label>
+                  <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4]">{employee?.authority || "--"}</p>
                 </div>
-  
-                <div className="flex flex-col items-start text-right">
-                  <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wide font-sans">مقدم الخدمة</label>
-                  <p className="text-[15px] font-extrabold text-[#1a2d4b]">--</p>
+   
+                <div className="flex flex-col items-start text-right space-y-1">
+                  <label className="text-[14px] font-medium text-slate-500 uppercase leading-[1.4]">مقدم الخدمة</label>
+                  <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4]">--</p>
                 </div>
-  
-                <div className="flex flex-col items-start text-right">
-                  <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wide font-sans">رقم الشركة</label>
-                  <p className="text-[15px] font-extrabold text-[#1a2d4b]">--</p>
+   
+                <div className="flex flex-col items-start text-right space-y-1">
+                  <label className="text-[14px] font-medium text-slate-500 uppercase leading-[1.4]">رقم الشركة</label>
+                  <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4]">--</p>
                 </div>
-  
-                <div className="flex flex-col items-start text-right">
-                  <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wide font-sans">مجموعة الخدمة في مكة</label>
-                  <p className="text-[15px] font-extrabold text-[#1a2d4b]">--</p>
+   
+                <div className="flex flex-col items-start text-right space-y-1">
+                  <label className="text-[14px] font-medium text-slate-500 uppercase leading-[1.4]">مجموعة الخدمة في مكة</label>
+                  <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4]">--</p>
                 </div>
               </div>
             </div>
           </div>
         </>
       ): <>
-           <div className="bg-white/98 w-full sm:w-[600px] font-ajeer rounded-lg p-6 mt-16 shadow-sm border border-slate-100 mx-auto text-center animate-in fade-in slide-in-from-top-2 duration-700">
-            <h1 className="text-[#1a2d4b] font-extrabold text-[50px] sm:text-[50px] mb-2 px-4 font-sans rtl">
+           <div className="bg-white/98 w-full sm:w-[600px] rounded-lg p-6 mt-16 shadow-sm border border-slate-100 mx-auto text-center animate-in fade-in slide-in-from-top-2 duration-700">
+            <h1 className="text-[#1a2d4b] font-extrabold text-[50px] sm:text-[50px] mb-2 px-4 rtl">
               حدث خطأ
             </h1>
-             <p className="text-[#1a2d4b] font-bold text-[20px] sm:text-[20px] leading-relaxed mb-2 px-4 font-sans rtl">
+             <p className="text-[#1a2d4b] font-bold text-[20px] sm:text-[20px] leading-relaxed mb-2 px-4 rtl">
 حدث خطأ اثناء عمليه جلب البيانات  
              </p>
             
@@ -240,13 +250,13 @@ export default async function VerifyPage(props: {
       </div>
 
 
-      {/* FOOTER */}
-      <footer className="bg-[#1a2d4b] text-white py-8 mt-12 w-full" dir="ltr">
-        <div className="w-full px-10 sm:px-32 flex justify-between items-center text-center sm:text-left">
-          <div className="text-[13px] sm:text-[14px] text-[#eef1f6] tracking-wide  opacity-90">
+      {/* FOOTER - Updated for Mobile Stacking */}
+      <footer className="bg-[#1a2d4b] text-white py-6 sm:py-12   mt-12 w-full" dir="ltr">
+        <div className="w-full px-4 sm:px-32 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+          <div className="order-2 sm:order-1 text-[13px] sm:text-[14px] text-[#eef1f6] tracking-wide opacity-90">
             Under the supervision of the Supreme Hajj Committee
           </div>
-          <div className="text-[14px] sm:text-[16px] text-[#eef1f6] opacity-90" dir="rtl">
+          <div className="order-1 sm:order-2 text-[14px] sm:text-[16px] text-[#eef1f6] opacity-90" dir="rtl">
             تحت إشراف لجنة الحج العليا
           </div>
         </div>
