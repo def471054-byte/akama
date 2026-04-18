@@ -183,7 +183,8 @@ export default async function VerifyPage(props: {
                   </div>
                   <div className="flex flex-col items-center md:items-start space-y-1">
                     <label className="text-[14px] font-medium text-slate-500 uppercase leading-[1.4]">فصيلة الدم</label>
-                    <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4]">{employee?.bloodType || "--"}</p>
+                    <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4]">{ "--"}</p>
+                    {/* employee?.bloodType || */}
                   </div>
                 </div>
               </div>
