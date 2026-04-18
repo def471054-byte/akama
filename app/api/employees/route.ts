@@ -2,8 +2,18 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import crypto from "crypto";
 
-export async function GET() {
+export async function GET(req: Request) {
   try {
+    const { searchParams } = new URL(req.url);
+    const token = searchParams.get("token");
+
+    if (token) {
+      const employee = await prisma.employee.findUnique({
+        where: { verificationToken: token },
+      });
+      return NextResponse.json(employee);
+    }
+
     const employees = await prisma.employee.findMany({
       orderBy: { createdAt: "desc" },
     });

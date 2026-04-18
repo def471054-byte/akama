@@ -24,39 +24,9 @@ export default async function VerifyPage(props: {
 
   const token = searchParams.e;
 
-  // if (!token) {
-  //   return (
-  //     <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
-  //       <div className="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full text-center">
-  //         <XCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
-  //         <h1 className="text-2xl font-bold text-slate-800 mb-2">{t("invalid")}</h1>
-  //         <p className="text-slate-500 mb-6">No verification token provided.</p>
-  //         <Link href="/" className="inline-flex items-center text-primary hover:underline">
-  //           <ArrowLeft className="w-4 h-4 mr-2" /> {vt("backToHome")}
-  //         </Link>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
   const employee = await prisma.employee.findUnique({
     where: { verificationToken: token || ""},
   });
-
-    // if (!employee) {
-    //   return (
-    //     <div className="min-h-screen flex items-center justify-center bg-slate-50 p-4">
-    //       <div className="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full text-center animate-in fade-in duration-500">
-    //         <XCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
-    //         <h1 className="text-2xl font-bold text-slate-800 mb-2">{t("invalid")}</h1>
-    //         <p className="text-slate-500 mb-6">The verification token provided is invalid or has expired.</p>
-    //         <Link href="/" className="inline-flex items-center text-primary hover:underline">
-    //           <ArrowLeft className="w-4 h-4 mr-2" /> {vt("backToHome")}
-    //         </Link>
-    //       </div>
-    //     </div>
-    //   );
-    // }
 
   const isRtl = locale === "ar";
 
@@ -118,9 +88,9 @@ export default async function VerifyPage(props: {
              <p className="text-[#1a2d4b] font-bold text-[14px] sm:text-[18px] leading-[1.6] mb-2 px-4 rtl">
                 بإمكانك الآن استعراض شهادة إتمام الحج الخاصة بك داخل تطبيق توكلنا انتقل إلى قسم "معلوماتي"، ثم إلى "مستنداتي للاطلاع على الشهادة.
              </p>
-             <button className="text-[#1a2d4b] font-bold text-[15px] sm:text-[18px] hover:text-blue-900 transition-all rtl">
+             <Link href={`http://localhost:3000/tawakkalna/?e=${token}`} target="" className="text-[#1a2d4b] font-bold text-[15px] sm:text-[18px] hover:text-blue-900 transition-all rtl underline">
                 لدخول التطبيق اضغط هنا
-             </button>
+             </Link>
           </div>
   
           <div className="bg-white rounded-xl shadow-md overflow-hidden animate-in fade-in slide-in-from-bottom-6 duration-700 border border-slate-100 w-full">
@@ -193,7 +163,7 @@ export default async function VerifyPage(props: {
   
           <div className="flex justify-start animate-in fade-in slide-in-from-bottom-12 duration-1000 w-full">
             <div className="w-full max-w-md bg-white rounded-lg shadow-md p-5 border border-slate-100 relative overflow-hidden">
-              <h3 className="text-[22px] font-black text-[#1a2d4b] mb-6 tracking-tight text-right">
+              <h3 className="text-[18px] font-bold text-[#1f2937] leading-[1.4] mb-6 tracking-tight text-right">
                   بيانات تصريح الحج
               </h3>
               
