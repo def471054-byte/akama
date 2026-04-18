@@ -161,7 +161,7 @@ export default async function PermitPage(props: {
 
             {/* RIGHT (PHOTO) */}
             <div className="flex justify-end">
-              <div className="w-[90px] h-[110px] bg-white border mt-4 mr-1">
+              <div className="w-[90px] h-[110px] bg-white mt-4 mr-1">
                 {employee.photo ? (
                   <img
                     src={employee.photo.startsWith('/uploads/') ? employee.photo.replace('/uploads/', '/api/uploads/') : employee.photo}
@@ -204,9 +204,11 @@ export default async function PermitPage(props: {
           {/* ROW 4 */}
           <div className="absolute bottom-6 right-4 text-right">
             <p className="text-[9px] text-gray-800 font-medium">Permit Sites</p>
-            <p className="text-[11px] font-bold text-black">
+            <p className="text-[11px] font-medium text-black">
               {employee.permitSites || "أحياء العاصمة المقدسة"}
+              <br />
             </p>
+            
           </div>
         </div>
       </div>

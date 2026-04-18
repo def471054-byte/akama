@@ -62,6 +62,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
          <div className="flex border-b-[1px] border-black min-h-[50px] text-black">
             <div className={`${labelClass}`}>اسم حامل التصريح</div>
             <div className={boldValueClass}>{employee.name}</div>
+            
          </div>
 
          <div className={`flex border-b-[1px] border-black min-h-[50px] text-black ${isPdf ? '' : 'items-center'}`}>
@@ -69,7 +70,7 @@ export default function PermitTemplate({ employee, verificationUrl, isPdf = fals
             <div className={`w-[28%] ${isPdf ? 'py-[14px] leading-[2.3]' : 'p-3 items-center leading-none'} text-center flex justify-center border-l-[1px] border-black font-normal ${isPdf ? 'text-[14px]' : 'text-[13px]'}`}>
                {employee.issueDate || '20-09-2025'}
             </div>
-            <div className={labelClass}>تاريخ انتهاء التصريح</div>
+            <div className={labelClass}>تاريخ انتهاء التصريح.</div>
             <div className={`flex-1 ${isPdf ? 'py-[14px] leading-[2.3]' : 'p-3 items-center leading-none'} text-center flex justify-center font-normal ${isPdf ? 'text-[14px]' : 'text-[13px]'}`}>
                {employee.expiryDate || '27-06-2026'}
             </div>

@@ -39,6 +39,10 @@ body {
   font-family: "DIN Next LT Arabic", var(--font-tajawal), sans-serif !important;
 }
 
+.font-tajawal {
+  font-family: var(--font-tajawal), sans-serif !important;
+}
+
 [dir="auto"],
 [dir="rtl"],
 [lang="ar"] {

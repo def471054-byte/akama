@@ -148,6 +148,7 @@ export default async function VerifyPage(props: {
                     <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4]">
                       {employee?.birthDate || "2000-01-01"}
                     </p>
+                   
                   </div>
                 </div>
   
