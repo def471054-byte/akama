@@ -33,6 +33,11 @@ type Employee = {
   birthDate: string | null;
   designation: string | null;
   permitSites?: string | null;
+  bloodType?: string | null;
+  authority?: string | null;
+  providerEstNumber?: string | null;
+  company?: string | null;
+  permitGroup?: string | null;
 };
 
 export default async function PermitPage(props: {
@@ -245,7 +250,7 @@ export default async function PermitPage(props: {
 
         <div className="border-b border-gray-800 pb-4">
           <p className="text-gray-400 text-sm">Blood Type</p>
-          <p className="text-lg">{employee.bloodType || "--"}</p>
+          <p className="text-lg">{ "--"}</p>
         </div>
 
         <div className="border-b border-gray-800 pb-4">
