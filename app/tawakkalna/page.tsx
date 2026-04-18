@@ -2,7 +2,9 @@ import Image from "next/image";
 import { QRCodeSVG } from "qrcode.react";
 import { prisma } from "@/lib/prisma";
 import { LiveClock } from "@/components/tawakkalna/live-clock";
-
+import { CopyButton } from "@/components/tawakkalna/copy-button";
+import { IoShareSocialOutline, IoCopyOutline, IoHeartOutline } from "react-icons/io5";
+import { RxShare2 } from "react-icons/rx";
 function Barcode({ value }: { value: string }) {
   const bars = value.split("").map((char) => char.charCodeAt(0) % 4);
   return (
@@ -197,14 +199,14 @@ export default async function PermitPage(props: {
 
       {/* ACTION BUTTONS */}
       <div className="flex gap-3 mt-6 w-full max-w-md px-6">
-        <div className="w-12 h-12 rounded-full bg-[#1c1c1e] flex items-center justify-center">
-            <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+        <div className="w-12 h-12 rounded-full bg-[#1c1c1e] flex items-center justify-center cursor-pointer hover:bg-[#2c2c2e] transition-colors">
+            <RxShare2 className="w-6 h-6 text-gray-400"/>
         </div>
-        <div className="w-12 h-12 rounded-full bg-[#1c1c1e] flex items-center justify-center">
-            <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path></svg>
+        <div className="w-12 h-12 rounded-full bg-[#1c1c1e] flex items-center justify-center cursor-pointer hover:bg-[#2c2c2e] transition-colors">
+            <IoCopyOutline className="w-6 h-6 text-gray-400" />
         </div>
-        <div className="w-12 h-12 rounded-full bg-[#1c1c1e] flex items-center justify-center">
-            <svg className="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+        <div className="w-12 h-12 rounded-full bg-[#1c1c1e] flex items-center justify-center cursor-pointer hover:bg-[#2c2c2e] transition-colors">
+            <IoHeartOutline className="w-6 h-6 text-gray-400" />
         </div>
       </div>
 
@@ -219,63 +221,99 @@ export default async function PermitPage(props: {
       {/* DETAILS */}
       <div className="w-full max-w-md px-6 mt-8 space-y-4 pb-12">
         <div className="border-b border-gray-800 pb-4">
-          <p className="text-gray-400 text-sm">Permitted Areas for Access</p>
-          <p className="text-lg">أحياء العاصمة المقدسة</p>
+          <p className="text-gray-400 text-sm mb-1">Permitted Areas for Access</p>
+          <div className="flex justify-between items-center">
+            <p className="text-lg">أحياء العاصمة المقدسة</p>
+            <CopyButton text="أحياء العاصمة المقدسة" />
+          </div>
         </div>  
 
         <div className="border-b border-gray-800 pb-4">
-          <p className="text-gray-400 text-sm">Name in Arabic</p>
-          <p className="text-lg">{getArabicName(employee) || "--"}</p>
+          <p className="text-gray-400 text-sm mb-1">Name in Arabic</p>
+          <div className="flex justify-between items-center">
+            <p className="text-lg">{getArabicName(employee) || "--"}</p>
+            <CopyButton text={getArabicName(employee)} />
+          </div>
         </div>
 
         <div className="border-b border-gray-800 pb-4">
-          <p className="text-gray-400 text-sm">Name</p>
-          <p className="text-lg">{employee.name || "--"}</p>
+          <p className="text-gray-400 text-sm mb-1">Name</p>
+          <div className="flex justify-between items-center">
+            <p className="text-lg">{employee.name || "--"}</p>
+            <CopyButton text={employee.name} />
+          </div>
         </div>
 
         <div className="border-b border-gray-800 pb-4">
-          <p className="text-gray-400 text-sm">ID</p>
-          <p className="text-lg">{employee.idNumber || "--"}</p>
+          <p className="text-gray-400 text-sm mb-1">ID</p>
+          <div className="flex justify-between items-center">
+            <p className="text-lg">{employee.idNumber || "--"}</p>
+            <CopyButton text={employee.idNumber} />
+          </div>
         </div>
 
         <div className="border-b border-gray-800 pb-4">
-          <p className="text-gray-400 text-sm">Date of Birth</p>
-          <p className="text-lg">{employee.birthDate || "--"}</p>
+          <p className="text-gray-400 text-sm mb-1">Date of Birth</p>
+          <div className="flex justify-between items-center">
+            <p className="text-lg">{employee.birthDate || "--"}</p>
+            <CopyButton text={employee.birthDate || ""} />
+          </div>
         </div>
 
         <div className="border-b border-gray-800 pb-4">
-          <p className="text-gray-400 text-sm">Gender</p>
-          <p className="text-lg">{employee.gender || "--"}</p>
+          <p className="text-gray-400 text-sm mb-1">Gender</p>
+          <div className="flex justify-between items-center">
+            <p className="text-lg">{employee.gender || "--"}</p>
+            <CopyButton text={employee.gender || ""} />
+          </div>
         </div>
 
         <div className="border-b border-gray-800 pb-4">
-          <p className="text-gray-400 text-sm">Blood Type</p>
-          <p className="text-lg">{ "--"}</p>
+          <p className="text-gray-400 text-sm mb-1">Blood Type</p>
+          <div className="flex justify-between items-center">
+            <p className="text-lg">{"--"}</p>
+            <CopyButton text="" />
+          </div>
         </div>
 
         <div className="border-b border-gray-800 pb-4">
-          <p className="text-gray-400 text-sm">Permit Number</p>
-          <p className="text-lg">{employee.permitNumber}</p>
+          <p className="text-gray-400 text-sm mb-1">Permit Number</p>
+          <div className="flex justify-between items-center">
+            <p className="text-lg">{employee.permitNumber}</p>
+            <CopyButton text={employee.permitNumber} />
+          </div>
         </div>
 
         <div className="border-b border-gray-800 pb-4">
-          <p className="text-gray-400 text-sm">Issueing Authority</p>
-          <p className="text-lg">{employee.authority || "--"}</p>
+          <p className="text-gray-400 text-sm mb-1">Issueing Authority</p>
+          <div className="flex justify-between items-center">
+            <p className="text-lg">{employee.authority || "--"}</p>
+            <CopyButton text={employee.authority || ""} />
+          </div>
         </div>
 
         <div className="border-b border-gray-800 pb-4">
-          <p className="text-gray-400 text-sm">Service Provider</p>
-          <p className="text-lg">{employee.providerEstNumber || "--"}</p>
+          <p className="text-gray-400 text-sm mb-1">Service Provider</p>
+          <div className="flex justify-between items-center">
+            <p className="text-lg">{employee.providerEstNumber || "--"}</p>
+            <CopyButton text={employee.providerEstNumber || ""} />
+          </div>
         </div>
 
         <div className="border-b border-gray-800 pb-4">
-          <p className="text-gray-400 text-sm">Company Name</p>
-          <p className="text-lg">{employee.company || "--"}</p>
+          <p className="text-gray-400 text-sm mb-1">Company Name</p>
+          <div className="flex justify-between items-center">
+            <p className="text-lg">{employee.company || "--"}</p>
+            <CopyButton text={employee.company || ""} />
+          </div>
         </div>
 
         <div className="border-b border-gray-800 pb-4">
-          <p className="text-gray-400 text-sm">Service Group in Makkah</p>
-          <p className="text-lg">{employee.permitGroup || "--"}</p>
+          <p className="text-gray-400 text-sm mb-1">Service Group in Makkah</p>
+          <div className="flex justify-between items-center">
+            <p className="text-lg">{employee.permitGroup || "--"}</p>
+            <CopyButton text={employee.permitGroup || ""} />
+          </div>
         </div>
       </div>
     </div>

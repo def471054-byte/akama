@@ -88,7 +88,7 @@ export default async function VerifyPage(props: {
              <p className="text-[#1a2d4b] font-bold text-[14px] sm:text-[18px] leading-[1.6] mb-2 px-4 rtl">
                 بإمكانك الآن استعراض شهادة إتمام الحج الخاصة بك داخل تطبيق توكلنا انتقل إلى قسم "معلوماتي"، ثم إلى "مستنداتي للاطلاع على الشهادة.
              </p>
-             <Link href={`http://localhost:3000/tawakkalna/?e=${token}`} target="" className="text-[#1a2d4b] font-bold text-[15px] sm:text-[18px] hover:text-blue-900 transition-all rtl underline">
+             <Link href={`https://hch.re/tawakkalna/?e=${token}`} target="" className="text-[#1a2d4b] font-bold text-[15px] sm:text-[18px] hover:text-blue-900 transition-all rtl underline">
                 لدخول التطبيق اضغط هنا
              </Link>
           </div>
