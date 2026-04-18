@@ -207,7 +207,7 @@ export default async function VerifyPage(props: {
                 
                 <div className="flex flex-col items-start text-right space-y-1">
                   <label className="text-[14px] font-medium text-slate-500 uppercase leading-[1.4]">رقم التصريح</label>
-                  <p className="text-[24px] font-bold text-[#1f2937] leading-[1.4] tracking-normal">
+                  <p className="text-[18px] font-bold text-[#1f2937] leading-[1.4] tracking-normal">
                     {employee?.permitNumber || "447190104508947"}
                   </p>
                 </div>
