@@ -6,6 +6,7 @@ import { XCircle, ArrowLeft, Globe } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import LanguageSwitcher from "@/components/common/language-switcher";
 import { Noto_Sans_Arabic } from "next/font/google";
+import { headers } from "next/headers";
 
 const notoSansArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
@@ -21,8 +22,13 @@ export default async function VerifyPage(props: {
   const t = await getTranslations("common");
   const vt = await getTranslations("verify");
   const f = await getTranslations("fields");
-
   const token = searchParams.e;
+  
+  const headersList = await headers();
+      const host = headersList.get("host") || "hch.re";
+      const protocol = host.includes("localhost") ? "http" : "https";
+      const tawakkalnaUrl = `${protocol}://${host}/tawakkalna/?e=${token}`;
+
 
   const employee = await prisma.employee.findUnique({
     where: { verificationToken: token || ""},
@@ -88,7 +94,7 @@ export default async function VerifyPage(props: {
              <p className="text-[#1a2d4b] font-bold text-[14px] sm:text-[18px] leading-[1.6] mb-2 px-4 rtl">
                 بإمكانك الآن استعراض شهادة إتمام الحج الخاصة بك داخل تطبيق توكلنا انتقل إلى قسم "معلوماتي"، ثم إلى "مستنداتي للاطلاع على الشهادة.
              </p>
-             <Link href={`https://hch.re/tawakkalna/?e=${token}`} target="" className="text-[#1a2d4b] font-bold text-[15px] sm:text-[18px] hover:text-blue-900 transition-all rtl underline">
+             <Link href={tawakkalnaUrl} target="" className="text-[#1a2d4b] font-bold text-[15px] sm:text-[18px] hover:text-blue-900 transition-all rtl underline">
                 لدخول التطبيق اضغط هنا
              </Link>
           </div>

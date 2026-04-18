@@ -62,7 +62,6 @@ export default function PermitView({ employee }: any) {
   };
 
   const verificationUrl = mounted
-    // ? `https://hch.re/?e=${employee.verificationToken}`
     ? `${window.location.origin}/?e=${employee.verificationToken}`
     : "";
 

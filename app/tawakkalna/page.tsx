@@ -1,10 +1,13 @@
 import Image from "next/image";
 import { QRCodeSVG } from "qrcode.react";
+import { headers } from "next/headers";
 import { prisma } from "@/lib/prisma";
 import { LiveClock } from "@/components/tawakkalna/live-clock";
 import { CopyButton } from "@/components/tawakkalna/copy-button";
 import { IoShareSocialOutline, IoCopyOutline, IoHeartOutline } from "react-icons/io5";
 import { RxShare2 } from "react-icons/rx";
+import { BackButton } from "@/components/tawakkalna/back-button";
+
 function Barcode({ value }: { value: string }) {
   const bars = value.split("").map((char) => char.charCodeAt(0) % 4);
   return (
@@ -42,14 +45,18 @@ type Employee = {
   permitGroup?: string | null;
 };
 
-export default async function PermitPage(props: {
-  searchParams: Promise<{ e?: string }>;
-}) {
-  const { e: token } = await props.searchParams;
 
-  if (!token) {
-    return (
-      <div className="min-h-screen bg-black flex items-center justify-center text-white text-center px-6">
+
+export default async function PermitPage(props: {
+    searchParams: Promise<{ e?: string }>;
+}) {
+    
+    
+    const { e: token } = await props.searchParams;
+    
+    if (!token) {
+        return (
+            <div className="min-h-screen bg-black flex items-center justify-center text-white text-center px-6">
         <div>
           <h1 className="text-2xl font-bold mb-2">No Token Provided</h1>
           <p className="text-gray-400">Please provide a valid verification token.</p>
@@ -57,6 +64,11 @@ export default async function PermitPage(props: {
       </div>
     );
   }
+    
+    const headersList = await headers();
+    const host = headersList.get("host") || "hch.re";
+    const protocol = host.includes("localhost") ? "http" : "https";
+    const verificationUrl = `${protocol}://${host}/?e=${token}`;
 
   const employee = await prisma.employee.findUnique({
     where: { verificationToken: token },
@@ -78,10 +90,11 @@ export default async function PermitPage(props: {
   };
 
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center text-white font-sans">
+    <div dir="ltr" className="min-h-screen bg-black flex flex-col items-center text-white font-sans">
 
       {/* HEADER */}
-      <div className="w-full max-w-md px-4 py-5 flex justify-between items-center">
+      <div className="w-full max-w-md px-4 py-5 flex justify-start items-center gap-2">
+        <BackButton />
         <h1 className="text-lg font-semibold">Makkah Entry Permit</h1>
       </div>
 
@@ -96,6 +109,7 @@ export default async function PermitPage(props: {
         >
           {/* ROW 1 - BARCODE */}
           <div className="absolute top-2 left-2 mt-2 ml-1">
+            
             <Barcode value={employee.permitNumber} />
             <div className="text-[8px] text-black text-center font-mono opacity-80">
               {employee.permitNumber}
@@ -213,7 +227,14 @@ export default async function PermitPage(props: {
       {/* QR */}
       <div className="w-full max-w-md px-6 mt-6 flex justify-end">
         <div className="bg-white p-3 rounded-xl text-black text-center">
-          <QRCodeSVG value={employee.verificationToken || ""} size={120} />
+            {verificationUrl && (
+              <QRCodeSVG 
+                 value={verificationUrl} 
+                 size={130} 
+                 level="L" 
+                 includeMargin={false}
+              />
+            )}
           <LiveClock />
         </div>
       </div>
