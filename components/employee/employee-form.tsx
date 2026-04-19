@@ -39,6 +39,7 @@ export default function EmployeeForm({ initialData, isEdit }: EmployeeFormProps)
       expiryDate: data.expiryDate || null,
       birthDate: data.birthDate || null,
       bloodType: data.bloodType || null,
+      engGender: data.gender === "ذكر" ? "Male" : "Female",
     };
 
     try {
@@ -94,15 +95,22 @@ export default function EmployeeForm({ initialData, isEdit }: EmployeeFormProps)
              <Input id="idNumber" name="idNumber" defaultValue={initialData?.idNumber} required placeholder="ID Number (Iqama/National ID)" className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
            </div>
 
-           <div className="space-y-2">
-             <Label htmlFor="nationality" className="text-sm font-bold text-slate-700 uppercase tracking-wide">{t("nationality")}</Label>
-             <Input id="nationality" name="nationality" defaultValue={initialData?.nationality} placeholder="Nationality" className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
-           </div>
-
-           <div className="space-y-2">
+            <div className="space-y-2">
              <Label htmlFor="permitNumber" className="text-sm font-bold text-slate-700 uppercase tracking-wide">{f("permitNumber")}</Label>
              <Input id="permitNumber" name="permitNumber" defaultValue={initialData?.permitNumber} placeholder="Permit Number" className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
            </div>
+
+           <div className="space-y-2">
+             <Label htmlFor="nationality" className="text-sm font-bold text-slate-700 uppercase tracking-wide">{t("nationality")}</Label>
+             <Input id="nationality" name="nationality" defaultValue={initialData?.nationality} placeholder="Nationality (Arabic)" className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
+           </div>
+
+           <div className="space-y-2">
+             <Label htmlFor="engNationality" className="text-sm font-bold text-slate-700 uppercase tracking-wide">Eng Nationality</Label>
+             <Input id="engNationality" name="engNationality" defaultValue={initialData?.engNationality} placeholder="Nationality (English)" className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
+           </div>
+
+          
 
            <div className="space-y-2">
              <Label htmlFor="issueDate" className="text-sm font-bold text-slate-700 uppercase tracking-wide">{f("issueDate")}</Label>
@@ -146,6 +154,18 @@ export default function EmployeeForm({ initialData, isEdit }: EmployeeFormProps)
                 className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" 
               />
             </div>
+
+           
+
+           <div className="space-y-2">
+             <Label htmlFor="religion" className="text-sm font-bold text-slate-700 uppercase tracking-wide">Religion</Label>
+             <Input id="religion" name="religion" defaultValue={initialData?.religion || "الإسلام"} placeholder="Religion (Arabic)" className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
+           </div>
+
+           <div className="space-y-2">
+             <Label htmlFor="engReligion" className="text-sm font-bold text-slate-700 uppercase tracking-wide">Eng Religion</Label>
+             <Input id="engReligion" name="engReligion" defaultValue={initialData?.engReligion || "Islam"} placeholder="Religion (English)" className="h-11 border-slate-200 focus-visible:ring-[#1e3a5f]" />
+           </div>
 
            <div className="space-y-2">
              <Label htmlFor="gender" className="text-sm font-bold text-slate-700 uppercase tracking-wide">{t("gender")}</Label>

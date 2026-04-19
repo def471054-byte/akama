@@ -42,5 +42,9 @@ model Employee {
   ajeerId           String?  @unique
   permitGroup       String?
   verificationToken String?  @unique
+  engNationality    String?
+  engGender         String?
+  religion          String?
+  engReligion       String?
   createdAt         DateTime @default(now())
 }

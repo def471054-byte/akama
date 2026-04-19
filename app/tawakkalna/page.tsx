@@ -43,6 +43,10 @@ type Employee = {
   providerEstNumber?: string | null;
   company?: string | null;
   permitGroup?: string | null;
+  engNationality?: string | null;
+  engGender?: string | null;
+  religion?: string | null;
+  engReligion?: string | null;
 };
 
 
