@@ -7,6 +7,7 @@ import { Link } from "@/i18n/routing";
 import LanguageSwitcher from "@/components/common/language-switcher";
 import { Noto_Sans_Arabic } from "next/font/google";
 import { headers } from "next/headers";
+import LoadingIllusion from "@/components/employee/loading-illusion";
 
 const notoSansArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
@@ -80,12 +81,13 @@ export default async function VerifyPage(props: {
           {/* MAIN CONTENT WRAPPER (Spans full width for background alignment) */}
         <div className="relative w-full overflow-hidden min-h-[calc(100vh-140px)] bg-[#efeef0]">
           {/* BACKGROUND PATTERN LAYER (Now all the way right with normal blend to avoid seams) */}
-          <div className="absolute inset-0 z-0 pointer-events-none  mr-[-50px] mt-[-20px] transition-opacity duration-1000">
-            <Image src="/view-bg.png" alt="Background pattern" fill className="object-contain object-right-top" priority />
+          <div className="absolute inset-0 z-0 pointer-events-none sm:mr-[-50px] mt-[-20px] transition-opacity duration-1000">
+            <Image src="/view-bg.png" alt="Background pattern" fill className="object-contain object-center sm:object-right-top" priority />
           </div>
   
           {/* CENTERED CONTENT AREA - FIXED RTL Layout Consistency */}
-          <div className="relative z-10 w-full px-6 sm:px-12 py-8 flex flex-col gap-6">
+          <LoadingIllusion>
+            <div className="relative z-10 w-full px-6 sm:px-12 py-8 flex flex-col gap-6">
       {token ? (
         <>
           
@@ -224,8 +226,9 @@ export default async function VerifyPage(props: {
           </div>
 
           </>}
+            </div>
+          </LoadingIllusion>
         </div>
-      </div>
 
 
       {/* FOOTER - Updated for Mobile Stacking */}
