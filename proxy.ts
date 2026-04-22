@@ -15,6 +15,7 @@ export default withAuth(
           pathname === "/setup" || 
           pathname === "/login" || 
           pathname === "/" || 
+          pathname === "/maintenance" || 
           pathname.startsWith("/tawakkalna") ||
           pathname.startsWith("/api") || 
           pathname.includes(".")

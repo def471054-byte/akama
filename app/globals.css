@@ -19,6 +19,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-outfit), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-inter), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-alexandria: var(--font-alexandria);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,8 +44,25 @@ body {
   font-family: var(--font-tajawal), sans-serif !important;
 }
 
+.font-alexandria {
+  font-family: var(--font-alexandria), sans-serif !important;
+}
+
 [dir="auto"],
 [dir="rtl"],
 [lang="ar"] {
   font-family: "DIN Next LT Arabic", var(--font-tajawal), 'Noto Sans Arabic', Arial, sans-serif;
+}
+
+@media print {
+  @page {
+    margin-top: 0in;
+    margin-bottom: 0in;
+    margin-left: 0.25in;
+    margin-right: 0.25in;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
 }

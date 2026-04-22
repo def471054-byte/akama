@@ -130,7 +130,7 @@ export default async function PermitPage(props: {
               <div className="mb-1">
                 <p className="text-[10px] font-9old text-gray-800 font-medium">Name / الاسم</p>
                 <p className="text-[11px] font-bold text-black">
-                  {getArabicName(employee)}
+                  {employee.arabicName}
                 </p>
                 <p className="text-[10px] font-bold tracking-tight text-black">
                   {employee.name}
@@ -140,11 +140,11 @@ export default async function PermitPage(props: {
               {/* NATIONALITY */}
               <div className="border-b border-gray-300/50 pb-1 mb-1 flex justify-end">
                 <div className="text-right">
-                  <p className="text-[9px] text-gray-800 font-medium">الجنسية</p>
-                  <p className="text-[11px] font-bold text-black">{employee.nationality || "--"}</p>
+                  <p className="text-[9px] text-gray-800 font-medium">Nationality</p>
+                  <p className="text-[11px] font-bold text-black">{employee.engNationality || "--"}</p>
                 </div>
                 <div className="text-right w-[100px]">
-                  <p className="text-[9px] text-gray-800 font-medium">Nationality</p>
+                  <p className="text-[9px] text-gray-800 font-medium">الجنسية</p>
                   <p className="text-[11px] font-bold text-black">{employee.nationality || "--"}</p>
                 </div>
               </div>
@@ -189,7 +189,7 @@ export default async function PermitPage(props: {
             <div className="flex-1 flex justify-end text-right">
               <div>
                 <p className="text-[9px] text-gray-800 font-medium">الجنس/Gender</p>
-                <p className="text-[11px] font-bold text-black">{employee.gender || "--"}</p>
+                <p className="text-[11px] font-bold text-black">{employee.engGender + " / " + employee.gender}</p>
               </div>
               <div className="w-[100px]">
                 <p className="text-[9px] text-gray-800 font-medium">Date of Birth/تاريخ الميلاد</p>

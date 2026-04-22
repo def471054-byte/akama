@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit, Tajawal } from "next/font/google";
+import { Inter, Outfit, Tajawal, Alexandria } from "next/font/google";
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getLocale } from "next-intl/server";
@@ -13,6 +13,11 @@ const tajawal = Tajawal({
   subsets: ["arabic"], 
   weight: ["200", "300", "400", "500", "700", "800", "900"],
   variable: "--font-tajawal" 
+});
+const alexandria = Alexandria({
+  subsets: ["arabic", "latin"],
+  weight: ["400", "700", "800"],
+  variable: "--font-alexandria"
 });
 
 export const metadata: Metadata = {
@@ -30,7 +35,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} suppressHydrationWarning>
-      <body className={`${inter.variable} ${outfit.variable} ${tajawal.variable} font-sans`}>
+      <body className={`${inter.variable} ${outfit.variable} ${tajawal.variable} ${alexandria.variable} font-sans`}>
         <NextIntlClientProvider messages={messages} locale={locale}>
           <AuthProvider>
             <ThemeProvider
