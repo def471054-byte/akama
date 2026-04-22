@@ -145,7 +145,7 @@ export default function AjeerCertificate({ employee }: AjeerCertificateProps) {
               <div className="col-span-9 py-1 px-2 font-normal text-slate-700">{employee.workLocations || '--'}</div>
            </div>
         </div>
-2
+
         {/* 4. DECLARATIONS */}
         <div className="mt-6 space-y-4">
            <h3 className="font-alexandria  font-semibold text-center  text-[12px] mb-2 text-slate-900 underline underline-offset-8 decoration-2 decoration-slate-200">إقرارات</h3>
